@@ -2,10 +2,12 @@
 Apache CarbonData Learning
 
 #1.operations
+
+
 ##DDL
 
 
-##L
+##DML
 
 
 #2.source code Analysis
