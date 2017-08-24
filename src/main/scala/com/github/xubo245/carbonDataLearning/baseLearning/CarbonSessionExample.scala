@@ -1,0 +1,131 @@
+/**
+  * Created by root on 8/11/17.
+  */
+
+package com.github.xubo245.carbonDataLearning.baseLearning
+
+import java.io.File
+
+import org.apache.carbondata.core.constants.CarbonCommonConstants
+import org.apache.carbondata.core.util.CarbonProperties
+import org.apache.spark.sql.SparkSession
+
+object CarbonSessionExample {
+
+  def main(args: Array[String]) {
+    val rootPath = new File(this.getClass.getResource("/").getPath
+      + "../..").getCanonicalPath
+    val storeLocation = s"$rootPath/target/store"
+    val warehouse = s"$rootPath/target/warehouse"
+    val metastoredb = s"$rootPath/target"
+
+    CarbonProperties.getInstance()
+      .addProperty(CarbonCommonConstants.CARBON_TIMESTAMP_FORMAT, "yyyy/MM/dd HH:mm:ss")
+      .addProperty(CarbonCommonConstants.CARBON_DATE_FORMAT, "yyyy/MM/dd")
+
+    import org.apache.spark.sql.CarbonSession._
+
+    val spark = SparkSession
+      .builder()
+      .master("local")
+      .appName("CarbonSessionExample")
+      .config("spark.sql.warehouse.dir", warehouse)
+      .getOrCreateCarbonSession(storeLocation, metastoredb)
+
+    spark.sparkContext.setLogLevel("WARN")
+
+    spark.sql("DROP TABLE IF EXISTS carbon_table")
+
+    // Create table
+    spark.sql(
+      s"""
+         | CREATE TABLE carbon_table(
+         | shortField SHORT,
+         | intField INT,
+         | bigintField LONG,
+         | doubleField DOUBLE,
+         | stringField STRING,
+         | timestampField TIMESTAMP,
+         | decimalField DECIMAL(18,2),
+         | dateField DATE,
+         | charField CHAR(5),
+         | floatField FLOAT,
+         | complexData ARRAY<STRING>
+         | )
+         | STORED BY 'carbondata'
+         | TBLPROPERTIES('DICTIONARY_INCLUDE'='dateField, charField')
+       """.stripMargin)
+
+    val path = s"$rootPath/src/main/resources/data.csv"
+
+    // scalastyle:off
+    spark.sql(
+      s"""
+         | LOAD DATA LOCAL INPATH '$path'
+         | INTO TABLE carbon_table
+         | OPTIONS('FILEHEADER'='shortField,intField,bigintField,doubleField,stringField,timestampField,decimalField,dateField,charField,floatField,complexData',
+         | 'COMPLEX_DELIMITER_LEVEL_1'='#')
+       """.stripMargin)
+    // scalastyle:on
+
+    spark.sql(
+      s"""
+         | SELECT *
+         | FROM carbon_table
+         | WHERE stringfield = 'spark' AND decimalField > 40
+      """.stripMargin).show()
+
+    spark.sql(
+      s"""
+         | SELECT *
+         | FROM carbon_table WHERE length(stringField) = 5
+       """.stripMargin).show()
+
+    spark.sql(
+      s"""
+         | SELECT *
+         | FROM carbon_table WHERE date_format(dateField, "yyyy-MM-dd") = "2015-07-23"
+       """.stripMargin).show()
+
+    spark.sql("SELECT count(stringField) FROM carbon_table").show()
+
+    spark.sql(
+      s"""
+         | SELECT sum(intField), stringField
+         | FROM carbon_table
+         | GROUP BY stringField
+       """.stripMargin).show()
+
+    spark.sql(
+      s"""
+         | SELECT t1.*, t2.*
+         | FROM carbon_table t1, carbon_table t2
+         | WHERE t1.stringField = t2.stringField
+      """.stripMargin).show()
+
+    spark.sql(
+      s"""
+         | WITH t1 AS (
+         | SELECT * FROM carbon_table
+         | UNION ALL
+         | SELECT * FROM carbon_table
+         | )
+         | SELECT t1.*, t2.*
+         | FROM t1, carbon_table t2
+         | WHERE t1.stringField = t2.stringField
+      """.stripMargin).show()
+
+    spark.sql(
+      s"""
+         | SELECT *
+         | FROM carbon_table
+         | WHERE stringField = 'spark' and floatField > 2.8
+       """.stripMargin).show()
+
+    // Drop table
+    spark.sql("DROP TABLE IF EXISTS carbon_table")
+
+    spark.stop()
+  }
+
+}

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.xubo245.canbonDataLearning</groupId>
+    <artifactId>CarbonDataLearning</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <snappy.version>1.1.2.6</snappy.version>
+        <hadoop.version>2.2.0</hadoop.version>
+        <hadoop.deps.scope>compile</hadoop.deps.scope>
+        <spark.deps.scope>compile</spark.deps.scope>
+        <scala.deps.scope>compile</scala.deps.scope>
+        <dev.path>${basedir}/dev</dev.path>
+        <spark.master.url>local[2]</spark.master.url>
+        <hdfs.url>local</hdfs.url>
+        <!--<suite.name>org.apache.carbondata.cluster.sdv.suite.SDVSuites</suite.name>-->
+        <spark.version>2.1.0</spark.version>
+        <scala.binary.version>2.11</scala.binary.version>
+        <scala.version>2.11.8</scala.version>
+        <carbondata.version>1.2.0-SNAPSHOT</carbondata.version>
+    </properties>
+
+
+    <dependencies>
+
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+            <scope>${spark.deps.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive-thriftserver_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+            <scope>${spark.deps.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-repl_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+            <scope>${spark.deps.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>${scala.version}</version>
+            <scope>${scala.deps.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>${scala.version}</version>
+            <scope>${scala.deps.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+            <scope>${scala.deps.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-actors</artifactId>
+            <version>${scala.version}</version>
+            <scope>${scala.deps.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scalap</artifactId>
+            <version>${scala.version}</version>
+            <scope>${scala.deps.scope}</scope>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.carbondata</groupId>-->
+        <!--<artifactId>carbondata-parent</artifactId>-->
+        <!--<version>1.1.0</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.carbondata</groupId>
+            <artifactId>carbondata-core</artifactId>
+            <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+        <groupId>org.apache.carbondata</groupId>
+        <artifactId>carbondata-spark-common</artifactId>
+        <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.carbondata</groupId>
+            <artifactId>carbondata-spark2</artifactId>
+            <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.carbondata</groupId>
+            <artifactId>carbondata-hadoop</artifactId>
+            <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.carbondata</groupId>
+            <artifactId>carbondata-common</artifactId>
+            <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.carbondata</groupId>
+            <artifactId>carbondata-format</artifactId>
+            <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive-thriftserver_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+            <scope>${spark.deps.scope}</scope>
+
+        </dependency>
+        <dependency>
+            <groupId>org.apache.carbondata</groupId>
+            <artifactId>carbondata-processing</artifactId>
+            <version>${carbondata.version}</version>
+        </dependency>
+    </dependencies>
+</project>
