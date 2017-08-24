@@ -291,8 +291,15 @@ sql中的字符串为：
 	USING org.apache.spark.sql.CarbonSource OPTIONS (tableName "test_table", dbName "default", tablePath "/david/xubo/carbondata/examples/spark2/target/store/default/test_table",carbonSchemaPartsNo '1',carbonSchema0 '{"databaseName":"default","tableUniqueName":"default_test_table","factTable":{"tableId":"df197ea2-3311-44d9-87f7-f5ad496e2665","tableName":"test_table","listOfColumns":[{"dataType":"STRING","columnName":"id","columnUniqueId":"15b54397-97cf-46fe-bed5-be6c686b586c","columnReferenceId":"15b54397-97cf-46fe-bed5-be6c686b586c","isColumnar":true,"encodingList":["INVERTED_INDEX"],"isDimensionColumn":true,"columnGroupId":-1,"scale":0,"precision":0,"schemaOrdinal":0,"numberOfChild":0,"invisible":false,"isSortColumn":true},{"dataType":"STRING","columnName":"name","columnUniqueId":"09843886-0141-43bb-bb21-0435777b62ce","columnReferenceId":"09843886-0141-43bb-bb21-0435777b62ce","isColumnar":true,"encodingList":["INVERTED_INDEX"],"isDimensionColumn":true,"columnGroupId":-1,"scale":0,"precision":0,"schemaOrdinal":1,"numberOfChild":0,"invisible":false,"isSortColumn":true},{"dataType":"STRING","columnName":"city","columnUniqueId":"f0728971-f9a5-4792-847b-b56aefaae97c","columnReferenceId":"f0728971-f9a5-4792-847b-b56aefaae97c","isColumnar":true,"encodingList":["INVERTED_INDEX"],"isDimensionColumn":true,"columnGroupId":-1,"scale":0,"precision":0,"schemaOrdinal":2,"numberOfChild":0,"invisible":false,"isSortColumn":true},{"dataType":"INT","columnName":"age","columnUniqueId":"93997e7c-28da-4dfe-8a3a-b111242e2aa9","columnReferenceId":"93997e7c-28da-4dfe-8a3a-b111242e2aa9","isColumnar":true,"encodingList":[],"isDimensionColumn":false,"columnGroupId":-1,"scale":0,"precision":0,"schemaOrdinal":3,"numberOfChild":0,"invisible":false,"isSortColumn":false}],"schemaEvalution":{"schemaEvolutionEntryList":[{"timeStamp":1503579770112}]},"tableProperties":{"sort_columns":"id,name,city"}},"lastUpdatedTime":1503579770112,"metaDataFilepath":"/david/xubo/carbondata/examples/spark2/target/store/default/test_table/Metadata","storePath":"/david/xubo/carbondata/examples/spark2/target/store","identifier":{"storePath":"/david/xubo/carbondata/examples/spark2/target/store","isLocalPath":false,"carbonTableIdentifier":{"databaseName":"default","tableName":"test_table","tableId":"df197ea2-3311-44d9-87f7-f5ad496e2665"}}}') 
 
 
+###5.结果：
 
+只有Schema文件：
 
+![](pictrues/CreateTable.PNG)
+
+Schema文件：
+
+![](pictrues/CreateTableFile.PNG)
 
 
 
