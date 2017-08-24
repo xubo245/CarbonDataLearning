@@ -1,5 +1,5 @@
 
-CarbonData创建表并加载数据操作的源码分析
+CarbonData创建表的源码分析
 
 
 ##环境说明
@@ -44,10 +44,8 @@ CarbonData创建表并加载数据操作的源码分析
 	      .getOrCreateCarbonSession(storeLocation, metastoredb)
 	    carbon.sparkContext.setLogLevel("ERROR")
 	    import carbon._
-	    val path = s"$rootPath/src/main/resources/sample.csv"
 	
 	    sql("CREATE TABLE IF NOT EXISTS test_table(id string,name string,city string,age Int) STORED BY 'carbondata' ")
-	    carbon.sql(s"""LOAD DATA INPATH '$path' INTO TABLE test_table""")
 	    carbon.sql("SELECT * FROM test_table").show()
 	    sql("DROP TABLE IF EXISTS test_table")
 	    carbon.stop()
