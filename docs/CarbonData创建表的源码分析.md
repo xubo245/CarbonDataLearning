@@ -295,11 +295,11 @@ sql中的字符串为：
 
 只有Schema文件：
 
-![schema](../docs/pictrues/CreateTable.PNG?raw=true)
+![schema](./pictrues/CreateTable.PNG)
 
 Schema文件：
 
-![file](../docs/pictrues/CreateTableFile.PNG?raw=true)
+![file](./pictrues/CreateTableFile.PNG)
 
 
 
