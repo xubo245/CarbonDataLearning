@@ -9,7 +9,7 @@ import org.apache.spark.sql.SparkSession
 /**
   * Created by root on 8/11/17.
   */
-object IndexCreateAndShow {
+object CreateAnalysis {
   def main(args: Array[String]): Unit = {
     val rootPath = new File(this.getClass.getResource("/").getPath
       + "../../").getCanonicalPath
@@ -40,13 +40,6 @@ object IndexCreateAndShow {
     carbon.sql("SELECT * FROM test_table").show()
     //    sc.stop()
 
-    
-    //    Exception in thread "main" java.lang.RuntimeException:
-    //      BaseSqlParser>>>>
-    //        Operation not allowed: CREATE INDEX(line 1, pos 0)
-
-    //    sql("CREATE INDEX index_test on table test_table(name,city) as 'org.apache.carbondata.format'")
-    //    sql("show indexes on test_table")
     carbon.stop()
 
   }

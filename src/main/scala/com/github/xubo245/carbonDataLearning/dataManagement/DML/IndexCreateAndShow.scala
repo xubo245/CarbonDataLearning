@@ -40,7 +40,7 @@ object IndexCreateAndShow {
     carbon.sql("SELECT * FROM test_table").show()
     //    sc.stop()
 
-    
+
     //    Exception in thread "main" java.lang.RuntimeException:
     //      BaseSqlParser>>>>
     //        Operation not allowed: CREATE INDEX(line 1, pos 0)
