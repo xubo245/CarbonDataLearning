@@ -78,5 +78,55 @@ org.apache.carbondata.spark.rdd.DataManagementFunc#executeCompaction
 
 ##5.org.apache.carbondata.spark.rdd.CarbonMergerRDD
 
+org.apache.carbondata.spark.rdd.CarbonMergerRDD#internalCompute
 
-执行：org.apache.carbondata.processing.merger.CompactionResultSortProcessor#execute
+ - 初始化：carbonLoadModel、segmentMapping，设置exec为org.apache.carbondata.processing.merger.CarbonCompactionExecutor#CarbonCompactionExecutor
+ - 查询并获得结果fire a query and get the results：org.apache.carbondata.processing.merger.CarbonCompactionExecutor#processTableBlocks
+ - 执行：org.apache.carbondata.processing.merger.CompactionResultSortProcessor#execute
+
+##6.execute：org.apache.carbondata.processing.merger.CompactionResultSortProcessor#execute
+
+	  public boolean execute(List<RawResultIterator> resultIteratorList) {
+	    boolean isCompactionSuccess = false;
+	    try {
+	      initTempStoreLocation();
+	      initSortDataRows();
+	      initAggType();
+	      processResult(resultIteratorList);
+	      // After delete command, if no records are fetched from one split,
+	      // below steps are not required to be initialized.
+	      if (isRecordFound) {
+	        initializeFinalThreadMergerForMergeSort();
+	        initDataHandler();
+	        readAndLoadDataFromSortTempFiles();
+	      }
+	      isCompactionSuccess = true;
+	    } catch (Exception e) {
+	      LOGGER.error(e, "Compaction failed: " + e.getMessage());
+	    } finally {
+	      // clear temp files and folders created during compaction
+	      deleteTempStoreLocation();
+	    }
+	    return isCompactionSuccess;
+	  }
+
+
+
+##sorting：
+org.apache.carbondata.processing.sortandgroupby.sortdata.SortDataRows#startSorting
+
+	   * Below method will be used to start storing process This method will get
+	   * all the temp files present in sort temp folder then it will create the
+	   * record holder heap and then it will read first record from each file and
+	   * initialize the heap
+
+compaction后sort：org.apache.carbondata.processing.sortandgroupby.sortdata.NewRowComparator#compare
+
+
+没有boolean类型：
+org.apache.carbondata.processing.sortandgroupby.sortdata.SortDataRows#writeData3
+
+
+写入文件触发：
+
+org.apache.carbondata.processing.store.CarbonFactDataHandlerColumnar#closeHandler
