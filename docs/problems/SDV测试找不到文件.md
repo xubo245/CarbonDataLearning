@@ -1,3 +1,4 @@
+##问题：
 SDV测试找不到文件
 	
 	- Batch_sort_Querying_001-01-01-01_001-TC_001 *** FAILED ***
@@ -12,3 +13,10 @@ SDV测试找不到文件
 	  at org.apache.spark.sql.execution.command.ExecutedCommandExec.doExecute(commands.scala:74)
 	  at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:114)
 	  at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:114)
+
+解决办法：
+	去ravipesala的sdv-test_data分支下获取数据
+
+	https://github.com/ravipesala/incubator-carbondata/tree/sdv-test_data/integration/spark-common-test/src/test/resources
+
+下面有Data文件夹及其相关数据
