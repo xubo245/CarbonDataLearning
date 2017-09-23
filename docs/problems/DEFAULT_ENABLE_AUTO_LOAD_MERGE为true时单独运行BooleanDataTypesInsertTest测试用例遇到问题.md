@@ -1,0 +1,22 @@
+
+##问题
+DEFAULT_ENABLE_AUTO_LOAD_MERGE为true时单独运行BooleanDataTypesInsertTest测试用例会遇到问题：
+
+getDouble的时候为null
+
+
+##问题分析
+
+boolean类型数据开发时DEFAULT_ENABLE_AUTO_LOAD_MERGE为false，没有测试其为true的情况。  DEFAULT_ENABLE_AUTO_LOAD_MERGE为true的时候CI能过，应该是其他类将DEFAULT_ENABLE_AUTO_LOAD_MERGE设置为了false，使得运行BooleanDataTypesInsertTest的时候DEFAULT_ENABLE_AUTO_LOAD_MERGE也为false，测试用例通过
+
+单独跑的时候DEFAULT_ENABLE_AUTO_LOAD_MERGE为true，所以报错
+
+##问题解决
+org.apache.carbondata.core.scan.collector.impl.AbstractScannedResultCollector#getMeasureData
+
+加入boolean类型的操作
+
+##后续考虑
+
+所有参数组合的测试？
+在queryTest中将DEFAULT_ENABLE_AUTO_LOAD_MERGE设置为true，然后看每个测试用例报错的原因，并进行分析
