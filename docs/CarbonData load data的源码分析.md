@@ -794,5 +794,5 @@ org.apache.carbondata.processing.store.writer.v3.CarbonFactDataWriterImplV3#clos
 先构建index文件（CarbonMetadataUtil）    
 copyCarbonDataFileToCarbonStorePath跟之前写data文件一样
 
-loadModel.getCarbonDataLoadSchema().getCarbonTable().getCarbonTableIdentifier()))  
-org.apache.carbondata.processing.newflow.DataLoadExecutor#removeBadRecordKey
+	loadModel.getCarbonDataLoadSchema().getCarbonTable().getCarbonTableIdentifier()))  
+	org.apache.carbondata.processing.newflow.DataLoadExecutor#removeBadRecordKey
