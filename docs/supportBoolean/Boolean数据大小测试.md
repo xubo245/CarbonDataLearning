@@ -1,4 +1,4 @@
-#1. 1100万条数据，多数据类型
+#1. 1100万条数据，多数据类型,SNAPPY压缩
 ##代码
 
 	  sql(
@@ -29,7 +29,7 @@
 421M=>123M  =3.422764228
 
 
-#2. 1.1亿条数据，多数据类型
+#2. 1.1亿条数据，多数据类型,SNAPPY压缩
 ##代码
 
 	  sql(
@@ -62,7 +62,7 @@
 4.5G =》1.4G   =3.214285714
 
 776+557M=1333M
-#3. 1100万条数据，只有Boolean
+#3. 1100万条数据，只有Boolean,SNAPPY压缩
 ##代码
 
 	  sql(
@@ -90,7 +90,7 @@
 
 
 
-#4. 1.1亿条数据，只有Boolean
+#4. 1.1亿条数据，只有Boolean,SNAPPY压缩
 ##代码
 
 	  sql(
@@ -117,3 +117,75 @@
 
 535M => 5.3M  =100.9433962
 
+#5. 11亿条数据，只有Boolean,SNAPPY压缩
+##代码
+
+	  sql(
+      s"""
+         | CREATE TABLE boolean_table(
+         | booleanField BOOLEAN
+         | )
+         | STORED BY 'carbondata'
+       """.stripMargin)
+
+##结果
+
+	SZX1000323521:/david/xubo/git # ll -h /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	-rw-r--r-- 1 root root 5.3G Sep 30 15:47 /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	SZX1000323521:/david/xubo/git # ll /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	-rw-r--r-- 1 root root 5600000000 Sep 30 15:47 /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	SZX1000323521:/david/xubo/git # du -sh /david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+	53M	/david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+	SZX1000323521:/david/xubo/git # du -s /david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+	53748	/david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+
+5600000000/53748
+
+5.3G/ 53M  = 102.4
+
+
+##RLE压缩
+
+#6. 1.1亿条数据，只有Boolean,RLE压缩
+##代码
+
+	  sql(
+      s"""
+         | CREATE TABLE boolean_table(
+         | booleanField BOOLEAN
+         | )
+         | STORED BY 'carbondata'
+       """.stripMargin)
+
+##结果
+
+	SZX1000323521:/david/xubo/git # ll -h /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	-rw-r--r-- 1 root root 535M Sep 30 16:09 /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	SZX1000323521:/david/xubo/git # du -sh /david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+	352K	/david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+	SZX1000323521:/david/xubo/git # 
+
+
+535M/352K  = 1556.363636
+
+
+
+#7. 11亿条数据，只有Boolean,SNAPPY压缩
+##代码
+
+	  sql(
+      s"""
+         | CREATE TABLE boolean_table(
+         | booleanField BOOLEAN
+         | )
+         | STORED BY 'carbondata'
+       """.stripMargin)
+
+##结果
+
+	SZX1000323521:/david/xubo/git # ll -h /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	-rw-r--r-- 1 root root 5.3G Sep 30 16:11 /david/xubo/git/carbondata/integration/spark2/src/test/resources/bool/supportBooleanBigFileOnlyBoolean.csv
+	SZX1000323521:/david/xubo/git # du -sh /david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+	3.1M	/david/xubo/git/carbondata/integration/spark-common/target/warehouse/default/boolean_table
+
+5.3G/3.1M = 1750.709677
