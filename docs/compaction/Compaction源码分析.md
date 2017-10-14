@@ -1,5 +1,7 @@
--Compaction源码分析
-
+Compaction源码分析
+#环境
+CarbonData 1.3.0-SNAPSHOT  
+2017.10.13
 #一.背景
 官方文档：
 [http://carbondata.apache.org/data-management.html#compacting-data](http://carbondata.apache.org/data-management.html#compacting-data)
@@ -333,3 +335,11 @@ org.apache.carbondata.processing.store.CarbonFactDataHandlerColumnar#closeHandle
       LOGGER.info("All blocklets have been finished writing");
       // close all the open stream for both the files
       this.dataWriter.closeWriter();
+
+
+
+参考
+
+	【1】https://github.com/xubo245/CarbonDataLearning  
+	【2】http://carbondata.apache.org  
+	【3】https://github.com/apache/carbondata

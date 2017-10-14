@@ -440,6 +440,23 @@ generateGlobalDictionary（org.apache.carbondata.spark.util.GlobalDictionaryUtil
 	    return created;
 	  }
 
+##数据加载方式选择
+
+	 if (updateModel.isDefined) {
+	          loadDataFrameForUpdate()
+	        } else if (carbonTable.getPartitionInfo(carbonTable.getFactTableName) != null) {
+	          loadDataForPartitionTable()
+	        } else if (isSortTable && sortScope.equals(SortScopeOptions.SortScope.GLOBAL_SORT)) {
+	          LOGGER.audit("Using global sort for loading.")
+	          status = DataLoadProcessBuilderOnSpark.loadDataUsingGlobalSort(sqlContext.sparkContext,
+	            dataFrame, carbonLoadModel)
+	        } else if (dataFrame.isDefined) {
+	          loadDataFrame()
+	        } else {
+	          loadDataFile()
+	        }
+
+
 ####3.1.6.3使用loadDataFile加载数据
 该方法比较长，与hadoop相关性很大，略看
 
