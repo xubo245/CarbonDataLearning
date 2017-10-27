@@ -1,4 +1,4 @@
-package carbonDataLearning.baseLearning
+package org.github.xubo245.carbonDataLearning.baseLearning
 
 import org.apache.spark.{SparkConf, SparkContext}
 

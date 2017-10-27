@@ -1,4 +1,4 @@
-package carbonDataLearning.dataManagement.dataType
+package org.github.xubo245.carbonDataLearning.dataManagement.dataType
 
 import java.io.File
 
