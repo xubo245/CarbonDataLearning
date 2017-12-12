@@ -10,4 +10,4 @@ java.lang.Exception: DataLoad failure: Problem while shutdown the server
 ##解决办法
 将tmp文件移到其他地方 
 
-	SZX1000323521:/ # mv tmp/blockmgr-* david/xubo/backup/tmp/
+	***:/ # mv tmp/blockmgr-* ***/xubo/backup/tmp/

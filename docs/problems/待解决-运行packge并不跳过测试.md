@@ -4,7 +4,7 @@
 编译一次，/tmp增加文件不少，/tmp大了会报错：Problem while shutdown the server
 	
 	
-	SZX1000323521:/ # du -sh *
+	***:/ # du -sh *
 	9.2M	bin
 	40M	boot
 	5.0G	david
@@ -31,7 +31,7 @@
 	16K	user
 	4.0G	usr
 	181M	var
-	SZX1000323521:/ # du -sh *
+	***:/ # du -sh *
 	9.2M	bin
 	40M	boot
 	5.0G	david

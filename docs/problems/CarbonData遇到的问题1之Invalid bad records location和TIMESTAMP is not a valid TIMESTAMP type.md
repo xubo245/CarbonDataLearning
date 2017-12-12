@@ -3,7 +3,7 @@
 
 ##问题1.Invalid bad records location.
 
-	/david/xubo/CarbonDataLearning/src/main/resources/datasample.csv
+	/***/xubo/CarbonDataLearning/src/main/resources/datasample.csv
 	Exception in thread "main" java.lang.RuntimeException: Invalid bad records location.
 		at scala.sys.package$.error(package.scala:27)
 		at org.apache.spark.sql.execution.command.LoadTable.processData(carbonTableSchema.scala:546)
@@ -35,11 +35,11 @@
 ##2.问题2
 
 
-	17/08/12 10:58:01 AUDIT CreateTable: [SZX1000323521][root][Thread-1]Table created with Database name [default] and Table name [sales]
-	/david/xubo/CarbonDataLearning/src/main/resources/datasample.csv
-	17/08/12 10:58:02 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table default.sales
+	17/08/12 10:58:01 AUDIT CreateTable: [***][root][Thread-1]Table created with Database name [default] and Table name [sales]
+	/***/xubo/CarbonDataLearning/src/main/resources/datasample.csv
+	17/08/12 10:58:02 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table default.sales
 	17/08/12 10:58:02 ERROR DataLoadExecutor: [Executor task launch worker-0][partitionID:default_sales_a59471fd-ae74-479e-8eb5-39a26ade480e] Data Load is partially success for table sales
-	17/08/12 10:58:02 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is failed for default.sales as there is no data to load
+	17/08/12 10:58:02 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is failed for default.sales as there is no data to load
 	17/08/12 10:58:02 ERROR LoadTable: main 
 	java.lang.Exception: No Data to load
 		at org.apache.carbondata.spark.rdd.CarbonDataRDDFactory$.loadCarbonData(CarbonDataRDDFactory.scala:906)
@@ -61,7 +61,7 @@
 		at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:592)
 		at com.github.xubo245.carbonDataLearning.dataManagement.DML.LoadDataWithBadRecords$.main(LoadDataWithBadRecords.scala:51)
 		at com.github.xubo245.carbonDataLearning.dataManagement.DML.LoadDataWithBadRecords.main(LoadDataWithBadRecords.scala)
-	17/08/12 10:58:02 AUDIT LoadTable: [SZX1000323521][root][Thread-1]Dataload failure for default.sales. Please check the logs
+	17/08/12 10:58:02 AUDIT LoadTable: [***][root][Thread-1]Dataload failure for default.sales. Please check the logs
 	Exception in thread "main" java.lang.Exception: No Data to load
 		at org.apache.carbondata.spark.rdd.CarbonDataRDDFactory$.loadCarbonData(CarbonDataRDDFactory.scala:906)
 		at org.apache.spark.sql.execution.command.LoadTable.processData(carbonTableSchema.scala:754)
@@ -102,7 +102,7 @@ CarbonProperties.getInstance()
 ##3.运行结果
 
 
-	17/08/12 11:08:27 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for default.sales
+	17/08/12 11:08:27 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for default.sales
 	+-----+--------------------+-------+------------+--------+----------+
 	|   ID|                date|country|actual_price|Quantity|sold_price|
 	+-----+--------------------+-------+------------+--------+----------+

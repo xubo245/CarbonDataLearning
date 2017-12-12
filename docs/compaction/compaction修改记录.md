@@ -1,13 +1,13 @@
 ##major compaction
 major compaction默认是1024M：
 	
-	SZX1000323521:/david/xubo/git/carbondata # du -sh /david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
-	69M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
-	961M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
-	303M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
-	226M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
-	381M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
-	150M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
+	***:/***/xubo/git/carbondata # du -sh /***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
+	69M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
+	961M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
+	303M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
+	226M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
+	381M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
+	150M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
 
 
 只有四个被合并：
@@ -25,7 +25,7 @@ major compaction默认是1024M：
 
 原文件：
 
-	SZX1000323521:/david/xubo/git/carbondata # ll -h /david/xubo/git/compaction/carbondata/integration/spark-common-test/src/test/resources/compaction/compactionSupportGlobalSort/bigFile
+	***:/***/xubo/git/carbondata # ll -h /***/xubo/git/compaction/carbondata/integration/spark-common-test/src/test/resources/compaction/compactionSupportGlobalSort/bigFile
 	total 2.2G
 	-rw-r--r-- 1 root root 135M Sep 15 15:52 sample1.csv
 	-rw-r--r-- 1 root root 588M Sep 15 15:52 sample2.csv
@@ -37,25 +37,25 @@ major compaction默认是1024M：
 
 ###将文件增大：
 
-	SZX1000323521:/david/xubo/git/carbondata # ll -h /david/xubo/git/compaction/carbondata/integration/spark-common-test/src/test/resources/compaction/compactionSupportGlobalSort/bigFile
+	***:/***/xubo/git/carbondata # ll -h /***/xubo/git/compaction/carbondata/integration/spark-common-test/src/test/resources/compaction/compactionSupportGlobalSort/bigFile
 	total 3.6G
 	-rw-r--r-- 1 root root 218M Sep 15 16:27 sample1.csv
 	-rw-r--r-- 1 root root 959M Sep 15 16:27 sample2.csv
 	-rw-r--r-- 1 root root 719M Sep 15 16:27 sample3.csv
 	-rw-r--r-- 1 root root 1.2G Sep 15 16:28 sample4.csv
 	-rw-r--r-- 1 root root 507M Sep 15 16:28 sample5.csv
-	SZX1000323521:/david/xubo/git/carbondata # du -sh /david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
-	112M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
-	954M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
-	490M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
-	366M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
-	615M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
-	852M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3.1
-	242M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
+	***:/***/xubo/git/carbondata # du -sh /***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
+	112M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
+	954M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
+	490M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
+	366M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
+	615M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
+	852M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3.1
+	242M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
 
 详细的文件大小：
 
-	SZX1000323521:/david/xubo/git/carbondata # ll -h /david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
+	***:/***/xubo/git/carbondata # ll -h /***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
 	total 954M
 	-rw-r--r-- 1 root root 687 Sep 15 16:47 0_batchno0-0-1505465237629.carbonindex
 	-rw-r--r-- 1 root root 707 Sep 15 16:47 10_batchno0-0-1505465237629.carbonindex
@@ -130,26 +130,26 @@ major compaction默认是1024M：
 
 运行记录：
 
-	SZX1000323521:/ # du -sh /david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
-	1.1M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
-	7.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
-	4.1M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
-	3.1M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
-	5.2M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
-	7.1M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3.1
-	2.1M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
-	SZX1000323521:/ # du -sh /david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
-	1.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
-	9.6M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
-	7.8M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
-	5.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
-	9.8M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
-	3.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
-	SZX1000323521:/ # du -sh /david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
-	1.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
-	9.6M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
-	7.8M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
-	5.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
-	9.4M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2.1
-	3.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
-	3.9M	/david/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
+	***:/ # du -sh /***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
+	1.1M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
+	7.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
+	4.1M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
+	3.1M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
+	5.2M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
+	7.1M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3.1
+	2.1M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
+	***:/ # du -sh /***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
+	1.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
+	9.6M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
+	7.8M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
+	5.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
+	9.8M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
+	3.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4
+	***:/ # du -sh /***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/*
+	1.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0
+	9.6M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_0.1
+	7.8M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_1
+	5.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2
+	9.4M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_2.1
+	3.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_3
+	3.9M	/***/xubo/git/compaction/carbondata/integration/spark-common/target/warehouse/default/compaction_globalsort/Fact/Part0/Segment_4

@@ -1,54 +1,54 @@
 	
 	
-		17/11/16 18:58:28 AUDIT DictionaryServer: [SZX1000323521][root][Thread-218]Dictionary Server started, Time spent 1 Listening on port 2040
-		17/11/16 18:58:28 AUDIT DictionaryClient: [SZX1000323521][root][Thread-234]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:28 AUDIT DictionaryClient: [SZX1000323521][root][Thread-233]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:28 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@369fd475
-		17/11/16 18:58:28 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@1e4468fb
-		17/11/16 18:58:28 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-235]Connected client io.netty.channel.DefaultChannelHandlerContext@67bbd10a
-		17/11/16 18:58:28 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-236]Connected client io.netty.channel.DefaultChannelHandlerContext@772ac754
-		17/11/16 18:58:31 AUDIT IncrementalColumnDictionaryGenerator: [SZX1000323521][root][Thread-238]
+		17/11/16 18:58:28 AUDIT DictionaryServer: [***][root][Thread-218]Dictionary Server started, Time spent 1 Listening on port 2040
+		17/11/16 18:58:28 AUDIT DictionaryClient: [***][root][Thread-234]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:28 AUDIT DictionaryClient: [***][root][Thread-233]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:28 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@369fd475
+		17/11/16 18:58:28 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@1e4468fb
+		17/11/16 18:58:28 AUDIT DictionaryClientHandler: [***][root][Thread-235]Connected client io.netty.channel.DefaultChannelHandlerContext@67bbd10a
+		17/11/16 18:58:28 AUDIT DictionaryClientHandler: [***][root][Thread-236]Connected client io.netty.channel.DefaultChannelHandlerContext@772ac754
+		17/11/16 18:58:31 AUDIT IncrementalColumnDictionaryGenerator: [***][root][Thread-238]
 		 columnName: city
 		 columnId: 4ecfcea6-203f-4ee5-bf8c-a29751d1d4a7
 		 new distinct values count: 101
 		 create dictionary cache: 0
 		 sort list, distinct and write: 1
 		 write sort info: 1
-		17/11/16 18:58:31 AUDIT TableDictionaryGenerator: [SZX1000323521][root][Thread-224]Total time taken to write dictionary file is: 3
-		17/11/16 18:58:35 AUDIT DictionaryClient: [SZX1000323521][root][Thread-251]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:35 AUDIT DictionaryClient: [SZX1000323521][root][Thread-253]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:35 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-252]Connected client io.netty.channel.DefaultChannelHandlerContext@517f9139
-		17/11/16 18:58:35 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@3254e95f
-		17/11/16 18:58:35 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-254]Connected client io.netty.channel.DefaultChannelHandlerContext@7508a044
-		17/11/16 18:58:35 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@2e93704b
-		17/11/16 18:58:38 AUDIT IncrementalColumnDictionaryGenerator: [SZX1000323521][root][Thread-257]
+		17/11/16 18:58:31 AUDIT TableDictionaryGenerator: [***][root][Thread-224]Total time taken to write dictionary file is: 3
+		17/11/16 18:58:35 AUDIT DictionaryClient: [***][root][Thread-251]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:35 AUDIT DictionaryClient: [***][root][Thread-253]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:35 AUDIT DictionaryClientHandler: [***][root][Thread-252]Connected client io.netty.channel.DefaultChannelHandlerContext@517f9139
+		17/11/16 18:58:35 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@3254e95f
+		17/11/16 18:58:35 AUDIT DictionaryClientHandler: [***][root][Thread-254]Connected client io.netty.channel.DefaultChannelHandlerContext@7508a044
+		17/11/16 18:58:35 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@2e93704b
+		17/11/16 18:58:38 AUDIT IncrementalColumnDictionaryGenerator: [***][root][Thread-257]
 		 columnName: city
 		 columnId: 4ecfcea6-203f-4ee5-bf8c-a29751d1d4a7
 		 new distinct values count: 200
 		 create dictionary cache: 0
 		 sort list, distinct and write: 2
 		 write sort info: 3
-		17/11/16 18:58:38 AUDIT TableDictionaryGenerator: [SZX1000323521][root][Thread-224]Total time taken to write dictionary file is: 7
-		17/11/16 18:58:40 AUDIT DictionaryClient: [SZX1000323521][root][Thread-270]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:40 AUDIT DictionaryClient: [SZX1000323521][root][Thread-271]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:40 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@590e2d70
-		17/11/16 18:58:40 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-272]Connected client io.netty.channel.DefaultChannelHandlerContext@36eb21a
-		17/11/16 18:58:40 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-273]Connected client io.netty.channel.DefaultChannelHandlerContext@6837f9a0
-		17/11/16 18:58:40 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@6791fe63
-		17/11/16 18:58:43 AUDIT IncrementalColumnDictionaryGenerator: [SZX1000323521][root][Thread-276]
+		17/11/16 18:58:38 AUDIT TableDictionaryGenerator: [***][root][Thread-224]Total time taken to write dictionary file is: 7
+		17/11/16 18:58:40 AUDIT DictionaryClient: [***][root][Thread-270]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:40 AUDIT DictionaryClient: [***][root][Thread-271]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:40 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@590e2d70
+		17/11/16 18:58:40 AUDIT DictionaryClientHandler: [***][root][Thread-272]Connected client io.netty.channel.DefaultChannelHandlerContext@36eb21a
+		17/11/16 18:58:40 AUDIT DictionaryClientHandler: [***][root][Thread-273]Connected client io.netty.channel.DefaultChannelHandlerContext@6837f9a0
+		17/11/16 18:58:40 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@6791fe63
+		17/11/16 18:58:43 AUDIT IncrementalColumnDictionaryGenerator: [***][root][Thread-276]
 		 columnName: city
 		 columnId: 4ecfcea6-203f-4ee5-bf8c-a29751d1d4a7
 		 new distinct values count: 100
 		 create dictionary cache: 0
 		 sort list, distinct and write: 1
 		 write sort info: 1
-		17/11/16 18:58:43 AUDIT TableDictionaryGenerator: [SZX1000323521][root][Thread-224]Total time taken to write dictionary file is: 2
-		17/11/16 18:58:45 AUDIT DictionaryClient: [SZX1000323521][root][Thread-290]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:45 AUDIT DictionaryClient: [SZX1000323521][root][Thread-289]Starting client on 10.229.51.168 2040
-		17/11/16 18:58:45 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-291]Connected client io.netty.channel.DefaultChannelHandlerContext@6f6a94c4
-		17/11/16 18:58:45 AUDIT DictionaryClientHandler: [SZX1000323521][root][Thread-292]Connected client io.netty.channel.DefaultChannelHandlerContext@7a1dbaaf
-		17/11/16 18:58:45 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@3aa96c0
-		17/11/16 18:58:45 AUDIT DictionaryServerHandler: [SZX1000323521][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@29a73757
+		17/11/16 18:58:43 AUDIT TableDictionaryGenerator: [***][root][Thread-224]Total time taken to write dictionary file is: 2
+		17/11/16 18:58:45 AUDIT DictionaryClient: [***][root][Thread-290]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:45 AUDIT DictionaryClient: [***][root][Thread-289]Starting client on 10.229.51.168 2040
+		17/11/16 18:58:45 AUDIT DictionaryClientHandler: [***][root][Thread-291]Connected client io.netty.channel.DefaultChannelHandlerContext@6f6a94c4
+		17/11/16 18:58:45 AUDIT DictionaryClientHandler: [***][root][Thread-292]Connected client io.netty.channel.DefaultChannelHandlerContext@7a1dbaaf
+		17/11/16 18:58:45 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@3aa96c0
+		17/11/16 18:58:45 AUDIT DictionaryServerHandler: [***][root][Thread-220]Connected io.netty.channel.DefaultChannelHandlerContext@29a73757
 		17/11/16 18:58:48 ERROR CarbonAppendableStreamSink$: stream execution thread for [id = cfbbe0e6-6ceb-42b6-9fda-07425f312b3b, runId = d836087b-5cf2-46a7-9025-5e497c328279] Aborting job job_20171116185845_0003.
 		java.lang.InterruptedException
 			at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:998)
@@ -233,7 +233,6 @@
 	
 第二次：
 	
-	/usr/java/jdk1.8.0_131/bin/java -javaagent:/david/idea-IC-171.4424.56/lib/idea_rt.jar=52832:/david/idea-IC-171.4424.56/bin -Dfile.encoding=UTF-8 -classpath /root/.IdeaIC2017.1/config/plugins/Scala/lib/scala-plugin-runners.jar:/usr/java/jdk1.8.0_131/jre/lib/charsets.jar:/usr/java/jdk1.8.0_131/jre/lib/deploy.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/cldrdata.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/dnsns.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/jaccess.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/jfxrt.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/localedata.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/nashorn.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/sunec.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/sunjce_provider.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/sunpkcs11.jar:/usr/java/jdk1.8.0_131/jre/lib/ext/zipfs.jar:/usr/java/jdk1.8.0_131/jre/lib/javaws.jar:/usr/java/jdk1.8.0_131/jre/lib/jce.jar:/usr/java/jdk1.8.0_131/jre/lib/jfr.jar:/usr/java/jdk1.8.0_131/jre/lib/jfxswt.jar:/usr/java/jdk1.8.0_131/jre/lib/jsse.jar:/usr/java/jdk1.8.0_131/jre/lib/management-agent.jar:/usr/java/jdk1.8.0_131/jre/lib/plugin.jar:/usr/java/jdk1.8.0_131/jre/lib/resources.jar:/usr/java/jdk1.8.0_131/jre/lib/rt.jar:/david/xubo/git/carbondata/integration/spark2/target/test-classes:/david/xubo/git/carbondata/integration/spark2/target/classes:/david/xubo/git/carbondata/streaming/target/classes:/david/xubo/git/carbondata/integration/spark-common/target/classes:/david/xubo/git/carbondata/processing/target/classes:/david/xubo/git/carbondata/core/target/classes:/david/repo/org/apache/carbondata/carbondata-format/1.3.0-SNAPSHOT/carbondata-format-1.3.0-20171114.034041-10.jar:/david/xubo/git/carbondata/common/target/classes:/david/repo/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar:/david/repo/org/apache/hadoop/hadoop-common/2.7.2/hadoop-common-2.7.2.jar:/david/repo/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/david/repo/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/david/repo/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar:/david/repo/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/david/repo/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar:/david/repo/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.jar:/david/repo/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/david/repo/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/david/repo/org/codehaus/jackson/jackson-jaxrs/1.8.3/jackson-jaxrs-1.8.3.jar:/david/repo/org/codehaus/jackson/jackson-xc/1.8.3/jackson-xc-1.8.3.jar:/david/repo/com/sun/jersey/jersey-server/1.9/jersey-server-1.9.jar:/david/repo/asm/asm/3.1/asm-3.1.jar:/david/repo/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/david/repo/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/david/repo/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar:/david/repo/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/david/repo/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/david/repo/org/apache/hadoop/hadoop-auth/2.7.2/hadoop-auth-2.7.2.jar:/david/repo/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.jar:/david/repo/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.jar:/david/repo/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.jar:/david/repo/org/apache/directory/api/api-util/1.0.0-M20/api-util-1.0.0-M20.jar:/david/repo/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar:/david/repo/org/apache/curator/curator-client/2.7.1/curator-client-2.7.1.jar:/david/repo/org/apache/htrace/htrace-core/3.1.0-incubating/htrace-core-3.1.0-incubating.jar:/david/repo/org/apache/hadoop/hadoop-hdfs/2.7.2/hadoop-hdfs-2.7.2.jar:/david/repo/commons-daemon/commons-daemon/1.0.13/commons-daemon-1.0.13.jar:/david/repo/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar:/david/repo/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar:/david/xubo/git/carbondata/hadoop/target/classes:/david/repo/org/apache/spark/spark-hive-thriftserver_2.11/2.1.0/spark-hive-thriftserver_2.11-2.1.0.jar:/david/repo/org/apache/spark/spark-hive_2.11/2.1.0/spark-hive_2.11-2.1.0.jar:/david/repo/com/twitter/parquet-hadoop-bundle/1.6.0/parquet-hadoop-bundle-1.6.0.jar:/david/repo/org/spark-project/hive/hive-exec/1.2.1.spark2/hive-exec-1.2.1.spark2.jar:/david/repo/javolution/javolution/5.5.1/javolution-5.5.1.jar:/david/repo/log4j/apache-log4j-extras/1.2.17/apache-log4j-extras-1.2.17.jar:/david/repo/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar:/david/repo/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar:/david/repo/antlr/antlr/2.7.7/antlr-2.7.7.jar:/david/repo/org/antlr/ST4/4.0.4/ST4-4.0.4.jar:/david/repo/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/david/repo/org/tukaani/xz/1.0/xz-1.0.jar:/david/repo/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/david/repo/com/googlecode/javaewah/JavaEWAH/0.3.2/JavaEWAH-0.3.2.jar:/david/repo/org/iq80/snappy/snappy/0.2/snappy-0.2.jar:/david/repo/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/david/repo/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar:/david/repo/org/spark-project/hive/hive-metastore/1.2.1.spark2/hive-metastore-1.2.1.spark2.jar:/david/repo/com/jolbox/bonecp/0.8.0.RELEASE/bonecp-0.8.0.RELEASE.jar:/david/repo/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar:/david/repo/org/datanucleus/datanucleus-api-jdo/3.2.6/datanucleus-api-jdo-3.2.6.jar:/david/repo/org/datanucleus/datanucleus-rdbms/3.2.9/datanucleus-rdbms-3.2.9.jar:/david/repo/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/david/repo/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/david/repo/javax/jdo/jdo-api/3.0.1/jdo-api-3.0.1.jar:/david/repo/javax/transaction/jta/1.1/jta-1.1.jar:/david/repo/org/apache/avro/avro/1.7.7/avro-1.7.7.jar:/david/repo/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/david/repo/org/apache/avro/avro-mapred/1.7.7/avro-mapred-1.7.7-hadoop2.jar:/david/repo/org/apache/avro/avro-ipc/1.7.7/avro-ipc-1.7.7.jar:/david/repo/org/apache/avro/avro-ipc/1.7.7/avro-ipc-1.7.7-tests.jar:/david/repo/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/david/repo/org/apache/calcite/calcite-avatica/1.2.0-incubating/calcite-avatica-1.2.0-incubating.jar:/david/repo/org/apache/calcite/calcite-core/1.2.0-incubating/calcite-core-1.2.0-incubating.jar:/david/repo/org/apache/calcite/calcite-linq4j/1.2.0-incubating/calcite-linq4j-1.2.0-incubating.jar:/david/repo/net/hydromatic/eigenbase-properties/1.1.5/eigenbase-properties-1.1.5.jar:/david/repo/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/david/repo/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/david/repo/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/david/repo/joda-time/joda-time/2.9.3/joda-time-2.9.3.jar:/david/repo/org/jodd/jodd-core/3.5.2/jodd-core-3.5.2.jar:/david/repo/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/david/repo/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar:/david/repo/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar:/david/repo/org/apache/thrift/libfb303/0.9.2/libfb303-0.9.2.jar:/david/repo/org/spark-project/hive/hive-cli/1.2.1.spark2/hive-cli-1.2.1.spark2.jar:/david/repo/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/david/repo/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/david/repo/org/spark-project/hive/hive-jdbc/1.2.1.spark2/hive-jdbc-1.2.1.spark2.jar:/david/repo/org/apache/httpcomponents/httpcore/4.4/httpcore-4.4.jar:/david/repo/org/spark-project/hive/hive-beeline/1.2.1.spark2/hive-beeline-1.2.1.spark2.jar:/david/repo/commons-io/commons-io/2.4/commons-io-2.4.jar:/david/repo/net/sf/supercsv/super-csv/2.2.0/super-csv-2.2.0.jar:/david/repo/org/apache/spark/spark-tags_2.11/2.1.0/spark-tags_2.11-2.1.0.jar:/david/repo/net/sf/jpam/jpam/1.1/jpam-1.1.jar:/david/repo/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/david/repo/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar:/david/repo/org/apache/spark/spark-repl_2.11/2.1.0/spark-repl_2.11-2.1.0.jar:/david/repo/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar:/david/repo/com/twitter/chill_2.11/0.8.0/chill_2.11-0.8.0.jar:/david/repo/com/esotericsoftware/kryo-shaded/3.0.3/kryo-shaded-3.0.3.jar:/david/repo/com/esotericsoftware/minlog/1.3.0/minlog-1.3.0.jar:/david/repo/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/david/repo/com/twitter/chill-java/0.8.0/chill-java-0.8.0.jar:/david/repo/org/apache/hadoop/hadoop-client/2.2.0/hadoop-client-2.2.0.jar:/david/repo/org/apache/hadoop/hadoop-mapreduce-client-app/2.2.0/hadoop-mapreduce-client-app-2.2.0.jar:/david/repo/org/apache/hadoop/hadoop-mapreduce-client-common/2.2.0/hadoop-mapreduce-client-common-2.2.0.jar:/david/repo/org/apache/hadoop/hadoop-yarn-client/2.2.0/hadoop-yarn-client-2.2.0.jar:/david/repo/com/google/inject/guice/3.0/guice-3.0.jar:/david/repo/javax/inject/javax.inject/1/javax.inject-1.jar:/david/repo/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/david/repo/org/apache/hadoop/hadoop-yarn-server-common/2.2.0/hadoop-yarn-server-common-2.2.0.jar:/david/repo/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.2.0/hadoop-mapreduce-client-shuffle-2.2.0.jar:/david/repo/org/apache/hadoop/hadoop-yarn-api/2.2.0/hadoop-yarn-api-2.2.0.jar:/david/repo/org/apache/hadoop/hadoop-mapreduce-client-core/2.7.2/hadoop-mapreduce-client-core-2.7.2.jar:/david/repo/org/apache/hadoop/hadoop-yarn-common/2.7.2/hadoop-yarn-common-2.7.2.jar:/david/repo/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.jar:/david/repo/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/david/repo/javax/activation/activation/1.1/activation-1.1.jar:/david/repo/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.2.0/hadoop-mapreduce-client-jobclient-2.2.0.jar:/david/repo/org/apache/hadoop/hadoop-annotations/2.2.0/hadoop-annotations-2.2.0.jar:/david/repo/org/apache/spark/spark-launcher_2.11/2.1.0/spark-launcher_2.11-2.1.0.jar:/david/repo/org/apache/spark/spark-network-common_2.11/2.1.0/spark-network-common_2.11-2.1.0.jar:/david/repo/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/david/repo/com/fasterxml/jackson/core/jackson-annotations/2.6.5/jackson-annotations-2.6.5.jar:/david/repo/org/apache/spark/spark-network-shuffle_2.11/2.1.0/spark-network-shuffle_2.11-2.1.0.jar:/david/repo/org/apache/spark/spark-unsafe_2.11/2.1.0/spark-unsafe_2.11-2.1.0.jar:/david/repo/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar:/david/repo/org/apache/curator/curator-recipes/2.4.0/curator-recipes-2.4.0.jar:/david/repo/org/apache/curator/curator-framework/2.4.0/curator-framework-2.4.0.jar:/david/repo/org/apache/zookeeper/zookeeper/3.4.5/zookeeper-3.4.5.jar:/david/repo/com/google/guava/guava/14.0.1/guava-14.0.1.jar:/david/repo/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/david/repo/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar:/david/repo/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.jar:/david/repo/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar:/david/repo/org/slf4j/jcl-over-slf4j/1.7.16/jcl-over-slf4j-1.7.16.jar:/david/repo/log4j/log4j/1.2.17/log4j-1.2.17.jar:/david/repo/org/slf4j/slf4j-log4j12/1.7.16/slf4j-log4j12-1.7.16.jar:/david/repo/com/ning/compress-lzf/1.0.3/compress-lzf-1.0.3.jar:/david/repo/org/xerial/snappy/snappy-java/1.1.2.6/snappy-java-1.1.2.6.jar:/david/repo/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar:/david/repo/org/roaringbitmap/RoaringBitmap/0.5.11/RoaringBitmap-0.5.11.jar:/david/repo/commons-net/commons-net/2.2/commons-net-2.2.jar:/david/repo/org/json4s/json4s-jackson_2.11/3.2.11/json4s-jackson_2.11-3.2.11.jar:/david/repo/org/json4s/json4s-core_2.11/3.2.11/json4s-core_2.11-3.2.11.jar:/david/repo/org/json4s/json4s-ast_2.11/3.2.11/json4s-ast_2.11-3.2.11.jar:/david/repo/org/scala-lang/scalap/2.11.8/scalap-2.11.8.jar:/david/repo/org/glassfish/jersey/core/jersey-client/2.22.2/jersey-client-2.22.2.jar:/david/repo/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/david/repo/org/glassfish/hk2/hk2-api/2.4.0-b34/hk2-api-2.4.0-b34.jar:/david/repo/org/glassfish/hk2/hk2-utils/2.4.0-b34/hk2-utils-2.4.0-b34.jar:/david/repo/org/glassfish/hk2/external/aopalliance-repackaged/2.4.0-b34/aopalliance-repackaged-2.4.0-b34.jar:/david/repo/org/glassfish/hk2/external/javax.inject/2.4.0-b34/javax.inject-2.4.0-b34.jar:/david/repo/org/glassfish/hk2/hk2-locator/2.4.0-b34/hk2-locator-2.4.0-b34.jar:/david/repo/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/david/repo/org/glassfish/jersey/core/jersey-common/2.22.2/jersey-common-2.22.2.jar:/david/repo/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/david/repo/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.22.2/jersey-guava-2.22.2.jar:/david/repo/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar:/david/repo/org/glassfish/jersey/core/jersey-server/2.22.2/jersey-server-2.22.2.jar:/david/repo/org/glassfish/jersey/media/jersey-media-jaxb/2.22.2/jersey-media-jaxb-2.22.2.jar:/david/repo/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/david/repo/org/glassfish/jersey/containers/jersey-container-servlet/2.22.2/jersey-container-servlet-2.22.2.jar:/david/repo/org/glassfish/jersey/containers/jersey-container-servlet-core/2.22.2/jersey-container-servlet-core-2.22.2.jar:/david/repo/io/netty/netty-all/4.0.42.Final/netty-all-4.0.42.Final.jar:/david/repo/io/netty/netty/3.8.0.Final/netty-3.8.0.Final.jar:/david/repo/com/clearspring/analytics/stream/2.7.0/stream-2.7.0.jar:/david/repo/io/dropwizard/metrics/metrics-core/3.1.2/metrics-core-3.1.2.jar:/david/repo/io/dropwizard/metrics/metrics-jvm/3.1.2/metrics-jvm-3.1.2.jar:/david/repo/io/dropwizard/metrics/metrics-json/3.1.2/metrics-json-3.1.2.jar:/david/repo/io/dropwizard/metrics/metrics-graphite/3.1.2/metrics-graphite-3.1.2.jar:/david/repo/com/fasterxml/jackson/core/jackson-databind/2.6.5/jackson-databind-2.6.5.jar:/david/repo/com/fasterxml/jackson/core/jackson-core/2.6.5/jackson-core-2.6.5.jar:/david/repo/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.6.5/jackson-module-scala_2.11-2.6.5.jar:/david/repo/com/fasterxml/jackson/module/jackson-module-paranamer/2.6.5/jackson-module-paranamer-2.6.5.jar:/david/repo/org/apache/ivy/ivy/2.4.0/ivy-2.4.0.jar:/david/repo/oro/oro/2.0.8/oro-2.0.8.jar:/david/repo/net/razorvine/pyrolite/4.13/pyrolite-4.13.jar:/david/repo/net/sf/py4j/py4j/0.10.4/py4j-0.10.4.jar:/david/repo/org/apache/commons/commons-crypto/1.0.0/commons-crypto-1.0.0.jar:/david/repo/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.jar:/david/repo/org/apache/spark/spark-streaming_2.11/2.1.0/spark-streaming_2.11-2.1.0.jar:/david/repo/org/apache/spark/spark-graphx_2.11/2.1.0/spark-graphx_2.11-2.1.0.jar:/david/repo/com/github/fommil/netlib/core/1.1.2/core-1.1.2.jar:/david/repo/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar:/david/repo/org/apache/spark/spark-mllib-local_2.11/2.1.0/spark-mllib-local_2.11-2.1.0.jar:/david/repo/org/scalanlp/breeze_2.11/0.12/breeze_2.11-0.12.jar:/david/repo/org/scalanlp/breeze-macros_2.11/0.12/breeze-macros_2.11-0.12.jar:/david/repo/com/github/rwl/jtransforms/2.4.0/jtransforms-2.4.0.jar:/david/repo/org/spire-math/spire_2.11/0.7.4/spire_2.11-0.7.4.jar:/david/repo/org/spire-math/spire-macros_2.11/0.7.4/spire-macros_2.11-0.7.4.jar:/david/repo/com/chuusai/shapeless_2.11/2.0.0/shapeless_2.11-2.0.0.jar:/david/repo/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.jar:/david/repo/org/jpmml/pmml-schema/1.2.15/pmml-schema-1.2.15.jar:/david/repo/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar:/david/repo/com/univocity/univocity-parsers/2.2.1/univocity-parsers-2.2.1.jar:/david/repo/org/apache/spark/spark-sketch_2.11/2.1.0/spark-sketch_2.11-2.1.0.jar:/david/repo/org/apache/spark/spark-catalyst_2.11/2.1.0/spark-catalyst_2.11-2.1.0.jar:/david/repo/org/codehaus/janino/janino/3.0.0/janino-3.0.0.jar:/david/repo/org/codehaus/janino/commons-compiler/3.0.0/commons-compiler-3.0.0.jar:/david/repo/org/antlr/antlr4-runtime/4.5.3/antlr4-runtime-4.5.3.jar:/david/repo/org/apache/parquet/parquet-column/1.8.1/parquet-column-1.8.1.jar:/david/repo/org/apache/parquet/parquet-common/1.8.1/parquet-common-1.8.1.jar:/david/repo/org/apache/parquet/parquet-encoding/1.8.1/parquet-encoding-1.8.1.jar:/david/repo/org/apache/parquet/parquet-hadoop/1.8.1/parquet-hadoop-1.8.1.jar:/david/repo/org/apache/parquet/parquet-format/2.3.0-incubating/parquet-format-2.3.0-incubating.jar:/david/repo/org/apache/parquet/parquet-jackson/1.8.1/parquet-jackson-1.8.1.jar:/david/repo/org/scala-lang/scala-compiler/2.11.8/scala-compiler-2.11.8.jar:/david/repo/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.4/scala-parser-combinators_2.11-1.0.4.jar:/david/repo/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar:/david/repo/jline/jline/2.12.1/jline-2.12.1.jar:/david/repo/org/slf4j/jul-to-slf4j/1.7.16/jul-to-slf4j-1.7.16.jar:/david/repo/org/apache/xbean/xbean-asm5-shaded/4.4/xbean-asm5-shaded-4.4.jar:/david/repo/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar:/david/repo/junit/junit/4.11/junit-4.11.jar:/david/repo/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/david/repo/org/scalatest/scalatest_2.11/2.2.1/scalatest_2.11-2.2.1.jar:/david/repo/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner -s org.apache.spark.carbondata.TestStreamingTableOperation -testName "streaming table execute batch loading" -C org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestReporter -showProgressMessages true
 	Testing started at 11:05 AM ...
 	log4j:WARN No appenders could be found for logger (org.apache.spark.sql.test.TestQueryExecutor$).
 	log4j:WARN Please initialize the log4j system properly.
@@ -241,7 +240,7 @@
 	Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 	17/11/16 19:05:37 INFO SparkContext: Running Spark version 2.1.0
 	17/11/16 19:05:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-	17/11/16 19:05:37 WARN Utils: Your hostname, SZX1000323521 resolves to a loopback address: 127.0.0.1; using 10.229.51.168 instead (on interface eth0)
+	17/11/16 19:05:37 WARN Utils: Your hostname, *** resolves to a loopback address: 127.0.0.1; using 10.229.51.168 instead (on interface eth0)
 	17/11/16 19:05:37 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 	17/11/16 19:05:37 INFO SecurityManager: Changing view acls to: root
 	17/11/16 19:05:37 INFO SecurityManager: Changing modify acls to: root
@@ -268,7 +267,7 @@
 	17/11/16 19:05:38 INFO BlockManagerMasterEndpoint: Registering block manager 10.229.51.168:51832 with 867.6 MB RAM, BlockManagerId(driver, 10.229.51.168, 51832, None)
 	17/11/16 19:05:38 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.229.51.168, 51832, None)
 	17/11/16 19:05:38 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.229.51.168, 51832, None)
-	17/11/16 19:05:38 INFO SharedState: Warehouse path is '/david/xubo/git/carbondata/integration/spark-common/target/warehouse'.
+	17/11/16 19:05:38 INFO SharedState: Warehouse path is '/***/xubo/git/carbondata/integration/spark-common/target/warehouse'.
 	17/11/16 19:05:38 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
 	17/11/16 19:05:39 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
 	17/11/16 19:05:39 INFO ObjectStore: ObjectStore, initialize called
@@ -296,85 +295,85 @@
 	17/11/16 19:05:42 INFO SessionState: Created HDFS directory: /tmp/hive/root/55773d66-ad05-4f7d-a5c1-5a36b5095288
 	17/11/16 19:05:42 INFO SessionState: Created local directory: /tmp/root/55773d66-ad05-4f7d-a5c1-5a36b5095288
 	17/11/16 19:05:42 INFO SessionState: Created HDFS directory: /tmp/hive/root/55773d66-ad05-4f7d-a5c1-5a36b5095288/_tmp_space.db
-	17/11/16 19:05:42 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.1) is /david/xubo/git/carbondata/integration/spark-common/target/warehouse
+	17/11/16 19:05:42 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.1) is /***/xubo/git/carbondata/integration/spark-common/target/warehouse
 	17/11/16 19:05:42 INFO HiveMetaStore: 0: get_database: default
 	17/11/16 19:05:42 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: default	
 	17/11/16 19:05:42 INFO HiveMetaStore: 0: get_database: global_temp
 	17/11/16 19:05:42 INFO audit: ugi=root	ip=unknown-ip-addr	cmd=get_database: global_temp	
 	17/11/16 19:05:42 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
 	17/11/16 19:05:42 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
-	17/11/16 19:05:44 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [source]
-	17/11/16 19:05:44 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [source]
-	17/11/16 19:05:45 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.source
-	17/11/16 19:05:45 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.source
-	17/11/16 19:05:46 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [batch_table]
-	17/11/16 19:05:46 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [batch_table]
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.batch_table
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.batch_table
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_socket]
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_socket]
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_socket
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_socket
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_file]
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_file]
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_file
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_file
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [bad_record_force]
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [bad_record_force]
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.bad_record_force
-	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.bad_record_force
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [bad_record_fail]
-	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [bad_record_fail]
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.bad_record_fail
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.bad_record_fail
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_1s]
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_1s]
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_1s
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_1s
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_10s]
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_10s]
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_10s
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_10s
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_batch]
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_batch]
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_scan]
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_scan]
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_scan
-	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_scan
-	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_scan_complex]
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_scan_complex]
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_scan_complex
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_scan_complex
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_filter]
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_filter]
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_filter
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_filter
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_filter_complex]
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_filter_complex]
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_filter_complex
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_filter_complex
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_agg]
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_agg]
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_agg
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_agg
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_agg_complex]
-	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_agg_complex]
-	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_agg_complex
-	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_agg_complex
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_compact]
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_compact]
-	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_compact
-	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_compact
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_new]
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_new]
-	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_new
-	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_new
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_tolerant]
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_tolerant]
-	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load request has been received for table streaming.stream_table_tolerant
-	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [SZX1000323521][root][Thread-1]Data load is successful for streaming.stream_table_tolerant
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_delete]
-	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [SZX1000323521][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_delete]
+	17/11/16 19:05:44 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [source]
+	17/11/16 19:05:44 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [source]
+	17/11/16 19:05:45 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.source
+	17/11/16 19:05:45 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.source
+	17/11/16 19:05:46 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [batch_table]
+	17/11/16 19:05:46 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [batch_table]
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.batch_table
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.batch_table
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_socket]
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_socket]
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_socket
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_socket
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_file]
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_file]
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_file
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_file
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [bad_record_force]
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [bad_record_force]
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.bad_record_force
+	17/11/16 19:05:47 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.bad_record_force
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [bad_record_fail]
+	17/11/16 19:05:47 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [bad_record_fail]
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.bad_record_fail
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.bad_record_fail
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_1s]
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_1s]
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_1s
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_1s
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_10s]
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_10s]
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_10s
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_10s
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_batch]
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_batch]
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_scan]
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_scan]
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_scan
+	17/11/16 19:05:48 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_scan
+	17/11/16 19:05:48 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_scan_complex]
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_scan_complex]
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_scan_complex
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_scan_complex
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_filter]
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_filter]
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_filter
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_filter
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_filter_complex]
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_filter_complex]
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_filter_complex
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_filter_complex
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_agg]
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_agg]
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_agg
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_agg
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_agg_complex]
+	17/11/16 19:05:49 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_agg_complex]
+	17/11/16 19:05:49 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_agg_complex
+	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_agg_complex
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_compact]
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_compact]
+	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_compact
+	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_compact
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_new]
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_new]
+	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_new
+	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_new
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_tolerant]
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_tolerant]
+	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load request has been received for table streaming.stream_table_tolerant
+	17/11/16 19:05:50 AUDIT CarbonDataRDDFactory$: [***][root][Thread-1]Data load is successful for streaming.stream_table_tolerant
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Creating Table with Database name [streaming] and Table name [stream_table_delete]
+	17/11/16 19:05:50 AUDIT CarbonCreateTableCommand: [***][root][Thread-1]Table created with Database name [streaming] and Table name [stream_table_delete]
 	
 	Address already in use (Bind failed)
 	java.net.BindException: Address already in use (Bind failed)
@@ -434,43 +433,43 @@
 		at org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner.runScalaTest2(ScalaTestRunner.java:138)
 		at org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner.main(ScalaTestRunner.java:28)
 	
-	17/11/16 19:05:50 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [batch_table] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [batch_table] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_socket] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_socket] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_file] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_file] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [bad_record_force] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [bad_record_force] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [bad_record_fail] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [bad_record_fail] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_1s] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_1s] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_10s] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_10s] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_batch] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_batch] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_scan] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_scan] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_scan_complex] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_scan_complex] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_filter] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_filter] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_filter_complex] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_filter_complex] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_agg] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_agg] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_agg_complex] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_agg_complex] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_compact] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_compact] under database [streaming]
-	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_new] under database [streaming]
-	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_new] under database [streaming]
-	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_tolerant] under database [streaming]
-	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_tolerant] under database [streaming]
-	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [stream_table_delete] under database [streaming]
-	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [stream_table_delete] under database [streaming]
-	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleting table [source] under database [streaming]
-	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [SZX1000323521][root][Thread-1]Deleted table [source] under database [streaming]
+	17/11/16 19:05:50 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [batch_table] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [batch_table] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_socket] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_socket] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_file] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_file] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [bad_record_force] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [bad_record_force] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [bad_record_fail] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [bad_record_fail] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_1s] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_1s] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_10s] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_10s] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_batch] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_batch] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_scan] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_scan] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_scan_complex] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_scan_complex] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_filter] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_filter] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_filter_complex] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_filter_complex] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_agg] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_agg] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_agg_complex] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_agg_complex] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_compact] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_compact] under database [streaming]
+	17/11/16 19:05:51 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_new] under database [streaming]
+	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_new] under database [streaming]
+	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_tolerant] under database [streaming]
+	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_tolerant] under database [streaming]
+	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [stream_table_delete] under database [streaming]
+	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [stream_table_delete] under database [streaming]
+	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleting table [source] under database [streaming]
+	17/11/16 19:05:52 AUDIT CarbonDropTableCommand: [***][root][Thread-1]Deleted table [source] under database [streaming]
 	
 	Process finished with exit code 0

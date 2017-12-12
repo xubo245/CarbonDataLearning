@@ -189,11 +189,11 @@ compaction后sort：org.apache.carbondata.processing.sortandgroupby.sortdata.New
 写入临时文件：
 org.apache.carbondata.processing.sort.sortdata.SortDataRows#writeData
 	
-	SZX1000323521:/david/xubo/git/carbondata # ll /tmp/991747682781728_0/default/compaction_globalsort/Fact/Part0/Segment_0.1/0/sortrowtmp/compaction_globalsort991867291360950.sorttemp
+	***:/***/xubo/git/carbondata # ll /tmp/991747682781728_0/default/compaction_globalsort/Fact/Part0/Segment_0.1/0/sortrowtmp/compaction_globalsort991867291360950.sorttemp
 	ls: cannot access /tmp/991747682781728_0/default/compaction_globalsort/Fact/Part0/Segment_0.1/0/sortrowtmp/compaction_globalsort991867291360950.sorttemp: No such file or directory
-	SZX1000323521:/david/xubo/git/carbondata # ll /tmp/991747682781728_0/default/compaction_globalsort/Fact/Part0/Segment_0.1/0/sortrowtmp/compaction_globalsort991867291360950.sorttemp
+	***:/***/xubo/git/carbondata # ll /tmp/991747682781728_0/default/compaction_globalsort/Fact/Part0/Segment_0.1/0/sortrowtmp/compaction_globalsort991867291360950.sorttemp
 	-rw-r--r-- 1 root root 0 Oct 13 21:52 /tmp/991747682781728_0/default/compaction_globalsort/Fact/Part0/Segment_0.1/0/sortrowtmp/compaction_globalsort991867291360950.sorttemp
-	SZX1000323521:/david/xubo/git/carbondata # 
+	***:/***/xubo/git/carbondata # 
 
 
 内容：
