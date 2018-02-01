@@ -23,3 +23,7 @@
  exception is error. Because some test case always run success whether sql throw exception
 
 [CARBONDATA-2082][CARBONDATA-1516] Timeseries pre-aggregate table should support the blank space
+[CARBONDATA-2083][CARBONDATA-1516] Timeseries pre-aggregate table should support hour !=1 and so on 
+
+
+[CARBONDATA-2085][CARBONDATA-1516] Timeseries pre-aggregate table is error when load data after create Timeseries pre-aggregate table
