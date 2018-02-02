@@ -27,3 +27,39 @@
 
 
 [CARBONDATA-2085][CARBONDATA-1516] Timeseries pre-aggregate table is error when load data after create Timeseries pre-aggregate table
+
+
+
+ESC[33mcommit ab68ae8361a2a85afeb7dbac68777227961c5992ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mPreAggregateTestForTimeSeriesESC[mESC[33m)ESC[m
+Author: xubo245 <601450868@qq.com>
+Date:   Thu Feb 1 15:55:39 2018 +0800
+
+    fix test error
+
+ESC[33mcommit b4991c93cf864d4468843128ce25c49431aabe88ESC[m
+Author: xubo245 <601450868@qq.com>
+Date:   Thu Feb 1 11:17:44 2018 +0800
+
+    [CARBONDATA-2073][CARBONDATA-1516][Tests] Add test cases for timeseries pre-aggregate table
+    
+    add using test, to be fixed
+    
+    add drop datamap test cases
+    
+    add drop test case and change timestamp
+    
+    add test cases
+    
+    add ignore
+    
+    "optimize the test cases"
+    
+    add test case for load twice
+    
+    add  some test case for IUD in timeseries table
+    
+    fix test error
+    
+    fix test error: timestamp
+    
+    update
