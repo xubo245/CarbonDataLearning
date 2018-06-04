@@ -81,7 +81,11 @@ Save
 	localhost:carbondata1 xubo$ thrift -version
 	Thrift version 0.9.3
 	
-	
+More information:
+
+[1] [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
+
 Refer
 
-	[1] https://www.jianshu.com/p/aadb54eac0a8
+	[1] https://github.com/apache/carbondata
+	[2] https://www.jianshu.com/p/aadb54eac0a8

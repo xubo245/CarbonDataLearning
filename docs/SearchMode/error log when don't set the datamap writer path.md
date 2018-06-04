@@ -159,3 +159,11 @@
 	18/05/29 06:36:55 AUDIT CarbonDropTableCommand: [localhost][xubo][Thread-1]Deleted table [datamap_test] under database [lucene]
 	
 	Process finished with exit code 0
+	
+More information:
+
+[1] [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
+
+Refer
+
+	[1] https://github.com/apache/carbondata
