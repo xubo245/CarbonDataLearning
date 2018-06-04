@@ -80,3 +80,8 @@ Save
 	🍺  /usr/local/Cellar/thrift/0.9.3: 95 files, 5.7MB, built in 5 minutes 19 seconds
 	localhost:carbondata1 xubo$ thrift -version
 	Thrift version 0.9.3
+	
+	
+Refer
+
+	[1] https://www.jianshu.com/p/aadb54eac0a8
