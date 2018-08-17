@@ -23,7 +23,7 @@
         <spark.version>2.1.0</spark.version>
         <scala.binary.version>2.11</scala.binary.version>
         <scala.version>2.11.8</scala.version>
-        <carbondata.version>1.2.0-SNAPSHOT</carbondata.version>
+        <carbondata.version>1.2.0</carbondata.version>
     </properties>
 
 

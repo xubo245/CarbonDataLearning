@@ -14,6 +14,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="scala-sdk-2.11.8 (2)" level="application" />
+    <orderEntry type="library" name="scala-sdk-2.11.8" level="application" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-core_2.11:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro-mapred:hadoop2:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro-ipc:1.7.7" level="project" />
@@ -186,7 +187,7 @@
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.11.8" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-actors:2.11.8" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scalap:2.11.8" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-core:1.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-core:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-common:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-math:2.1" level="project" />
@@ -219,12 +220,12 @@
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-hdfs:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: commons-daemon:commons-daemon:1.0.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.7" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-spark-common:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-spark2:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-hadoop:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-common:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-format:1.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-spark-common:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-spark2:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-hadoop:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-common:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-format:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.thrift:libthrift:0.9.3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-processing:1.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.carbondata:carbondata-processing:1.2.0" level="project" />
   </component>
 </module>
