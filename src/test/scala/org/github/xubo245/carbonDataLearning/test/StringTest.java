@@ -15,14 +15,10 @@
  * limitations under the License.
  */
 
-package org.github.xubo245.carbonDataLearning.etl
+package org.github.xubo245.carbonDataLearning.test;
 
-/**
-  * Created by root on 8/17/18.
-  */
-object test {
-  def main(args: Array[String]): Unit = {
-    println("99".matches("[0-9]*"))
-    println("99a".matches("[0-9]*"))
+public class StringTest {
+  public static void main(String[] args) {
+    System.out.println("String Test");
   }
 }

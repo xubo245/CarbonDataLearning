@@ -14,16 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.github.xubo245.carbonDataLearning.booleanDataType
 
 import java.io.{File, PrintWriter}
 
 import scala.util.Random
 
-
 object BooleanFile {
 
   val randomNumber = 10000
+
   def createBooleanFileRandom(path: String, totalLines: Int, rate: Double): Boolean = {
     try {
       val write = new PrintWriter(path)
