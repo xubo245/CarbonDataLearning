@@ -20,16 +20,13 @@
         <spark.master.url>local[2]</spark.master.url>
         <hdfs.url>local</hdfs.url>
         <!--<suite.name>org.apache.carbondata.cluster.sdv.suite.SDVSuites</suite.name>-->
-        <spark.version>2.1.0</spark.version>
+        <spark.version>2.2.1</spark.version>
         <scala.binary.version>2.11</scala.binary.version>
-        <scala.version>2.11.8</scala.version>
-        <carbondata.version>1.2.0</carbondata.version>
+        <scala.version>2.11.12</scala.version>
+        <carbondata.version>1.5.0</carbondata.version>
     </properties>
 
-
     <dependencies>
-
-
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.binary.version}</artifactId>
@@ -124,12 +121,17 @@
             <artifactId>spark-hive-thriftserver_${scala.binary.version}</artifactId>
             <version>${spark.version}</version>
             <scope>${spark.deps.scope}</scope>
-
         </dependency>
         <dependency>
             <groupId>org.apache.carbondata</groupId>
             <artifactId>carbondata-processing</artifactId>
             <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_${scala.binary.version}</artifactId>
+            <version>2.2.1</version>
+            <!--<scope>test</scope>-->
         </dependency>
     </dependencies>
 </project>
