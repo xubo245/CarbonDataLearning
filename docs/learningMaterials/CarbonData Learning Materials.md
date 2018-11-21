@@ -15,7 +15,7 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
  - 2.7 [Apache Carbondata: An indexed columnar file format for interactive query with Spark SQL](https://www.youtube.com/watch?v=yya8-GzRW5M)
  
 ## 3.Documentation
- - 3.1 [Spark、Flink、CarbonData 技术实践最佳案例解析](https://www.infoq.cn/article/spark-flink-carbondata-best-practice)
+ - 3.1 [Spark、Flink、CarbonData 技术实践最佳案例解析: https://www.infoq.cn/article/spark-flink-carbondata-best-practice](https://www.infoq.cn/article/spark-flink-carbondata-best-practice)
  - 3.2 [单表千亿电信大数据场景，使用Spark+CarbonData替换Impala案例](https://my.oschina.net/u/4029686/blog/2878526?from=groupmessage) 
  - 3.3 [Apache顶级项目CarbonData应用实践与2.0新技术规划介绍](https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247486125&idx=1&sn=3fc9892ba596b5435c36c9ee536b6543&chksm=fbe9b362cc9e3a743cb890ac708060613e86d95aee098a62d24e9770c5695fc685e1b4ec3db2&scene=27#wechat_redirect)
  - 3.4 [CarbonData+Spark SQL的应用实践和调优经验分享](https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247486139&idx=2&sn=4d32ab981e66d614d048ef9361811124&chksm=fbe9b374cc9e3a62cd135100900d3136a3b59c84df9793eff89172ed27e9e6ec23050de5f55a&scene=27#wechat_redirect), [InfoQ Link](https://www.infoq.cn/article/2017%2F09%2FCarbonData-Spark-huawei)
