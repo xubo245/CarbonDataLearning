@@ -25,10 +25,6 @@ import org.apache.spark.sql.SparkSession
 
 object TestCarbon {
   def main(args: Array[String]): Unit = {
-    //    val conf = new SparkConf().setAppName("Simple Application").setMaster("local[8]")
-    //    val sc = new SparkContext(conf)
-    //    sc.setLogLevel("ERROR")
-    //    val carbon = SparkSession.builder().config(sc.getConf).getOrCreateCarbonSession("data/carbon/")
 
     val rootPath = new File(this.getClass.getResource("/").getPath
       + "../../").getCanonicalPath

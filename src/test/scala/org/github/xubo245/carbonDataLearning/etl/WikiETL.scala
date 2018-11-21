@@ -24,9 +24,6 @@ import java.util.Date
 import scala.io.Source
 import scala.util.Random
 
-/**
-  * Created by root on 8/14/18.
-  */
 object WikiETL {
   def main(args: Array[String]): Unit = {
     val directory = "/root/xubo/data"
@@ -42,22 +39,6 @@ object WikiETL {
       ,("s","wikisource")
       ,("v","wikiversity")
       ,("w","mediawiki"))
-
-
-//    ,("","")
-//    ,("","")
-//    ,("","")
-//    ,("","")
-//    ,("","")
-//    wikibooks: ".b"
-//    wiktionary: ".d"
-//    wikimedia: ".m"
-//    wikipedia mobile: ".mw"
-//    wikinews: ".n"
-//    wikiquote: ".q"
-//    wikisource: ".s"
-//    wikiversity: ".v"
-//    mediawiki: ".w"
 
     for (file <- files.listFiles().sorted.filter(_.getCanonicalFile.getName.contains("pageviews-20150505-"))) {
       val filePath = file.getCanonicalPath
@@ -78,8 +59,6 @@ object WikiETL {
           .append(fileName.substring(19, 21)).append(delimiter)
         val array=line.mkString.split("\\s+")
 
-//        val result = stringBuffer.toString.substring(0, stringBuffer.length() - 1)
-        //        println(result)
         if (array.length == 4 && array(2).matches("[0-9]*") && !array(1).contains("\"")) {
           val domain = array(0).split('.')
           stringBuffer.append(domain(0)).append(delimiter)
@@ -97,17 +76,16 @@ object WikiETL {
             .append(random.nextInt(100000)).append(delimiter)
             .append(time)
 
-//          for (i <- 0 until array.length-1){
-//            stringBuffer.append(array(i)).append(delimiter)
-//          }
-//          stringBuffer.append(array(array.length-1))
+          //          for (i <- 0 until array.length-1){
+          //            stringBuffer.append(array(i)).append(delimiter)
+          //          }
+          //          stringBuffer.append(array(array.length-1))
 
-//        if (array.length == 4 && array(2).matches("[0-9]*")) {
-//          id = id + 1
+          //        if (array.length == 4 && array(2).matches("[0-9]*")) {
+          //          id = id + 1
           out.println(stringBuffer.toString)
         }
       }
-//            out.close()
     }
     out.close()
   }

@@ -73,10 +73,6 @@ object UpdateTable {
     sql("UPDATE test_table SET (city,age) = ('shanghai',age+10) where test_table.id='1' and EXISTS (select * from test_table o where o.age>100)").show() // need to show
     sql("SELECT * FROM test_table").show()
 
-    //    carbon.sql("SELECT * FROM test_table2").show()
-    //    sql("UPDATE test_table d SET (age) = (select s.age from test_table s where d.city=s.city) where EXISTS (select * from test_table o where o.age>30)").show()   // need to show
-    //    sql("SELECT * FROM test_table").show()
-    //    sc.stop()
     carbon.stop()
 
   }

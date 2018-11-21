@@ -19,19 +19,16 @@ package org.github.xubo245.carbonDataLearning.etl
 
 import scala.io.Source
 
-/**
-  * Created by root on 8/17/18.
-  */
 object JudgeFile {
   def main(args: Array[String]): Unit = {
     val fileName = "/root/xubo/data/pageviews-20150505key"
     judge(fileName)
-//    val fileName = "/root/xubo/data/pageviews-20150505-000000WithTime"
-//    for (i <- 0 to 9) {
-//      val path = s"/root/xubo/data/pageviews-20150505-0" + i + "0000WithTime"
-//      println("read file " +i + ":" + path)
-//      judge(path)
-//    }
+    //    val fileName = "/root/xubo/data/pageviews-20150505-000000WithTime"
+    //    for (i <- 0 to 9) {
+    //      val path = s"/root/xubo/data/pageviews-20150505-0" + i + "0000WithTime"
+    //      println("read file " +i + ":" + path)
+    //      judge(path)
+    //    }
   }
   def judge(fileName:String): Unit ={
     val reader = Source.fromFile(fileName)

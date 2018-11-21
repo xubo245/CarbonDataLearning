@@ -34,7 +34,6 @@ object LoadDataLearning {
     CarbonProperties.getInstance()
       .addProperty(CarbonCommonConstants.CARBON_TIMESTAMP_FORMAT, "yyyy/MM/dd HH:mm:ss")
       .addProperty(CarbonCommonConstants.CARBON_DATE_FORMAT, "yyyy/MM/dd")
-    //      .addProperty(CarbonCommonConstants.ENABLE_UNSAFE_COLUMN_PAGE_LOADING, "true")
 
     import org.apache.spark.sql.CarbonSession._
     val carbon = SparkSession
@@ -47,28 +46,8 @@ object LoadDataLearning {
     carbon.sparkContext.setLogLevel("ERROR")
 
 
-    //    val path = s"$rootPath/src/main/resources/data.csv"
-    //    val dicPath = s"$rootPath/src/main/resources/data.dictionary"
     carbon.sql("DROP TABLE IF EXISTS carbontable")
 
-    //    carbon.sql(
-    //      s"""
-    //         | CREATE TABLE carbontable(
-    //         | shortField SHORT,
-    //         | intField INT,
-    //         | bigintField LONG,
-    //         | doubleField DOUBLE,
-    //         | stringField STRING,
-    //         | timestampField TIMESTAMP,
-    //         | decimalField DECIMAL(18,2),
-    //         | dateField DATE,
-    //         | charField CHAR(5),
-    //         | floatField FLOAT,
-    //         | complexData ARRAY<STRING>
-    //         | )
-    //         | STORED BY 'carbondata'
-    //         | TBLPROPERTIES('DICTIONARY_INCLUDE'='dateField, charField')
-    //       """.stripMargin)
     carbon.sql("CREATE TABLE carbontable (empno int, empname String, designation String, doj Timestamp, workgroupcategory int, workgroupcategoryname String, deptno int, deptname String, projectcode int, projectjoindate Timestamp, projectenddate Timestamp,attendance int,utilization int,salary int) STORED BY 'org.apache.carbondata.format' tblproperties('sort_columns'='empname', 'dictionary_include'='empname')")
 
 
@@ -82,7 +61,6 @@ object LoadDataLearning {
          | 'COMPLEX_DELIMITER_LEVEL_2'=':','ALL_DICTIONARY_PATH'='$rootPath/src/main/resources/data.dictionary','SINGLE_PASS'='TRUE')""".stripMargin)
     carbon.sql("SELECT * FROM carbontable").show()
 
-    //    sc.stop()
     carbon.stop()
 
   }

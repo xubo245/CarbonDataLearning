@@ -15,17 +15,11 @@
  * limitations under the License.
  */
 
-package org.github.xubo245.carbonDataLearning.baseLearning
+package org.github.xubo245.carbonDataLearning.test
 
-import java.io.File
-
-object TestFile {
+object testMatches {
   def main(args: Array[String]): Unit = {
-    val file = new File("data/1.txt")
-    println(file.getPath)
-    println(file.getAbsolutePath)
-    println(file.getName)
-    println(file.getCanonicalPath)
+    println("99".matches("[0-9]*"))
+    println("99a".matches("[0-9]*"))
   }
-
 }

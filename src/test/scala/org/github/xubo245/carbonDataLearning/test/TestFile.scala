@@ -15,15 +15,17 @@
  * limitations under the License.
  */
 
-package org.github.xubo245.carbonDataLearning.dataManagement
+package org.github.xubo245.carbonDataLearning.test
 
-object Test {
+import java.io.File
+
+object TestFile {
   def main(args: Array[String]): Unit = {
-    val a=10
-    val b=10.00001
-
-    assert(Math.abs(a-b)<0.00002)
-    println(Math.abs(a-b))
+    val file = new File("data/1.txt")
+    println(file.getPath)
+    println(file.getAbsolutePath)
+    println(file.getName)
+    println(file.getCanonicalPath)
   }
 
 }

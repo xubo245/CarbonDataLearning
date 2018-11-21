@@ -15,14 +15,15 @@
  * limitations under the License.
  */
 
-package org.github.xubo245.carbonDataLearning.etl
+package org.github.xubo245.carbonDataLearning.test
 
-/**
-  * Created by root on 8/17/18.
-  */
-object test {
+object Test {
   def main(args: Array[String]): Unit = {
-    println("99".matches("[0-9]*"))
-    println("99a".matches("[0-9]*"))
+    val a=10
+    val b=10.00001
+
+    assert(Math.abs(a-b)<0.00002)
+    println(Math.abs(a-b))
   }
+
 }

@@ -23,9 +23,6 @@ import org.apache.carbondata.core.constants.CarbonCommonConstants
 import org.apache.carbondata.core.util.CarbonProperties
 import org.apache.spark.sql.SparkSession
 
-/**
-  * Created by root on 8/11/17.
-  */
 object CreateAnalysis {
   def main(args: Array[String]): Unit = {
     val rootPath = new File(this.getClass.getResource("/").getPath
