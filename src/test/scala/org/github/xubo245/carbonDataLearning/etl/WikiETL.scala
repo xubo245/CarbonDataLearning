@@ -18,6 +18,8 @@
 package org.github.xubo245.carbonDataLearning.etl
 
 import java.io.{File, PrintWriter}
+import java.text.SimpleDateFormat
+import java.util.Date
 
 import scala.io.Source
 import scala.util.Random
@@ -29,7 +31,7 @@ object WikiETL {
   def main(args: Array[String]): Unit = {
     val directory = "/root/xubo/data"
     val files = new File(directory)
-    val out = new PrintWriter("/root/xubo/data/pageviews-20150505tid")
+    val out = new PrintWriter("/root/xubo/data/pageviews-20150505time")
     var flag:Int = 10000000;
     var typeMap= Map (("b","wikibooks")
       ,("d","wiktionary")
@@ -87,12 +89,13 @@ object WikiETL {
           } else {
             stringBuffer.append("wiki").append(delimiter)
           }
-
-          stringBuffer.append(array(1).replace('_',' ')).append(delimiter)
+          val time = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
           val tid= id*10+random.nextInt(5)
-          stringBuffer.append(tid).append(delimiter)
-          stringBuffer.append(array(2)).append(delimiter)
-          stringBuffer.append(random.nextInt(100000))
+          stringBuffer.append(array(1).replace('_',' ')).append(delimiter)
+            .append(tid).append(delimiter)
+            .append(array(2)).append(delimiter)
+            .append(random.nextInt(100000)).append(delimiter)
+            .append(time)
 
 //          for (i <- 0 until array.length-1){
 //            stringBuffer.append(array(i)).append(delimiter)
