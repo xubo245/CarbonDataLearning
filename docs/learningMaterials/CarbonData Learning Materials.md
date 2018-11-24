@@ -6,27 +6,45 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
  - 1.3 CarbonData cwiki: [https://cwiki.apache.org/confluence/display/CARBONDATA/](https://cwiki.apache.org/confluence/display/CARBONDATA/)
 
 ## 2.Vedio
- - 2.1 2018实时大数据Meetup——Spark、Flink、CarbonData的技术与实践,2018-09-08 09:30 - 12:20: [http://www.itdks.com/eventlist/detail/2599](http://www.itdks.com/eventlist/detail/2599). 
+ - 2.1 2018实时大数据Meetup——Spark、Flink、CarbonData的技术与实践,2018-09-08 09:30 - 12:20: 
+	 - [http://www.itdks.com/eventlist/detail/2599](http://www.itdks.com/eventlist/detail/2599). 
  
  - 2.2 Open Sourcing CarbonData, a distributed global co- operation, development and success story, 2018-10-20 14:10-14:50(2018中国开源年会 COSCon'18): 
-	 - [https://www.itdks.com/dakalive/detail/17003](https://www.itdks.com/dakalive/detail/17003).  
 	 - [https://v.qq.com/x/page/c0797395o2n.html](https://v.qq.com/x/page/c0797395o2n.html)
- - 2.3 华为云大数据存储技术创新-CarbonData解密及实践,2018-04-22 15:40-16:20: [http://www.itdks.com/dakalive/detail/11395](http://www.itdks.com/dakalive/detail/11395)
- - 2.4 Apache CarbonData成长故事, 2017-11-18 14:00-14:30: [http://www.itdks.com/dakalive/detail/7727](http://www.itdks.com/dakalive/detail/7727)
- - 2.5 Apache Carbondata: An Indexed Columnar File Format for Interactive Query by Jacky Li/Jihong Ma, Spark summit EAST 2017: [https://www.youtube.com/watch?v=lhsAg2H_GXc](https://www.youtube.com/watch?v=lhsAg2H_GXc).  
- - 2.6 Introducing Apache CarbonData : A new hadoop-native file format for faster data analysis, O'Reilly Open Source Convention: OSCON, May 16 - 19, 2016: [https://www.youtube.com/watch?v=VEckmJuU47g](https://www.youtube.com/watch?v=VEckmJuU47g)
- - 2.7 Apache Carbondata: An indexed columnar file format for interactive query with Spark SQL: [https://www.youtube.com/watch?v=yya8-GzRW5M](https://www.youtube.com/watch?v=yya8-GzRW5M)
+	 - 	[https://www.itdks.com/dakalive/detail/17003](https://www.itdks.com/dakalive/detail/17003).  
+ - 2.3 华为云大数据存储技术创新-CarbonData解密及实践,2018-04-22 15:40-16:20: 
+	 - [https://bbs.huaweicloud.com/videos/21e577defdbb4b5997e464af3bf447be](https://bbs.huaweicloud.com/videos/21e577defdbb4b5997e464af3bf447be)
+	 - [http://www.itdks.com/dakalive/detail/11395](http://www.itdks.com/dakalive/detail/11395)
+	 - [slides](https://bbs.huaweicloud.com/forum/thread-8444-1-1.html)
+ - 2.4 Apache CarbonData成长故事, 2017-11-18 14:00-14:30: 
+	 - [http://www.itdks.com/dakalive/detail/7727](http://www.itdks.com/dakalive/detail/7727)
+ - 2.5 Apache Carbondata: An Indexed Columnar File Format for Interactive Query by Jacky Li/Jihong Ma, Spark summit EAST 2017: 
+	 - [https://v.qq.com/x/page/z0800eq6fhx.html](https://v.qq.com/x/page/z0800eq6fhx.html)
+	 - [https://www.youtube.com/watch?v=lhsAg2H_GXc](https://www.youtube.com/watch?v=lhsAg2H_GXc).  
+ - 2.6 Introducing Apache CarbonData : A new hadoop-native file format for faster data analysis, O'Reilly Open Source Convention: OSCON, May 16 - 19, 2016: 
+	 - [https://v.qq.com/x/page/j0800dgsdd8.html](https://v.qq.com/x/page/j0800dgsdd8.html)
+	 - [https://www.youtube.com/watch?v=VEckmJuU47g](https://www.youtube.com/watch?v=VEckmJuU47g)
+ - 2.7 Apache Carbondata: An indexed columnar file format for interactive query with Spark SQL: 
+	 - [https://v.qq.com/x/page/j0800u2ulaj.html](https://v.qq.com/x/page/j0800u2ulaj.html)
+	 - [https://www.youtube.com/watch?v=yya8-GzRW5M](https://www.youtube.com/watch?v=yya8-GzRW5M)
  
 ## 3.Documentation
- - 3.1 Spark、Flink、CarbonData 技术实践最佳案例解析: [https://www.infoq.cn/article/spark-flink-carbondata-best-practice](https://www.infoq.cn/article/spark-flink-carbondata-best-practice)
+ - 3.1 Spark、Flink、CarbonData 技术实践最佳案例解析: 
+	 - [https://www.infoq.cn/article/spark-flink-carbondata-best-practice](https://www.infoq.cn/article/spark-flink-carbondata-best-practice)
  
- - 3.2 [单表千亿电信大数据场景，使用Spark+CarbonData替换Impala案例: [https://my.oschina.net/u/4029686/blog/2878526?from=groupmessage](https://my.oschina.net/u/4029686/blog/2878526?from=groupmessage) 
- - 3.3 Apache顶级项目CarbonData应用实践与2.0新技术规划介绍: [https://www.sohu.com/a/193921606_470008](https://www.sohu.com/a/193921606_470008)
- - 3.4 CarbonData+Spark SQL的应用实践和调优经验分享: 
+ - 3.2 [单表千亿电信大数据场景，使用Spark+CarbonData替换Impala案例: 
+	 - [https://my.oschina.net/u/4029686/blog/2878526?from=groupmessage](https://my.oschina.net/u/4029686/blog/2878526?from=groupmessage) 
+ - 3.3 Apache顶级项目CarbonData应用实践与2.0新技术规划介绍: 
+	 - [https://www.sohu.com/a/193921606_470008](https://www.sohu.com/a/193921606_470008)
+ - 3.4 云计算开源产业联盟发布融合数据白皮书，Apache CarbonData成为主流融合存储技术
+	 - [https://bbs.huaweicloud.com/blogs/2f27376be9e511e79fc57ca23e93a89f](https://bbs.huaweicloud.com/blogs/2f27376be9e511e79fc57ca23e93a89f)
+ - 3.5 CarbonData+Spark SQL的应用实践和调优经验分享: 
 	 - [https://www.sohu.com/a/190681267_470008](https://www.sohu.com/a/190681267_470008), 
 	 - [InfoQ Link: https://www.infoq.cn/article/2017%2F09%2FCarbonData-Spark-huawei](https://www.infoq.cn/article/2017%2F09%2FCarbonData-Spark-huawei)
- - 3.5 深度访谈：华为开源数据格式CarbonData项目，实现大数据即席查询秒级响应: [ AI前线 WeChat Link](https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247486473&idx=1&sn=e82339bfa2812fefa387eef0c931c19f&chksm=fbe9b5c6cc9e3cd05b9efa3eccb883f3956335bc3a16181b70a2f7bd53dcaefcfe70b00acd1e&scene=27#wechat_redirect)
- - 3.6 Apache CarbonData:大数据生态一种新的高性能数据格式: [https://my.oschina.net/u/3156280/blog/808506](https://my.oschina.net/u/3156280/blog/808506)
+ - 3.6 深度访谈：华为开源数据格式CarbonData项目，实现大数据即席查询秒级响应: 
+	 - [ AI前线 WeChat Link](https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247486473&idx=1&sn=e82339bfa2812fefa387eef0c931c19f&chksm=fbe9b5c6cc9e3cd05b9efa3eccb883f3956335bc3a16181b70a2f7bd53dcaefcfe70b00acd1e&scene=27#wechat_redirect)
+ - 3.7 Apache CarbonData:大数据生态一种新的高性能数据格式: 
+	 - [https://my.oschina.net/u/3156280/blog/808506](https://my.oschina.net/u/3156280/blog/808506)
 
 ## 4.Slides
  - 4.1 Realtime BigData BeiJing Meetup(8th Sep,2018): 

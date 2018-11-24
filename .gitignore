@@ -1,4 +1,6 @@
 *.class
 *.log
 .idea
+.DS_Store
+docs/.DS_Store
 target
