@@ -63,9 +63,15 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
  	- [ CarbonData_An Indexed Columnar File Format For Interactive Query](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_BeiJing_2016_10_29/%20CarbonData_An%20Indexed%20Columnar%20File%20Format%20For%20Interactive%20Query.pdf) 
  - 4.5 Spark Summit East 2017-Apache CarbonData (8th Feb,2017)
  	- [Apache CWiki Link](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=68714802) 
+ - 4.6 华为云技术私享会杭州站
+	 - [华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Huawei_Cloud_Technology_Private_Meeting_Hangzhou_2018_04_22/03%20华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践.pdf.pdf)
  
  详细请见：[https://github.com/xubo245/CarbonDataLearning/tree/master/docs/slides/](https://github.com/xubo245/CarbonDataLearning/tree/master/docs/slides/)
 ## 5.Refernce
  - 5.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
  - 5.2 [https://github.com/QiangCai/carbondata_guide](https://github.com/QiangCai/carbondata_guide)
  - 5.3 [Apache CarbonData 中文文档 - 过往记忆](https://www.iteblog.com/archives/tag/carbondata/)
+ 
+ ## 6.更多资料：
+  - 6.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
+  - 6.2 [https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData Learning Materials.md](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData%20Learning%20Materials.md)
