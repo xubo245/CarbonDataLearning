@@ -20,6 +20,7 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 	 - [http://www.itdks.com/dakalive/detail/7727](http://www.itdks.com/dakalive/detail/7727)
  - 2.5 Apache Carbondata: An Indexed Columnar File Format for Interactive Query by Jacky Li/Jihong Ma, Spark summit EAST 2017: 
 	 - [https://v.qq.com/x/page/z0800eq6fhx.html](https://v.qq.com/x/page/z0800eq6fhx.html)
+	 - [https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql](https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql)
 	 - [https://www.youtube.com/watch?v=lhsAg2H_GXc](https://www.youtube.com/watch?v=lhsAg2H_GXc).  
  - 2.6 Introducing Apache CarbonData : A new hadoop-native file format for faster data analysis, O'Reilly Open Source Convention: OSCON, May 16 - 19, 2016: 
 	 - [https://v.qq.com/x/page/j0800dgsdd8.html](https://v.qq.com/x/page/j0800dgsdd8.html)
@@ -47,23 +48,25 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 	 - [https://my.oschina.net/u/3156280/blog/808506](https://my.oschina.net/u/3156280/blog/808506)
 
 ## 4.Slides
- - 4.1 Realtime BigData BeiJing Meetup(8th Sep,2018): 
+ - 4.1 Apache CarbonData ShenZhen Meetup PPT (1st Dec,2018)
+ 	- 
+ - 4.2 Realtime BigData BeiJing Meetup(8th Sep,2018): 
  	- [Easy, Scalable, Fault-tolerant stream processing with Structured Streaming-TD](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Realtime_BigData_Meetup_BeiJing_2018_09_08/Easy%2C%20Scalable%2C%20Fault-tolerant%20stream%20processing%20with%20Structured%20Streaming-TD.pdf)
  	- [CarbonData技术原理及使用介绍-蔡强](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Realtime_BigData_Meetup_BeiJing_2018_09_08/CarbonData技术原理及使用介绍-蔡强.pdf)
  	- [美团点评Flink实践与应用-孙梦瑶](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Realtime_BigData_Meetup_BeiJing_2018_09_08/美团点评Flink实践与应用-孙梦瑶.pdf)
  	- [智能流计算Flink_Spark在华为云CloudStream中的应用实践-时金魁](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Realtime_BigData_Meetup_BeiJing_2018_09_08/智能流计算Flink_Spark在华为云CloudStream中的应用实践-时金魁.pdf)
- - 4.2 Apache CarbonData Shanghai Meetup PPT (2nd Sep,2017)
+ - 4.3 Apache CarbonData Shanghai Meetup PPT (2nd Sep,2017)
  	- [Spark SQL_ Past, Present and Future_范文臣](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShangHai_2017_09_02/%20Spark%20SQL_%20Past%2C%20Present%20and%20Future_范文臣.pdf)
  	- [CarbonData应用实践和未来规划_李昆](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShangHai_2017_09_02/%20CarbonData应用实践和未来规划_李昆.pdf)
  	- [Cost-Based Optimizer Framework for Spark SQL_王振华](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShangHai_2017_09_02/Cost-Based%20Optimizer%20Framework%20for%20Spark%20SQL_王振华.pdf)
  	- [CarbonData Partition 功能介绍与上汽集团 CarbonData实践分享_曹鲁](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShangHai_2017_09_02/%20CarbonData%20Partition%20功能介绍与上汽集团%20CarbonData实践分享_曹鲁.pdf) 
- - 4.3 China Open Source Conference ShenZhen(20 Oct. 2018)
+ - 4.4 China Open Source Conference ShenZhen(20 Oct. 2018)
  	- [Apahce_CarbonData_Open_Source_Journey_of_Becoming_Top_Level_Project_Raghunandan_S](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/China_Open_Source_Conference_ShenZhen_2018_10_20/2-Raghunandan_S-Apahce_CarbonData_Open_Source_Journey_of_Becoming_Top_Level_Project.pdf)
- - 4.4 Apache CarbonData Beijing Meetup PPT (29th Oct, 2016)
+ - 4.5 Apache CarbonData Beijing Meetup PPT (29th Oct, 2016)
  	- [ CarbonData_An Indexed Columnar File Format For Interactive Query](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_BeiJing_2016_10_29/%20CarbonData_An%20Indexed%20Columnar%20File%20Format%20For%20Interactive%20Query.pdf) 
- - 4.5 Spark Summit East 2017-Apache CarbonData (8th Feb,2017)
+ - 4.6 Spark Summit East 2017-Apache CarbonData (8th Feb,2017)
  	- [Apache CWiki Link](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=68714802) 
- - 4.6 华为云技术私享会杭州站
+ - 4.7 华为云技术私享会杭州站
 	 - [华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Huawei_Cloud_Technology_Private_Meeting_Hangzhou_2018_04_22/03%20华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践.pdf.pdf)
  
  详细请见：[https://github.com/xubo245/CarbonDataLearning/tree/master/docs/slides/](https://github.com/xubo245/CarbonDataLearning/tree/master/docs/slides/)

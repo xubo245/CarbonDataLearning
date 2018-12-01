@@ -3,4 +3,5 @@
 .idea
 .DS_Store
 docs/.DS_Store
+docs/slides/.DS_Store
 target
