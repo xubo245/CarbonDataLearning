@@ -49,7 +49,11 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 
 ## 4.Slides
  - 4.1 Apache CarbonData ShenZhen Meetup PPT (1st Dec,2018)
- 	- 
+ 	- [What's New in Apache Spark 2.4](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/What's%20New%20in%20Apache%20Spark%202.4.pdf)
+ 	- [基于CarbonData构建万亿级数据仓库](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/基于CarbonData构建万亿级数据仓库.pptx)
+ 	- [QATCodec Past, Present and Future_rev1.0](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/QATCodec%20Past%2C%20Present%20and%20Future_rev1.0.pdf)
+ 	- [CarbonData 的实践与调优](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/CarbonData_meetup_shenzhen_20181201_v1.1.2.pdf)
+ 	- [Apache CarbonData & Spark Meetup 主持稿](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/轮播PPT（Apache%20CarbonData%20%26%20Spark%20Meetup）.pptx)
  - 4.2 Realtime BigData BeiJing Meetup(8th Sep,2018): 
  	- [Easy, Scalable, Fault-tolerant stream processing with Structured Streaming-TD](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Realtime_BigData_Meetup_BeiJing_2018_09_08/Easy%2C%20Scalable%2C%20Fault-tolerant%20stream%20processing%20with%20Structured%20Streaming-TD.pdf)
  	- [CarbonData技术原理及使用介绍-蔡强](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Realtime_BigData_Meetup_BeiJing_2018_09_08/CarbonData技术原理及使用介绍-蔡强.pdf)
