@@ -1,8 +1,8 @@
-	root@ecs-909c:/huawei/xubo/tools# vi /usr/share/i18n/locales/i18n
-	root@ecs-909c:/huawei/xubo/tools# LC_ALL=C
-	root@ecs-909c:/huawei/xubo/tools# export LC_ALL
-	root@ecs-909c:/huawei/xubo/tools# 
-	root@ecs-909c:/huawei/xubo/tools# apt-get install gdm
+	root@ecs-909c://xubo/tools# vi /usr/share/i18n/locales/i18n
+	root@ecs-909c://xubo/tools# LC_ALL=C
+	root@ecs-909c://xubo/tools# export LC_ALL
+	root@ecs-909c://xubo/tools# 
+	root@ecs-909c://xubo/tools# apt-get install gdm
 	Reading package lists... Done
 	Building dependency tree       
 	Reading state information... Done
@@ -19,8 +19,8 @@
 	Preparing to unpack .../gdm_3.18.3-0ubuntu2.1_all.deb ...
 	Unpacking gdm (3.18.3-0ubuntu2.1) ...
 	Setting up gdm (3.18.3-0ubuntu2.1) ...
-	root@ecs-909c:/huawei/xubo/tools# 
-	root@ecs-909c:/huawei/xubo/tools# 
-	root@ecs-909c:/huawei/xubo/tools# vi /etc/profile
-	root@ecs-909c:/huawei/xubo/tools# source /etc/profile
+	root@ecs-909c://xubo/tools# 
+	root@ecs-909c://xubo/tools# 
+	root@ecs-909c://xubo/tools# vi /etc/profile
+	root@ecs-909c://xubo/tools# source /etc/profile
 	**********

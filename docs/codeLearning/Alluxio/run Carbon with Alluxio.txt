@@ -1,12 +1,138 @@
-./spark-shell --jars /huawei/xubo/git/carbondata1/assembly/target/scala-2.11/apache-carbondata-1.6.0-SNAPSHOT-bin-spark2.2.1-hadoop2.7.2.jar
-./spark-shell --jars /huawei/xubo/git/carbondata1/assembly/target/scala-2.11/apache-carbondata-1.6.0-SNAPSHOT-bin-spark2.3.2-hadoop2.7.2.jar
+## start alluxio
+	   please refer [1]
+## start spark-shell
 
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.CarbonSession._
-val carbon = SparkSession.builder().config(sc.getConf).getOrCreateCarbonSession("alluxio://localhost:19998/carbon")
+ 	./bin/spark-shell --jars /Users/xubo/Desktop/xubo/git/carbondata2/assembly/target/scala-2.11/apache-carbondata-1.6.0-SNAPSHOT-bin-spark2.2.1-hadoop2.7.2.jar,/Users/xubo/Desktop/xubo/soft/alluxio-1.8.1/client/alluxio-1.8.1-client.jar
 
+## command in spark-shell
 
-carbon.sql("CREATE TABLE IF NOT EXISTS test_table(id string,name string,city string,age Int) STORED AS carbondata")
+	import org.apache.spark.sql.SparkSession
+	import org.apache.spark.sql.CarbonSession._
+	val carbon = SparkSession.builder().config(sc.getConf).getOrCreateCarbonSession("alluxio://localhost:19998/carbon")
+	
+	
+	carbon.sql("CREATE TABLE IF NOT EXISTS test_table(id string,name string,city string,age Int) STORED AS carbondata")
+	
+	
+	carbon.sql("LOAD DATA INPATH '/Users/xubo/Desktop/xubo/git/carbondata2/integration/spark-common-test/src/test/resources/sample.csv' INTO TABLE test_table")
+	
+	carbon.sql("SELECT * FROM test_table").show()
+	
+	carbon.sql("SELECT city, avg(age), sum(age) FROM test_table GROUP BY city").show()
+	
 
-
-carbon.sql("LOAD DATA INPATH '/huawei/xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv' INTO TABLE test_table")
+## run history:
+	
+	localhost:spark xubo$ ./bin/spark-shell --jars /Users/xubo/Desktop/xubo/git/carbondata2/assembly/target/scala-2.11/apache-carbondata-1.6.0-SNAPSHOT-bin-spark2.2.1-hadoop2.7.2.jar,/Users/xubo/Desktop/xubo/soft/alluxio-1.8.1/client/alluxio-1.8.1-client.jar
+	Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+	Setting default log level to "WARN".
+	To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+	18/12/13 10:23:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+	18/12/13 10:23:01 WARN Utils: Your hostname, localhost resolves to a loopback address: 127.0.0.1; using 192.168.44.90 instead (on interface en3)
+	18/12/13 10:23:01 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+	18/12/13 10:23:02 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+	Spark context Web UI available at http://192.168.44.90:4041
+	Spark context available as 'sc' (master = local[*], app id = local-1544667782225).
+	Spark session available as 'spark'.
+	Welcome to
+	      ____              __
+	     / __/__  ___ _____/ /__
+	    _\ \/ _ \/ _ `/ __/  '_/
+	   /___/ .__/\_,_/_/ /_/\_\   version 2.2.1
+	      /_/
+	         
+	Using Scala version 2.11.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_171)
+	Type in expressions to have them evaluated.
+	Type :help for more information.
+	
+	scala> import org.apache.spark.sql.SparkSession
+	import org.apache.spark.sql.SparkSession
+	
+	scala> import org.apache.spark.sql.CarbonSession._
+	import org.apache.spark.sql.CarbonSession._
+	
+	scala> val carbon = SparkSession.builder().config(sc.getConf).getOrCreateCarbonSession("alluxio://localhost:19998/carbon")
+	18/12/13 10:23:09 WARN SparkContext: Using an existing SparkContext; some configuration may not take effect.
+	18/12/13 10:23:09 WARN CarbonProperties: The enable unsafe sort value "null" is invalid. Using the default value "true
+	18/12/13 10:23:09 WARN CarbonProperties: The enable off heap sort value "null" is invalid. Using the default value "true
+	18/12/13 10:23:09 WARN CarbonProperties: The custom block distribution value "null" is invalid. Using the default value "false
+	18/12/13 10:23:09 WARN CarbonProperties: The enable vector reader value "null" is invalid. Using the default value "true
+	18/12/13 10:23:09 WARN CarbonProperties: The carbon task distribution value "null" is invalid. Using the default value "block
+	18/12/13 10:23:09 WARN CarbonProperties: The enable auto handoff value "null" is invalid. Using the default value "true
+	18/12/13 10:23:09 WARN CarbonProperties: The specified value for property 512is invalid.
+	18/12/13 10:23:09 WARN CarbonProperties: The specified value for property carbon.sort.storage.inmemory.size.inmbis invalid. Taking the default value.512
+	18/12/13 10:23:13 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+	carbon: org.apache.spark.sql.SparkSession = org.apache.spark.sql.CarbonSession@50331591
+	
+	scala> 
+	
+	scala> 
+	
+	scala> carbon.sql("CREATE TABLE IF NOT EXISTS test_table(id string,name string,city string,age Int) STORED AS carbondata")
+	18/12/13 10:23:15 AUDIT audit: {"time":"December 13, 2018 10:23:15 AM CST","username":"xubo","opName":"CREATE TABLE","opId":"63159462826557","opStatus":"START"}
+	18/12/13 10:23:27 WARN HiveExternalCatalog: Couldn't find corresponding Hive SerDe for data source provider org.apache.spark.sql.CarbonSource. Persisting data source table `default`.`test_table` into Hive metastore in Spark SQL specific format, which is NOT compatible with Hive.
+	18/12/13 10:23:27 AUDIT audit: {"time":"December 13, 2018 10:23:27 AM CST","username":"xubo","opName":"CREATE TABLE","opId":"63159462826557","opStatus":"SUCCESS","opTime":"12758 ms","table":"default.test_table","extraInfo":{"bad_record_path":"","local_dictionary_enable":"true","external":"false","sort_columns":"id,name,city","comment":""}}
+	res0: org.apache.spark.sql.DataFrame = []
+	
+	scala> 
+	
+	scala> 
+	
+	scala> carbon.sql("LOAD DATA INPATH '//xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv' INTO TABLE test_table")
+	18/12/13 10:23:29 AUDIT audit: {"time":"December 13, 2018 10:23:29 AM CST","username":"xubo","opName":"LOAD DATA","opId":"63174334645641","opStatus":"START"}
+	18/12/13 10:23:29 ERROR CarbonLoadDataCommand: Got exception org.apache.carbondata.processing.exception.DataLoadingException: The input file does not exist: //xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv when processing data. But this command does not support undo yet, skipping the undo part.
+	18/12/13 10:23:29 AUDIT audit: {"time":"December 13, 2018 10:23:29 AM CST","username":"xubo","opName":"LOAD DATA","opId":"63174334645641","opStatus":"FAILED","opTime":"36 ms","table":"default.test_table","extraInfo":{"Exception":"org.apache.carbondata.processing.exception.DataLoadingException","Message":"The input file does not exist: //xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv"}}
+	org.apache.carbondata.processing.exception.DataLoadingException: The input file does not exist: //xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv
+	  at org.apache.spark.util.FileUtils$$anonfun$getPaths$1.apply$mcVI$sp(FileUtils.scala:80)
+	  at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)
+	  at org.apache.spark.util.FileUtils$.getPaths(FileUtils.scala:76)
+	  at org.apache.spark.sql.execution.command.management.CarbonLoadDataCommand.processData(CarbonLoadDataCommand.scala:201)
+	  at org.apache.spark.sql.execution.command.AtomicRunnableCommand$$anonfun$run$3.apply(package.scala:147)
+	  at org.apache.spark.sql.execution.command.AtomicRunnableCommand$$anonfun$run$3.apply(package.scala:144)
+	  at org.apache.spark.sql.execution.command.Auditable$class.runWithAudit(package.scala:104)
+	  at org.apache.spark.sql.execution.command.AtomicRunnableCommand.runWithAudit(package.scala:140)
+	  at org.apache.spark.sql.execution.command.AtomicRunnableCommand.run(package.scala:144)
+	  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:58)
+	  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:56)
+	  at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:67)
+	  at org.apache.spark.sql.Dataset.<init>(Dataset.scala:183)
+	  at org.apache.spark.sql.CarbonSession$$anonfun$sql$1.apply(CarbonSession.scala:90)
+	  at org.apache.spark.sql.CarbonSession$$anonfun$sql$1.apply(CarbonSession.scala:89)
+	  at org.apache.spark.sql.CarbonSession.withProfiler(CarbonSession.scala:135)
+	  at org.apache.spark.sql.CarbonSession.sql(CarbonSession.scala:87)
+	  ... 50 elided
+	
+	scala> carbon.sql("LOAD DATA INPATH '/Users/xubo/Desktop/xubo/git/carbondata2/integration/spark-common-test/src/test/resources/sample.csv' INTO TABLE test_table")
+	18/12/13 10:24:20 AUDIT audit: {"time":"December 13, 2018 10:24:20 AM CST","username":"xubo","opName":"LOAD DATA","opId":"63225205044384","opStatus":"START"}
+	18/12/13 10:24:25 WARN UnsafeIntermediateMerger: the configure spill size is 0 less than the page size 67108864,so no merge and spill in-memory pages to disk
+	18/12/13 10:24:25 WARN UnsafeMemoryManager: It is not recommended to set offheap working memory size less than 512MB, so setting default value to 512
+	18/12/13 10:24:25 WARN CarbonDataProcessorUtil: dir already exists, skip dir creation: /var/folders/lw/4y5plg0x7rq45h38m4sfxlbm0000gn/T//carbon63229953594600_0/Fact/Part0/Segment_0/0
+	18/12/13 10:24:26 AUDIT audit: {"time":"December 13, 2018 10:24:26 AM CST","username":"xubo","opName":"LOAD DATA","opId":"63225205044384","opStatus":"SUCCESS","opTime":"5614 ms","table":"default.test_table","extraInfo":{"SegmentId":"0","DataSize":"1.26KB","IndexSize":"676.0B"}}
+	res2: org.apache.spark.sql.DataFrame = []
+	
+	scala> carbon.sql("SELECT * FROM test_table").show()
+	+---+------+---------+---+
+	| id|  name|     city|age|
+	+---+------+---------+---+
+	|  1| david| shenzhen| 31|
+	|  2| eason| shenzhen| 27|
+	|  3| jarry|Bangalore| 35|
+	|  3| jarry|    wuhan| 35|
+	|  4| kunal|    Delhi| 26|
+	|  4|vishal|Bangalore| 29|
+	+---+------+---------+---+
+	
+	
+	scala> carbon.sql("SELECT city, avg(age), sum(age) FROM test_table GROUP BY city").show()
+	+---------+--------+--------+
+	|     city|avg(age)|sum(age)|
+	+---------+--------+--------+
+	|Bangalore|    32.0|      64|
+	|    wuhan|    35.0|      35|
+	|    Delhi|    26.0|      26|
+	| shenzhen|    29.0|      58|
+	+---------+--------+--------+
+	
+## reference:
+	[1] https://www.alluxio.org/docs/1.8/en/Getting-Started.html
+	

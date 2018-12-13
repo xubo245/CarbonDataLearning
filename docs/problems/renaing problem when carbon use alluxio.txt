@@ -1,66 +1,66 @@
-root@ecs-909c:/huawei/xubo/tools/spark-2.3.2-bin-hadoop2.7# ./bin/spark-shell --jars /huawei/xubo/git/carbondata1/assembly/target/scala-2.11/apache-carbondata-1.6.0-SNAPSHOT-bin-spark2.3.2-hadoop2.7.2.jar
-SLF4J: Class path contains multiple SLF4J bindings.
-SLF4J: Found binding in [jar:file:/huawei/xubo/tools/alluxio-1.8.1-hadoop-2.7/client/alluxio-1.8.1-client.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-SLF4J: Found binding in [jar:file:/huawei/xubo/tools/spark-2.3.2-bin-hadoop2.7/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
-2018-12-12 17:31:06 WARN  Utils:66 - Your hostname, ecs-909c resolves to a loopback address: 127.0.0.1; using 192.168.0.206 instead (on interface eth0)
-2018-12-12 17:31:06 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
-2018-12-12 17:31:06 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Setting default log level to "WARN".
-To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-Spark context Web UI available at http://192.168.0.206:4040
-Spark context available as 'sc' (master = local[*], app id = local-1544607073504).
-Spark session available as 'spark'.
-Welcome to
-      ____              __
-     / __/__  ___ _____/ /__
-    _\ \/ _ \/ _ `/ __/  '_/
-   /___/ .__/\_,_/_/ /_/\_\   version 2.3.2
-      /_/
-
-Using Scala version 2.11.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_161)
-Type in expressions to have them evaluated.
-Type :help for more information.
-
-scala>
-
-scala>
-
-scala> import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.SparkSession
-
-scala> import org.apache.spark.sql.CarbonSession._
-import org.apache.spark.sql.CarbonSession._
-
-scala> val carbon = SparkSession.builder().config(sc.getConf).getOrCreateCarbonSession("alluxio://localhost:19998/carbon")
-2018-12-12 17:31:25 WARN  SparkContext:66 - Using an existing SparkContext; some configuration may not take effect.
-2018-12-12 17:31:25 WARN  CarbonProperties:465 - The enable unsafe sort value "null" is invalid. Using the default value "true
-2018-12-12 17:31:25 WARN  CarbonProperties:477 - The enable off heap sort value "null" is invalid. Using the default value "true
-2018-12-12 17:31:25 WARN  CarbonProperties:438 - The custom block distribution value "null" is invalid. Using the default value "false
-2018-12-12 17:31:25 WARN  CarbonProperties:425 - The enable vector reader value "null" is invalid. Using the default value "true
-2018-12-12 17:31:25 WARN  CarbonProperties:453 - The carbon task distribution value "null" is invalid. Using the default value "block
-2018-12-12 17:31:25 WARN  CarbonProperties:556 - The enable auto handoff value "null" is invalid. Using the default value "true
-2018-12-12 17:31:25 WARN  CarbonProperties:1298 - The specified value for property 512is invalid.
-2018-12-12 17:31:25 WARN  CarbonProperties:1309 - The specified value for property carbon.sort.storage.inmemory.size.inmbis invalid. Taking the default value.512
-carbon: org.apache.spark.sql.SparkSession = org.apache.spark.sql.CarbonSession@56d5460f
-
-scala> carbon.sql("CREATE TABLE IF NOT EXISTS test_table(id string,name string,city string,age Int) STORED AS carbondata")
-2018-12-12 17:31:33 WARN  ObjectStore:6666 - Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
-2018-12-12 17:31:33 WARN  ObjectStore:568 - Failed to get database default, returning NoSuchObjectException
-2018-12-12 17:31:34 WARN  ObjectStore:568 - Failed to get database global_temp, returning NoSuchObjectException
-2018-12-12 17:31:35 AUDIT audit:72 - {"time":"December 12, 2018 5:31:35 PM CST","username":"root","opName":"CREATE TABLE","opId":"2410382203959370","opStatus":"START"}
-2018-12-12 17:31:37 AUDIT audit:93 - {"time":"December 12, 2018 5:31:37 PM CST","username":"root","opName":"CREATE TABLE","opId":"2410382203959370","opStatus":"FAILED","opTime":"2138 ms","table":"default.test_table","extraInfo":{"Exception":"org.apache.carbondata.spark.exception.ProcessMetaDataException","Message":"operation failed for default.test_table: Create table'test_table' in database 'default' failed, temporary file renaming failed, src=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema.write, dest=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema"}}
-org.apache.carbondata.spark.exception.ProcessMetaDataException: operation failed for default.test_table: Create table'test_table' in database 'default' failed, temporary file renaming failed, src=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema.write, dest=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema
-  at org.apache.spark.sql.execution.command.MetadataProcessOpeation$class.throwMetadataException(package.scala:55)
-  at org.apache.spark.sql.execution.command.MetadataCommand.throwMetadataException(package.scala:120)
-  at org.apache.spark.sql.execution.command.table.CarbonCreateTableCommand.processMetadata(CarbonCreateTableCommand.scala:179)
-  at org.apache.spark.sql.execution.command.MetadataCommand$$anonfun$run$1.apply(package.scala:122)
-  at org.apache.spark.sql.execution.command.MetadataCommand$$anonfun$run$1.apply(package.scala:122)
-  at org.apache.spark.sql.execution.command.Auditable$class.runWithAudit(package.scala:104)
-  at org.apache.spark.sql.execution.command.MetadataCommand.runWithAudit(package.scala:120)
-  at org.apache.spark.sql.execution.command.MetadataCommand.run(package.scala:122)
-  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:70)
-  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:68)
-  at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:79)
- 
+	root@ecs-909c://xubo/tools/spark-2.3.2-bin-hadoop2.7# ./bin/spark-shell --jars //xubo/git/carbondata1/assembly/target/scala-2.11/apache-carbondata-1.6.0-SNAPSHOT-bin-spark2.3.2-hadoop2.7.2.jar
+	SLF4J: Class path contains multiple SLF4J bindings.
+	SLF4J: Found binding in [jar:file://xubo/tools/alluxio-1.8.1-hadoop-2.7/client/alluxio-1.8.1-client.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: Found binding in [jar:file://xubo/tools/spark-2.3.2-bin-hadoop2.7/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+	SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+	2018-12-12 17:31:06 WARN  Utils:66 - Your hostname, ecs-909c resolves to a loopback address: 127.0.0.1; using 192.168.0.206 instead (on interface eth0)
+	2018-12-12 17:31:06 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+	2018-12-12 17:31:06 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+	Setting default log level to "WARN".
+	To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+	Spark context Web UI available at http://192.168.0.206:4040
+	Spark context available as 'sc' (master = local[*], app id = local-1544607073504).
+	Spark session available as 'spark'.
+	Welcome to
+	      ____              __
+	     / __/__  ___ _____/ /__
+	    _\ \/ _ \/ _ `/ __/  '_/
+	   /___/ .__/\_,_/_/ /_/\_\   version 2.3.2
+	      /_/
+	
+	Using Scala version 2.11.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_161)
+	Type in expressions to have them evaluated.
+	Type :help for more information.
+	
+	scala>
+	
+	scala>
+	
+	scala> import org.apache.spark.sql.SparkSession
+	import org.apache.spark.sql.SparkSession
+	
+	scala> import org.apache.spark.sql.CarbonSession._
+	import org.apache.spark.sql.CarbonSession._
+	
+	scala> val carbon = SparkSession.builder().config(sc.getConf).getOrCreateCarbonSession("alluxio://localhost:19998/carbon")
+	2018-12-12 17:31:25 WARN  SparkContext:66 - Using an existing SparkContext; some configuration may not take effect.
+	2018-12-12 17:31:25 WARN  CarbonProperties:465 - The enable unsafe sort value "null" is invalid. Using the default value "true
+	2018-12-12 17:31:25 WARN  CarbonProperties:477 - The enable off heap sort value "null" is invalid. Using the default value "true
+	2018-12-12 17:31:25 WARN  CarbonProperties:438 - The custom block distribution value "null" is invalid. Using the default value "false
+	2018-12-12 17:31:25 WARN  CarbonProperties:425 - The enable vector reader value "null" is invalid. Using the default value "true
+	2018-12-12 17:31:25 WARN  CarbonProperties:453 - The carbon task distribution value "null" is invalid. Using the default value "block
+	2018-12-12 17:31:25 WARN  CarbonProperties:556 - The enable auto handoff value "null" is invalid. Using the default value "true
+	2018-12-12 17:31:25 WARN  CarbonProperties:1298 - The specified value for property 512is invalid.
+	2018-12-12 17:31:25 WARN  CarbonProperties:1309 - The specified value for property carbon.sort.storage.inmemory.size.inmbis invalid. Taking the default value.512
+	carbon: org.apache.spark.sql.SparkSession = org.apache.spark.sql.CarbonSession@56d5460f
+	
+	scala> carbon.sql("CREATE TABLE IF NOT EXISTS test_table(id string,name string,city string,age Int) STORED AS carbondata")
+	2018-12-12 17:31:33 WARN  ObjectStore:6666 - Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+	2018-12-12 17:31:33 WARN  ObjectStore:568 - Failed to get database default, returning NoSuchObjectException
+	2018-12-12 17:31:34 WARN  ObjectStore:568 - Failed to get database global_temp, returning NoSuchObjectException
+	2018-12-12 17:31:35 AUDIT audit:72 - {"time":"December 12, 2018 5:31:35 PM CST","username":"root","opName":"CREATE TABLE","opId":"2410382203959370","opStatus":"START"}
+	2018-12-12 17:31:37 AUDIT audit:93 - {"time":"December 12, 2018 5:31:37 PM CST","username":"root","opName":"CREATE TABLE","opId":"2410382203959370","opStatus":"FAILED","opTime":"2138 ms","table":"default.test_table","extraInfo":{"Exception":"org.apache.carbondata.spark.exception.ProcessMetaDataException","Message":"operation failed for default.test_table: Create table'test_table' in database 'default' failed, temporary file renaming failed, src=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema.write, dest=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema"}}
+	org.apache.carbondata.spark.exception.ProcessMetaDataException: operation failed for default.test_table: Create table'test_table' in database 'default' failed, temporary file renaming failed, src=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema.write, dest=alluxio://localhost:19998/carbon/default/test_table/Metadata/schema
+	  at org.apache.spark.sql.execution.command.MetadataProcessOpeation$class.throwMetadataException(package.scala:55)
+	  at org.apache.spark.sql.execution.command.MetadataCommand.throwMetadataException(package.scala:120)
+	  at org.apache.spark.sql.execution.command.table.CarbonCreateTableCommand.processMetadata(CarbonCreateTableCommand.scala:179)
+	  at org.apache.spark.sql.execution.command.MetadataCommand$$anonfun$run$1.apply(package.scala:122)
+	  at org.apache.spark.sql.execution.command.MetadataCommand$$anonfun$run$1.apply(package.scala:122)
+	  at org.apache.spark.sql.execution.command.Auditable$class.runWithAudit(package.scala:104)
+	  at org.apache.spark.sql.execution.command.MetadataCommand.runWithAudit(package.scala:120)
+	  at org.apache.spark.sql.execution.command.MetadataCommand.run(package.scala:122)
+	  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:70)
+	  at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:68)
+	  at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:79)
+	 
