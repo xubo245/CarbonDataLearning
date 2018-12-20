@@ -47,14 +47,14 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 		 - [http://www.itdks.com/dakalive/detail/7727](http://www.itdks.com/dakalive/detail/7727)
 	 - Slides：
 		 - [Apache CarbonData成长故事-PPT.pdf](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/China_Open_Source_Conference_ShangHai_2017_11_18/Apache%20CarbonData成长故事-PPT.pdf)
-- 2.8 华为云技术私享会杭州站：华为云大数据存储技术创新-CarbonData解密及实践,2018-04-22 15:40-16:20: 
+- 2.7 华为云技术私享会杭州站：华为云大数据存储技术创新-CarbonData解密及实践,2018-04-22 15:40-16:20: 
 	 - Videos：
 		 - [https://bbs.huaweicloud.com/videos/21e577defdbb4b5997e464af3bf447be](https://bbs.huaweicloud.com/videos/21e577defdbb4b5997e464af3bf447be)
 		 - [http://www.itdks.com/dakalive/detail/11395](http://www.itdks.com/dakalive/detail/11395)
 		 - [slides](https://bbs.huaweicloud.com/forum/thread-8444-1-1.html)
 	 -  Slides:
 		 - [华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Huawei_Cloud_Technology_Private_Meeting_Hangzhou_2018_04_22/03%20华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践.pdf.pdf)
-- 2.9 Spark summit EAST 2017：Apache Carbondata: An Indexed Columnar File Format for Interactive Query by Jacky Li/Jihong Ma: 
+- 2.8 Spark summit EAST 2017：Apache Carbondata: An Indexed Columnar File Format for Interactive Query by Jacky Li/Jihong Ma: 
 	 - Videos:
 		 - [https://v.qq.com/x/page/z0800eq6fhx.html](https://v.qq.com/x/page/z0800eq6fhx.html)
 		 - [https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql](https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql)
@@ -62,11 +62,11 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 	- Slides (Spark Summit East 2017-Apache CarbonData (8th Feb,2017)):
 	 	- [Apache CWiki Link](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=68714802) 
 
-- 2.10 O'Reilly Open Source Convention: Introducing Apache CarbonData : A new hadoop-native file format for faster data analysis, OSCON, May 16 - 19, 2016: 
+- 2.9 O'Reilly Open Source Convention: Introducing Apache CarbonData : A new hadoop-native file format for faster data analysis, OSCON, May 16 - 19, 2016: 
 	 - Videos:
 		 - [https://v.qq.com/x/page/j0800dgsdd8.html](https://v.qq.com/x/page/j0800dgsdd8.html)
 		 - [https://www.youtube.com/watch?v=VEckmJuU47g](https://www.youtube.com/watch?v=VEckmJuU47g)
-- 2.11 Apache Carbondata: An indexed columnar file format for interactive query with Spark SQL: 
+- 2.10 Apache Carbondata: An indexed columnar file format for interactive query with Spark SQL: 
 	 - Videos:
 		 - [https://v.qq.com/x/page/j0800u2ulaj.html](https://v.qq.com/x/page/j0800u2ulaj.html)
 		 - [https://www.youtube.com/watch?v=yya8-GzRW5M](https://www.youtube.com/watch?v=yya8-GzRW5M)
@@ -98,7 +98,9 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
  - 5.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
  - 5.2 [https://github.com/QiangCai/carbondata_guide](https://github.com/QiangCai/carbondata_guide)
  - 5.3 [Apache CarbonData 中文文档 - 过往记忆](https://www.iteblog.com/archives/tag/carbondata/)
- 
-## 6.更多资料：
-  - 6.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
-  - 6.2 [https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData Learning Materials.md](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData%20Learning%20Materials.md)
+
+## 6.WeChat group(微信群)
+   Please add WeChat ID：xu601450868, I will add you into CarbonData WeChat group
+## 7.更多资料：
+  - 7.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
+  - 7.2 [https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData Learning Materials.md](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData%20Learning%20Materials.md)
