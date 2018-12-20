@@ -7,9 +7,9 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 
 ## 2.Activity (Video and ppt)
  - 2.1 Apache CarbonData ShenZhen Meetup PPT (1st Dec,2018)
- 	- Video
+ 	- Videos:
  		- 视频回顾：[http://zhibo.huaweicloud.com/watch/2590022](http://zhibo.huaweicloud.com/watch/2590022)
- 	- News
+ 	- News:
  		- [https://www.oschina.net/question/3802184_2290292](https://www.oschina.net/question/3802184_2290292)
  	- Slides 
 	 	- [What's New in Apache Spark 2.4](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/What's%20New%20in%20Apache%20Spark%202.4.pdf)
@@ -18,7 +18,7 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 	 	- [CarbonData 的实践与调优](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/CarbonData_meetup_shenzhen_20181201_v1.1.2.pdf)
 	 	- [Apache CarbonData & Spark Meetup 主持稿](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_ShenZhen_2018_12_01/轮播PPT（Apache%20CarbonData%20%26%20Spark%20Meetup）.pptx)
  - 2.2 2018实时大数据Meetup——Spark、Flink、CarbonData的技术与实践,2018-09-08 09:30 - 12:20: 
-	 - Video
+	 - Videos:
 		 - [http://www.itdks.com/eventlist/detail/2599](http://www.itdks.com/eventlist/detail/2599). 
 	 - Slides (Realtime BigData BeiJing Meetup(8th Sep,2018)): 
 	 	- [Easy, Scalable, Fault-tolerant stream processing with Structured Streaming-TD](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Realtime_BigData_Meetup_BeiJing_2018_09_08/Easy%2C%20Scalable%2C%20Fault-tolerant%20stream%20processing%20with%20Structured%20Streaming-TD.pdf)
@@ -35,41 +35,39 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 - 2.4 Apache CarbonData Beijing Meetup PPT (29th Oct, 2016)
  	- Slides
 	 	- [ CarbonData_An Indexed Columnar File Format For Interactive Query](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Apache_CarbonData_Meetup_BeiJing_2016_10_29/%20CarbonData_An%20Indexed%20Columnar%20File%20Format%20For%20Interactive%20Query.pdf) 
- - 2.3 2018中国开源年会: Open Sourcing CarbonData, a distributed global co-operation, development and success story, 2018-10-20 14:10-14:50( COSCon'18): 
-	 - Video
+- 2.5 2018中国开源年会: Open Sourcing CarbonData, a distributed global co-operation, development and success story, 2018-10-20 14:10-14:50( COSCon'18): 
+	 - Videos:
 		 - [https://v.qq.com/x/page/c0797395o2n.html](https://v.qq.com/x/page/c0797395o2n.html)
 		 - 	[https://www.itdks.com/dakalive/detail/17003](https://www.itdks.com/dakalive/detail/17003).  
 	 -  Slides (China Open Source Conference ShenZhen(20 Oct. 2018)):
  		- [Apahce_CarbonData_Open_Source_Journey_of_Becoming_Top_Level_Project_Raghunandan_S](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/China_Open_Source_Conference_ShenZhen_2018_10_20/2-Raghunandan_S-Apahce_CarbonData_Open_Source_Journey_of_Becoming_Top_Level_Project.pdf)
 
- - 2.4 2017中国开源年会: Apache CarbonData成长故事, 2017-11-18 14:00-14:30: 
+- 2.6 2017中国开源年会: Apache CarbonData成长故事, 2017-11-18 14:00-14:30: 
 	 - [http://www.itdks.com/dakalive/detail/7727](http://www.itdks.com/dakalive/detail/7727)
- - 2.5 华为云技术私享会杭州站：华为云大数据存储技术创新-CarbonData解密及实践,2018-04-22 15:40-16:20: 
+- 2.8 华为云技术私享会杭州站：华为云大数据存储技术创新-CarbonData解密及实践,2018-04-22 15:40-16:20: 
 	 - Videos：
 	 - [https://bbs.huaweicloud.com/videos/21e577defdbb4b5997e464af3bf447be](https://bbs.huaweicloud.com/videos/21e577defdbb4b5997e464af3bf447be)
 	 - [http://www.itdks.com/dakalive/detail/11395](http://www.itdks.com/dakalive/detail/11395)
 	 - [slides](https://bbs.huaweicloud.com/forum/thread-8444-1-1.html)
-	 -  - 4.7 
+	 -  Slides:
 	 - [华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Huawei_Cloud_Technology_Private_Meeting_Hangzhou_2018_04_22/03%20华为云技术私享会-华为云大数据存储技术创新-CarbonData解密及实践.pdf.pdf)
- - 2.5 Spark summit EAST 2017：Apache Carbondata: An Indexed Columnar File Format for Interactive Query by Jacky Li/Jihong Ma: 
-	 - [https://v.qq.com/x/page/z0800eq6fhx.html](https://v.qq.com/x/page/z0800eq6fhx.html)
-	 - [https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql](https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql)
-	 - [https://www.youtube.com/watch?v=lhsAg2H_GXc](https://www.youtube.com/watch?v=lhsAg2H_GXc).  
- - 2.6 Introducing Apache CarbonData : A new hadoop-native file format for faster data analysis, O'Reilly Open Source Convention: OSCON, May 16 - 19, 2016: 
-	 - [https://v.qq.com/x/page/j0800dgsdd8.html](https://v.qq.com/x/page/j0800dgsdd8.html)
-	 - [https://www.youtube.com/watch?v=VEckmJuU47g](https://www.youtube.com/watch?v=VEckmJuU47g)
- - 2.7 Apache Carbondata: An indexed columnar file format for interactive query with Spark SQL: 
-	 - [https://v.qq.com/x/page/j0800u2ulaj.html](https://v.qq.com/x/page/j0800u2ulaj.html)
-	 - [https://www.youtube.com/watch?v=yya8-GzRW5M](https://www.youtube.com/watch?v=yya8-GzRW5M)
- 
- ## 4.Slides
+- 2.9 Spark summit EAST 2017：Apache Carbondata: An Indexed Columnar File Format for Interactive Query by Jacky Li/Jihong Ma: 
+	 - Videos:
+		 - [https://v.qq.com/x/page/z0800eq6fhx.html](https://v.qq.com/x/page/z0800eq6fhx.html)
+		 - [https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql](https://databricks.com/session/apache-carbondata-an-indexed-columnar-file-format-for-interactive-query-with-spark-sql)
+		 - [https://www.youtube.com/watch?v=lhsAg2H_GXc](https://www.youtube.com/watch?v=lhsAg2H_GXc).  
+	- Slides (Spark Summit East 2017-Apache CarbonData (8th Feb,2017)):
+	 	- [Apache CWiki Link](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=68714802) 
 
+ - 2.10 O'Reilly Open Source Convention: Introducing Apache CarbonData : A new hadoop-native file format for faster data analysis, OSCON, May 16 - 19, 2016: 
+	 - Videos:
+		 - [https://v.qq.com/x/page/j0800dgsdd8.html](https://v.qq.com/x/page/j0800dgsdd8.html)
+		 - [https://www.youtube.com/watch?v=VEckmJuU47g](https://www.youtube.com/watch?v=VEckmJuU47g)
+- 2.11 Apache Carbondata: An indexed columnar file format for interactive query with Spark SQL: 
+	 - Videos:
+		 - [https://v.qq.com/x/page/j0800u2ulaj.html](https://v.qq.com/x/page/j0800u2ulaj.html)
+		 - [https://www.youtube.com/watch?v=yya8-GzRW5M](https://www.youtube.com/watch?v=yya8-GzRW5M)
 
-
- - 4.6 Spark Summit East 2017-Apache CarbonData (8th Feb,2017)
- 	- [Apache CWiki Link](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=68714802) 
-
- 
  详细请见：[https://github.com/xubo245/CarbonDataLearning/tree/master/docs/slides/](https://github.com/xubo245/CarbonDataLearning/tree/master/docs/slides/)
  
 ## 3.Documentation
@@ -89,6 +87,8 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
 	 - [ AI前线 WeChat Link](https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247486473&idx=1&sn=e82339bfa2812fefa387eef0c931c19f&chksm=fbe9b5c6cc9e3cd05b9efa3eccb883f3956335bc3a16181b70a2f7bd53dcaefcfe70b00acd1e&scene=27#wechat_redirect)
  - 3.7 Apache CarbonData:大数据生态一种新的高性能数据格式: 
 	 - [https://my.oschina.net/u/3156280/blog/808506](https://my.oschina.net/u/3156280/blog/808506)
+
+## 4. Performance report
 
 
 ## 5.Refernce
