@@ -1,0 +1,13 @@
+create external table lineitem2 STORED BY 'carbondata' location 's3a://newcarbonstore/default/lineitem_batch_dict';
+select count(*) from lineitem2;
+select count(l_shipdate) from lineitem2;
+
+
+select count(distinct l_shipdate),count(distinct l_shipinstruct),count(distinct l_returnflag),count(distinct l_receiptdate),count(distinct l_orderkey),count(distinct l_partkey),count(distinct l_suppkey),count(distinct l_linenumber),count(distinct l_quantity),count(distinct l_extendedprice),count(distinct l_discount),count(distinct l_tax),count(distinct l_linestatus),count(distinct l_commitdate),count(distinct l_comment),count(distinct l_shipmode) from lineitem; 
+
+select count(distinct l_orderkey) from lineitem;
+
+
+group by 
+l_shipdate,l_shipinstruct, l_returnflag, l_receiptdate, l_orderkey, l_partkey, l_suppkey, l_linenumber, l_quantity, l_extendedprice, l_discount, l_tax, l_linestatus, l_commitdate, l_comment, l_shipmode;
+
