@@ -568,6 +568,427 @@ Splits: 19 total, 19 done (100.00%)
 0:40 [30M rows, 264MB] [742K rows/s, 6.52MB/s]
 
 
+presto:default> select count(*) from orders;
+  _col0
+---------
+ 7500000
+(1 row)
+
+Query 20181222_103716_00007_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:04 [7.5M rows, 0B] [2.06M rows/s, 0B/s]
+
+0: jdbc:hive2://127.0.0.1:10000> LOAD DATA LOCAL INPATH 's3a://carbondata/TPCH/size5G/orders100.tbl' into table ORDERS OPTIONS('DELIMITER'='|','HEADER'='false');
+Error: org.apache.carbondata.processing.exception.DataLoadingException: The input file does not exist: s3a://carbondata/TPCH/size5G/orders100.tbl (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> LOAD DATA LOCAL INPATH 's3a://carbondata/TPCH/size5G/orders100.tbl' into table ORDERS OPTIONS('DELIMITER'='|','HEADER'='false');
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (30.34 seconds)
+
+presto:default> select * from orders limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |                                 o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+--------------------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          2 |    390010 | O             | 75004.81     | 1996-12-01  | 1-URGENT        | Clerk#000004396 |              0 |  foxes. pending accounts at the pending, silent a
+          3 |    616570 | F             | 228570.52    | 1993-10-14  | 5-LOW           | Clerk#000004772 |              0 | sly final accounts boost. carefully regular ideas
+          4 |    683881 | O             | 35015.50     | 1995-10-11  | 5-LOW           | Clerk#000000617 |              0 | sits. slyly regular warthogs cajole. regular, reg
+          5 |    222424 | F             | 151840.11    | 1994-07-30  | 5-LOW           | Clerk#000004624 |              0 | quickly. bold deposits sleep slyly. packages use
+          6 |    278111 | F             | 41236.87     | 1992-02-21  | 4-NOT SPECIFIED | Clerk#000000290 |              0 | ggle. special, final requests are against the fur
+          7 |    195673 | O             | 250593.17    | 1996-01-10  | 2-HIGH          | Clerk#000002349 |              0 | ly special requests
+         32 |    650285 | O             | 152975.54    | 1995-07-16  | 2-HIGH          | Clerk#000003079 |              0 | ise blithely bold, regular requests. quickly unus
+         33 |    334790 | F             | 170291.54    | 1993-10-27  | 3-MEDIUM        | Clerk#000002043 |              0 | uriously. furiously final request
+         34 |    305002 | O             | 56450.43     | 1998-07-21  | 3-MEDIUM        | Clerk#000001114 |              0 | ly final packages. fluffily final deposits wake b
+(10 rows)
+
+Query 20181222_104002_00008_b76je, FINISHED, 1 node
+Splits: 19 total, 18 done (94.74%)
+0:11 [100 rows, 12KB] [8 rows/s, 1.05KB/s]
+
+
+0: jdbc:hive2://127.0.0.1:10000> LOAD DATA LOCAL INPATH 's3a://carbondata/TPCH/size5G/orders100.tbl' into table ORDERS OPTIONS('DELIMITER'='|','HEADER'='false');
+Error: org.apache.carbondata.processing.exception.DataLoadingException: The input file does not exist: s3a://carbondata/TPCH/size5G/orders100.tbl (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> LOAD DATA LOCAL INPATH 's3a://carbondata/TPCH/size5G/orders100.tbl' into table ORDERS OPTIONS('DELIMITER'='|','HEADER'='false');
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (30.34 seconds)
+
+
+presto:default> select * from orders where o_custkey=184501 limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |             o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+    2224802 |    184501 | F             | 207888.51    | 1993-01-14  | 1-URGENT        | Clerk#000004132 |              0 | sly final requests. pending, regular ideas among
+    3489861 |    184501 | F             | 55378.68     | 1993-10-15  | 3-MEDIUM        | Clerk#000000939 |              0 | to the carefully ironic deposits. carefu
+    5525574 |    184501 | O             | 169199.75    | 1998-02-16  | 4-NOT SPECIFIED | Clerk#000002121 |              0 | cial pinto beans wake. slyly even warthogs use. b
+   11805830 |    184501 | F             | 58148.70     | 1994-11-11  | 2-HIGH          | Clerk#000002843 |              0 | ccounts doubt blithely. requests hag
+   12566784 |    184501 | O             | 18311.43     | 1996-04-13  | 1-URGENT        | Clerk#000001143 |              0 |  pains after the quickly ironic foxes affix furio
+   13045318 |    184501 | O             | 58766.64     | 1997-02-18  | 1-URGENT        | Clerk#000000116 |              0 | ly among the bold deposits. ideas across the furi
+   13750470 |    184501 | O             | 141101.48    | 1995-10-05  | 1-URGENT        | Clerk#000000884 |              0 | ly about the carefully ironic deposits. pending,
+   13911395 |    184501 | O             | 314319.16    | 1996-10-09  | 3-MEDIUM        | Clerk#000003827 |              0 | o beans cajole. caref
+(10 rows)
+
+Query 20181222_104042_00009_b76je, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+1:11 [7.5M rows, 83.8MB] [105K rows/s, 1.17MB/s]
+
+presto:default> select count(*) from orders;
+  _col0
+---------
+ 7500100
+(1 row)
+
+Query 20181222_104203_00010_b76je, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:04 [7.5M rows, 0B] [1.89M rows/s, 0B/s]
+
+
+
+
+0: jdbc:hive2://127.0.0.1:10000> show segments for table orders;
++--------------------+----------+--------------------------+--------------------------+------------+--------------+------------+-------------+--+
+| SegmentSequenceId  |  Status  |     Load Start Time      |      Load End Time       | Merged To  | File Format  | Data Size  | Index Size  |
++--------------------+----------+--------------------------+--------------------------+------------+--------------+------------+-------------+--+
+| 1                  | Success  | 2018-12-22 18:39:34.606  | 2018-12-22 18:39:50.855  | NA         | COLUMNAR_V3  | 7.86KB     | 1.42KB      |
+| 0                  | Success  | 2018-12-22 12:15:04.837  | 2018-12-22 12:21:12.171  | NA         | COLUMNAR_V3  | 267.12MB   | 2.97KB      |
++--------------------+----------+--------------------------+--------------------------+------------+--------------+------------+-------------+--+
+2 rows selected (0.549 seconds)
+0: jdbc:hive2://127.0.0.1:10000> delete from table or where segment.id in (1)
+or      order
+0: jdbc:hive2://127.0.0.1:10000> delete from table orders where segment.id in (1)
+0: jdbc:hive2://127.0.0.1:10000> ;
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (9.471 seconds)
+
+
+
+presto:default> select count(*) from orders;
+  _col0
+---------
+ 7500000
+(1 row)
+
+Query 20181222_105038_00013_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:04 [7.5M rows, 0B] [2.12M rows/s, 0B/s]
+
+presto:default> select * from orders where o_orderkey=1 limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |             o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+(1 row)
+
+Query 20181222_105100_00014_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:10 [32K rows, 0B] [3.05K rows/s, 0B/s]
+
+
+0: jdbc:hive2://127.0.0.1:10000> ;
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (9.471 seconds)
+0: jdbc:hive2://127.0.0.1:10000> LOAD DATA LOCAL INPATH 's3a://carbondata/TPCH/size5G/orders100.tbl' into table ORDERS OPTIONS('DELIMITER'='|','HEADER'='false');
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (38.741 seconds)
+0: jdbc:hive2://127.0.0.1:10000> LOAD DATA LOCAL INPATH 's3a://carbondata/TPCH/size5G/orders100.tbl' into table ORDERS OPTIONS('DELIMITER'='|','HEADER'='false');
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (53.081 seconds)
+0: jdbc:hive2://127.0.0.1:10000> LOAD DATA LOCAL INPATH 's3a://carbondata/TPCH/size5G/orders100.tbl' into table ORDERS OPTIONS('DELIMITER'='|','HEADER'='false');
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (53.99 seconds)
+0: jdbc:hive2://127.0.0.1:10000> alter table orders compact 'major'
+0: jdbc:hive2://127.0.0.1:10000> ;
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (315.354 seconds)
+
+
+
+presto:default> select * from orders where o_orderkey=1 limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |             o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+(4 rows)
+
+Query 20181222_105450_00015_b76je, FINISHED, 1 node
+Splits: 21 total, 21 done (100.00%)
+0:17 [32.3K rows, 0B] [1.94K rows/s, 0B/s]
+
+presto:default> select count(*) from orders;
+  _col0
+---------
+ 7500300
+(1 row)
+
+Query 20181222_105511_00016_b76je, FINISHED, 1 node
+Splits: 21 total, 21 done (100.00%)
+0:08 [7.5M rows, 0B] [900K rows/s, 0B/s]
+
+presto:default> select count(*) from orders;
+  _col0
+---------
+ 7500300
+(1 row)
+
+Query 20181222_110458_00017_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:08 [7.5M rows, 0B] [891K rows/s, 0B/s]
+
+presto:default> select * from orders where o_orderkey=1 limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |             o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+(4 rows)
+
+Query 20181222_110521_00018_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:11 [32K rows, 0B] [2.94K rows/s, 0B/s]
+
+presto:default>
+
+
+0: jdbc:hive2://127.0.0.1:10000> show segments for table orders;
++--------------------+--------------------+--------------------------+--------------------------+------------+--------------+------------+-------------+--+
+| SegmentSequenceId  |       Status       |     Load Start Time      |      Load End Time       | Merged To  | File Format  | Data Size  | Index Size  |
++--------------------+--------------------+--------------------------+--------------------------+------------+--------------+------------+-------------+--+
+| 4                  | Compacted          | 2018-12-22 18:53:52.069  | 2018-12-22 18:54:28.587  | 0.1        | COLUMNAR_V3  | 7.86KB     | 1.42KB      |
+| 3                  | Compacted          | 2018-12-22 18:52:54.579  | 2018-12-22 18:53:25.436  | 0.1        | COLUMNAR_V3  | 7.86KB     | 1.42KB      |
+| 2                  | Compacted          | 2018-12-22 18:51:51.785  | 2018-12-22 18:52:12.247  | 0.1        | COLUMNAR_V3  | 7.86KB     | 1.42KB      |
+| 1                  | Marked for Delete  | 2018-12-22 18:39:34.606  | 2018-12-22 18:39:50.855  | NA         | COLUMNAR_V3  | 7.86KB     | 1.42KB      |
+| 0.1                | Success            | 2018-12-22 18:55:30.78   | 2018-12-22 19:00:28.463  | NA         | COLUMNAR_V3  | 267.13MB   | 2.99KB      |
+| 0                  | Compacted          | 2018-12-22 12:15:04.837  | 2018-12-22 12:21:12.171  | 0.1        | COLUMNAR_V3  | 267.12MB   | 2.97KB      |
++--------------------+--------------------+--------------------------+--------------------------+------------+--------------+------------+-------------+--+
+6 rows selected (0.904 seconds)
+0: jdbc:hive2://127.0.0.1:10000>
+
+
+
+
+
+UPDATE orders SET (o_totalprice) = (o_totalprice + 100) WHERE  o_orderkey= 1;
+
+0: jdbc:hive2://127.0.0.1:10000> UPDATE orders SET (o_totalprice) = (o_totalprice + 100) WHERE  o_orderkey= 1;
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (59.533 seconds)
+
+
+presto:default> select * from orders where o_orderkey=1 limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |             o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+------------------------------------
+          1 |    184501 | O             | 203110.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203110.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203110.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          1 |    184501 | O             | 203110.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+(4 rows)
+
+Query 20181222_110742_00019_b76je, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:07 [32K rows, 0B] [4.79K rows/s, 0B/s]
+
+
+DELETE FROM orders WHERE o_orderkey  = 1;
+
+
+presto:default> select * from orders where o_orderkey=1 limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority | o_clerk | o_shippriority | o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+---------+----------------+-----------
+(0 rows)
+
+Query 20181222_110853_00020_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:06 [32K rows, 0B] [5.14K rows/s, 0B/s]
+
+presto:default> select count(*) from orders;
+  _col0
+---------
+ 7500296
+(1 row)
+
+Query 20181222_110919_00021_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:04 [7.5M rows, 0B] [1.92M rows/s, 0B/s]
+
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE orders RENAME TO orders2
+0: jdbc:hive2://127.0.0.1:10000> ;
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (5.755 seconds)
+0: jdbc:hive2://127.0.0.1:10000> show tables;
++-----------+---------------+--------------+--+
+| database  |   tableName   | isTemporary  |
++-----------+---------------+--------------+--+
+| default   | carbon        | false        |
+| default   | customer      | false        |
+| default   | lineitem      | false        |
+| default   | lineitem1114  | false        |
+| default   | lineitem2     | false        |
+| default   | orders2       | false        |
++-----------+---------------+--------------+--+
+6 rows selected (0.107 seconds)
+0: jdbc:hive2://127.0.0.1:10000>
+
+presto:default> show tables;
+        Table
+---------------------
+ ae_event_carbon_one
+ carbon
+ customer
+ lineitem
+ lineitem2
+ orders
+ sdk
+ xubo1
+ xubo5
+(9 rows)
+
+
+presto:default> select count(*) from orders;
+  _col0
+---------
+ 7500296
+(1 row)
+
+Query 20181222_111059_00024_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:04 [7.5M rows, 0B] [1.8M rows/s, 0B/s]
+
+presto:default> select count(*) from orders2;
+Query 20181222_111105_00025_b76je failed: Table 'default.orders2' not found
+
+
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon ADD COLUMNS (a1 INT, b1 STRING);
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (8.267 seconds)
+0: jdbc:hive2://127.0.0.1:10000> desc
+desc         describe     descriptor
+0: jdbc:hive2://127.0.0.1:10000> descri
+describe     descriptor
+0: jdbc:hive2://127.0.0.1:10000> descri
+describe     descriptor
+0: jdbc:hive2://127.0.0.1:10000> descri
+describe     descriptor
+0: jdbc:hive2://127.0.0.1:10000> describe carbon;
++-----------+------------+----------+--+
+| col_name  | data_type  | comment  |
++-----------+------------+----------+--+
+| name      | string     | NULL     |
+| age       | int        | NULL     |
+| a1        | int        | NULL     |
+| b1        | string     | NULL     |
++-----------+------------+----------+--+
+4 rows selected (0.06 seconds)
+0: jdbc:hive2://127.0.0.1:10000> select * from carbon;
++--------+------+-------+-------+--+
+|  name  | age  |  a1   |  b1   |
++--------+------+-------+-------+--+
+| Bob    | 27   | NULL  | NULL  |
+| david  | 30   | NULL  | NULL  |
++--------+------+-------+-------+--+
+2 rows selected (11.476 seconds)
+
+presto:default> select * from carbon;
+Query is gone (server restarted?)
+
+
+0: jdbc:hive2://127.0.0.1:10000>  create table carbon(name string, age int) stored as carbondata;
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (2.942 seconds)
+0: jdbc:hive2://127.0.0.1:10000> insert into carbon values('Bob',27);
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (44.162 seconds)
+0: jdbc:hive2://127.0.0.1:10000> insert into carbon values('David',33);
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (27.211 seconds)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon ADD COLUMNS (a1 INT, b1 STRING);
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (8.834 seconds)
+0: jdbc:hive2://127.0.0.1:10000> select * from carbon;
++--------+------+-------+-------+--+
+|  name  | age  |  a1   |  b1   |
++--------+------+-------+-------+--+
+| Bob    | 27   | NULL  | NULL  |
+| David  | 33   | NULL  | NULL  |
++--------+------+-------+-------+--+
+2 rows selected (6.417 seconds)
+
+
+
+
+presto:default> select * from carbon;
+ name  | age
+-------+-----
+ David |  33
+ Bob   |  27
+(2 rows)
+
+Query 20181222_112153_00004_i92vm, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:04 [2 rows, 36B] [0 rows/s, 8B/s]
+
+presto:default> select * from carbon;
+Query is gone (server restarted?)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
