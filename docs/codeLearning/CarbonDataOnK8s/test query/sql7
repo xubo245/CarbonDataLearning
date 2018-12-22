@@ -1,21 +1,21 @@
-create external table lineitem STORED BY 'carbondata' location 's3a://newcarbonstore/default/lineitem_batch';
-
-select 
- count(distinct l_shipdate      ) as  l_shipdate       ,
- count(distinct l_shipinstruct  ) as  l_shipinstruct   ,
- count(distinct l_returnflag    ) as  l_returnflag     ,
- count(distinct l_receiptdate   ) as  l_receiptdate    ,
- count(distinct l_orderkey      ) as  l_orderkey       ,
- count(distinct l_partkey       ) as  l_partkey        ,
- count(distinct l_suppkey       ) as  l_suppkey        ,
- count(distinct l_linenumber    ) as  l_linenumber     ,
- count(distinct l_quantity      ) as  l_quantity       ,
- count(distinct l_extendedprice ) as  l_extendedprice  ,
- count(distinct l_discount      ) as  l_discount       ,
- count(distinct l_tax           ) as  l_tax            ,
- count(distinct l_linestatus    ) as  l_linestatus     ,
- count(distinct l_commitdate    ) as  l_commitdate     ,
- count(distinct l_comment       ) as  l_comment        ,
- count(distinct l_shipmode      ) as  l_shipmode       ,
- count(*) as total
- from (select * from lineitem limit 10000) t1
+	create external table lineitem STORED BY 'carbondata' location 's3a://newcarbonstore/default/lineitem_batch';
+	
+	select 
+	 count(distinct l_shipdate      ) as  l_shipdate       ,
+	 count(distinct l_shipinstruct  ) as  l_shipinstruct   ,
+	 count(distinct l_returnflag    ) as  l_returnflag     ,
+	 count(distinct l_receiptdate   ) as  l_receiptdate    ,
+	 count(distinct l_orderkey      ) as  l_orderkey       ,
+	 count(distinct l_partkey       ) as  l_partkey        ,
+	 count(distinct l_suppkey       ) as  l_suppkey        ,
+	 count(distinct l_linenumber    ) as  l_linenumber     ,
+	 count(distinct l_quantity      ) as  l_quantity       ,
+	 count(distinct l_extendedprice ) as  l_extendedprice  ,
+	 count(distinct l_discount      ) as  l_discount       ,
+	 count(distinct l_tax           ) as  l_tax            ,
+	 count(distinct l_linestatus    ) as  l_linestatus     ,
+	 count(distinct l_commitdate    ) as  l_commitdate     ,
+	 count(distinct l_comment       ) as  l_comment        ,
+	 count(distinct l_shipmode      ) as  l_shipmode       ,
+	 count(*) as total
+	 from (select * from lineitem limit 10000) t1

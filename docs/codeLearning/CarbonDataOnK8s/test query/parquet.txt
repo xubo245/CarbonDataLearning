@@ -1,44 +1,44 @@
-create table part_parquet2 using parquet location 's3a://newcarbonstore/default/part_parquet' as select * from part;
-create table customer_parquet2 using parquet location 's3a://newcarbonstore/default/customer_parquet' as select * from customer;
-create table orders_parquet2 using parquet location 's3a://newcarbonstore/default/orders_parquet' as select * from orders;
-
-
-create table lineitem_parquet using parquet location 's3a://parquet/lineitem_parquet';
-select count(*) from lineitem;
-create datamap datamap11p using 'mv' as select count(l_shipdate),count(l_shipinstruct),count(l_orderkey),sum(l_quantity), avg(l_discount) from lineitem_parquet;
-refresh datamap datamap11p;
-create datamap datamap12p using 'mv' as select l_shipmode,count(l_shipinstruct) from lineitem_parquet group by l_shipmode;
-refresh datamap datamap12p;
-create datamap datamap13p using 'mv' as select l_quantity,count(l_shipinstruct) from lineitem_parquet group by l_quantity;
-refresh datamap datamap13p;
-create datamap datamap14p using 'mv' as select count(l_shipinstruct) from lineitem_parquet group by l_orderkey,l_receiptdate ;
-refresh datamap datamap14p;
-create datamap datamap15p using 'mv' as select count(l_receiptdate) from lineitem_parquet group by l_shipdate;
-refresh datamap datamap15p;
-create datamap datamap16p using 'mv' as select count(l_shipdate) from lineitem_parquet group by  l_receiptdate;
-refresh datamap datamap16p;
-create datamap datamap17p using 'mv' as select l_receiptdate,l_shipinstruct, sum(l_extendedprice) from lineitem_parquet group by l_receiptdate,l_shipinstruct;
-refresh datamap datamap17p;
-create datamap datamap18p using 'mv' as select l_shipdate, sum(l_extendedprice) from lineitem_parquet where l_receiptdate = '1992-01-25' group by l_shipdate;
-refresh datamap datamap18p;
-create datamap datamap19p using 'mv' as select sum(l_quantity) from lineitem_parquet group by l_orderkey, l_shipdate;
-refresh datamap datamap19p;
-create datamap datamap20p using 'mv' as select sum(l_quantity) from lineitem_parquet group by l_orderkey;
-refresh datamap datamap20p;
-create datamap datamap21p using 'mv' as select * from lineitem_parquet  where l_orderkey = 360345957;
-refresh datamap datamap21p;
-
-create datamap datamap31p using 'mv' as select l_orderkey, sum(l_extendedprice * (1 - l_discount)) as revenue, o_orderdate, o_shippriority from customer_parquet2, orders_parquet2, lineitem_parquet where c_mktsegment = 'HOUSEHOLD' and c_custkey = o_custkey and l_orderkey = o_orderkey and o_orderdate < date '1995-02-02' and l_shipdate > date '1995-02-02' group by l_orderkey, o_orderdate, o_shippriority order by revenue desc, o_orderdate;
-refresh datamap datamap31p;
-create datamap datamap32p using 'mv' as select sum(l_extendedprice * l_discount) as revenue from lineitem_parquet where l_shipdate >= date '1992-03-02' and l_shipdate < date '1992-03-02' + interval '3' year and l_discount between 0.03 and 0.05 and l_quantity < 20;
-refresh datamap datamap32p;
-create datamap datamap33p using 'mv' as select sum(l_quantity) from customer_parquet2, orders_parquet2, lineitem_parquet where c_custkey = o_custkey and o_orderkey = l_orderkey and  o_orderdate < date '1992-03-02' group by c_name, c_custkey, o_orderkey, o_orderdate, o_totalprice order by o_totalprice desc, o_orderdate;
-refresh datamap datamap33p;
-create datamap datamap34p using 'mv' as select sum(l_extendedprice* (1 - l_discount)) as revenue from lineitem_parquet, part where ( p_partkey = l_partkey and p_brand = 'Brand#31' and p_container in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG') and l_quantity >= 20 and l_quantity <=  30 and p_size between 1 and 5 and l_shipmode in ('AIR', 'AIR REG') and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#41' and p_container in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK') and l_quantity >= 30 and l_quantity <= 40 and p_size between 1 and 10 and l_shipmode in ('AIR', 'AIR REG') and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#51' and p_container in ('LG CASE', 'LG BOX', 'LG PACK', 'LG PKG') and l_quantity >= 40 and l_quantity <= 50 and p_size between 1 and 15 and l_shipmode in ('AIR', 'AIR REG') and l_shipinstruct = 'DELIVER IN PERSON' );
-refresh datamap datamap34p;
-create datamap datamap35p using 'mv' as select sum(l_extendedprice) as revenue from lineitem_parquet, part where ( p_partkey = l_partkey and p_brand = 'Brand#31' and p_container = 'SM CASE' and l_quantity >= 20 and l_quantity <=  30 and p_size < 5 and l_shipmode = 'AIR' and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#41' and p_container = 'MED BAG' and l_quantity >= 30 and l_quantity <= 40 and p_size between 1 and 10 and l_shipmode = 'AIR' and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#51' and p_container = 'LG CASE' and l_quantity >= 40 and l_quantity <= 50 and p_size < 15 and l_shipmode = 'AIR' and l_shipinstruct = 'DELIVER IN PERSON' );
-refresh datamap datamap35p;
-
-
-
-
+	create table part_parquet2 using parquet location 's3a://newcarbonstore/default/part_parquet' as select * from part;
+	create table customer_parquet2 using parquet location 's3a://newcarbonstore/default/customer_parquet' as select * from customer;
+	create table orders_parquet2 using parquet location 's3a://newcarbonstore/default/orders_parquet' as select * from orders;
+	
+	
+	create table lineitem_parquet using parquet location 's3a://parquet/lineitem_parquet';
+	select count(*) from lineitem;
+	create datamap datamap11p using 'mv' as select count(l_shipdate),count(l_shipinstruct),count(l_orderkey),sum(l_quantity), avg(l_discount) from lineitem_parquet;
+	refresh datamap datamap11p;
+	create datamap datamap12p using 'mv' as select l_shipmode,count(l_shipinstruct) from lineitem_parquet group by l_shipmode;
+	refresh datamap datamap12p;
+	create datamap datamap13p using 'mv' as select l_quantity,count(l_shipinstruct) from lineitem_parquet group by l_quantity;
+	refresh datamap datamap13p;
+	create datamap datamap14p using 'mv' as select count(l_shipinstruct) from lineitem_parquet group by l_orderkey,l_receiptdate ;
+	refresh datamap datamap14p;
+	create datamap datamap15p using 'mv' as select count(l_receiptdate) from lineitem_parquet group by l_shipdate;
+	refresh datamap datamap15p;
+	create datamap datamap16p using 'mv' as select count(l_shipdate) from lineitem_parquet group by  l_receiptdate;
+	refresh datamap datamap16p;
+	create datamap datamap17p using 'mv' as select l_receiptdate,l_shipinstruct, sum(l_extendedprice) from lineitem_parquet group by l_receiptdate,l_shipinstruct;
+	refresh datamap datamap17p;
+	create datamap datamap18p using 'mv' as select l_shipdate, sum(l_extendedprice) from lineitem_parquet where l_receiptdate = '1992-01-25' group by l_shipdate;
+	refresh datamap datamap18p;
+	create datamap datamap19p using 'mv' as select sum(l_quantity) from lineitem_parquet group by l_orderkey, l_shipdate;
+	refresh datamap datamap19p;
+	create datamap datamap20p using 'mv' as select sum(l_quantity) from lineitem_parquet group by l_orderkey;
+	refresh datamap datamap20p;
+	create datamap datamap21p using 'mv' as select * from lineitem_parquet  where l_orderkey = 360345957;
+	refresh datamap datamap21p;
+	
+	create datamap datamap31p using 'mv' as select l_orderkey, sum(l_extendedprice * (1 - l_discount)) as revenue, o_orderdate, o_shippriority from customer_parquet2, orders_parquet2, lineitem_parquet where c_mktsegment = 'HOUSEHOLD' and c_custkey = o_custkey and l_orderkey = o_orderkey and o_orderdate < date '1995-02-02' and l_shipdate > date '1995-02-02' group by l_orderkey, o_orderdate, o_shippriority order by revenue desc, o_orderdate;
+	refresh datamap datamap31p;
+	create datamap datamap32p using 'mv' as select sum(l_extendedprice * l_discount) as revenue from lineitem_parquet where l_shipdate >= date '1992-03-02' and l_shipdate < date '1992-03-02' + interval '3' year and l_discount between 0.03 and 0.05 and l_quantity < 20;
+	refresh datamap datamap32p;
+	create datamap datamap33p using 'mv' as select sum(l_quantity) from customer_parquet2, orders_parquet2, lineitem_parquet where c_custkey = o_custkey and o_orderkey = l_orderkey and  o_orderdate < date '1992-03-02' group by c_name, c_custkey, o_orderkey, o_orderdate, o_totalprice order by o_totalprice desc, o_orderdate;
+	refresh datamap datamap33p;
+	create datamap datamap34p using 'mv' as select sum(l_extendedprice* (1 - l_discount)) as revenue from lineitem_parquet, part where ( p_partkey = l_partkey and p_brand = 'Brand#31' and p_container in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG') and l_quantity >= 20 and l_quantity <=  30 and p_size between 1 and 5 and l_shipmode in ('AIR', 'AIR REG') and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#41' and p_container in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK') and l_quantity >= 30 and l_quantity <= 40 and p_size between 1 and 10 and l_shipmode in ('AIR', 'AIR REG') and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#51' and p_container in ('LG CASE', 'LG BOX', 'LG PACK', 'LG PKG') and l_quantity >= 40 and l_quantity <= 50 and p_size between 1 and 15 and l_shipmode in ('AIR', 'AIR REG') and l_shipinstruct = 'DELIVER IN PERSON' );
+	refresh datamap datamap34p;
+	create datamap datamap35p using 'mv' as select sum(l_extendedprice) as revenue from lineitem_parquet, part where ( p_partkey = l_partkey and p_brand = 'Brand#31' and p_container = 'SM CASE' and l_quantity >= 20 and l_quantity <=  30 and p_size < 5 and l_shipmode = 'AIR' and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#41' and p_container = 'MED BAG' and l_quantity >= 30 and l_quantity <= 40 and p_size between 1 and 10 and l_shipmode = 'AIR' and l_shipinstruct = 'DELIVER IN PERSON' ) or ( p_partkey = l_partkey and p_brand = 'Brand#51' and p_container = 'LG CASE' and l_quantity >= 40 and l_quantity <= 50 and p_size < 15 and l_shipmode = 'AIR' and l_shipinstruct = 'DELIVER IN PERSON' );
+	refresh datamap datamap35p;
+	
+	
+	
+	

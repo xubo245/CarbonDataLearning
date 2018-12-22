@@ -1,22 +1,22 @@
-create external table lineitem STORED BY 'carbondata' location 's3a://newcarbonstore/default/lineitem_dic2';
-select count(*) from lineitem;
-CREATE DATAMAP comment ON TABLE lineitem USING 'lucene' DMProperties('TEXT_COLUMNS'='l_comment');
-refresh datamap comment ON TABLE lineitem;
-
-
-SELECT * FROM datamap_test4 WHERE TEXT_MATCH('name:n10')
-
-
-drop table if exists t1;
-create table t1 (name String) stored by 'carbondata'  location 's3a://carbontest/t1';
-
-
-
-CREATE DATAMAP n1 ON TABLE t1 USING 'lucene' DMProperties('TEXT_COLUMNS'='name');
-insert into t1 values('carbondata');
-
-
-
-
-
-   String segmentPath = CarbonTablePath.getSegmentPath(tablePath, segmentId);
+	create external table lineitem STORED BY 'carbondata' location 's3a://newcarbonstore/default/lineitem_dic2';
+	select count(*) from lineitem;
+	CREATE DATAMAP comment ON TABLE lineitem USING 'lucene' DMProperties('TEXT_COLUMNS'='l_comment');
+	refresh datamap comment ON TABLE lineitem;
+	
+	
+	SELECT * FROM datamap_test4 WHERE TEXT_MATCH('name:n10')
+	
+	
+	drop table if exists t1;
+	create table t1 (name String) stored by 'carbondata'  location 's3a://carbontest/t1';
+	
+	
+	
+	CREATE DATAMAP n1 ON TABLE t1 USING 'lucene' DMProperties('TEXT_COLUMNS'='name');
+	insert into t1 values('carbondata');
+	
+	
+	
+	
+	
+	   String segmentPath = CarbonTablePath.getSegmentPath(tablePath, segmentId);

@@ -1,14 +1,14 @@
-CREATE external TABLE carbonsession_table
-STORED BY 'carbondata'
-location 's3a://upload-test/data/carbonsession_table';
-
-SELECT charField, stringField, intField
- FROM carbonsession_table
- WHERE stringfield = 'spark' AND decimalField > 40;
- 
- SELECT *
- FROM carbonsession_table WHERE length(stringField) = 5;
- 
- SELECT *
- FROM carbonsession_table
- WHERE stringField = 'spark' and floatField > 2.8
+	CREATE external TABLE carbonsession_table
+	STORED BY 'carbondata'
+	location 's3a://upload-test/data/carbonsession_table';
+	
+	SELECT charField, stringField, intField
+	 FROM carbonsession_table
+	 WHERE stringfield = 'spark' AND decimalField > 40;
+	 
+	 SELECT *
+	 FROM carbonsession_table WHERE length(stringField) = 5;
+	 
+	 SELECT *
+	 FROM carbonsession_table
+	 WHERE stringField = 'spark' and floatField > 2.8
