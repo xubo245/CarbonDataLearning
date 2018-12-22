@@ -1,0 +1,1381 @@
+Presto related operations
+
+8.1 and 8.5 
+presto:default> ALTER SCHEMA information_schema RENAME TO information_schema2;
+Query 20181222_070427_00014_gtreq failed: This connector does not support renaming schemas
+
+presto:default> CREATE SCHEMA schema1
+             -> ;
+Query 20181222_071524_00015_gtreq failed: This connector does not support creating schemas
+
+presto:default>
+presto:default>
+[8]+  Stopped                 ./presto --server localhost:8086 --catalog carbondata --schema default
+root@ecs-909c:/huawei/xubo/tools#  ./presto --server localhost:8086 --catalog carbondata
+presto> show schemas;
+       Schema
+--------------------
+ default
+ information_schema
+(2 rows)
+
+Query 20181222_071607_00016_gtreq, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:01 [2 rows, 35B] [1 rows/s, 27B/s]
+
+presto>  CREATE SCHEMA schema1
+     -> ;
+Query 20181222_071624_00017_gtreq failed: This connector does not support creating schemas
+
+presto> ALTER SCHEMA information_schema RENAME TO information_schema2;
+Query 20181222_071641_00018_gtreq failed: This connector does not support renaming schemas
+
+
+
+presto:default> ALTER TABLE carbon RENAME TO newCarbon2;
+Query 20181222_072709_00026_gtreq failed: line 1:1: Target table 'carbondata.default.newcarbon2' already exists
+ALTER TABLE carbon RENAME TO newCarbon2
+
+
+presto:default> ALTER TABLE carbon ADD COLUMN company string;
+Query 20181222_072845_00028_gtreq failed: line 1:31: Unknown type 'string' for column 'company'
+ALTER TABLE carbon ADD COLUMN company string
+
+presto:default> ALTER TABLE carbon ADD COLUMN weight int;
+Query 20181222_072959_00029_gtreq failed: This connector does not support adding columns
+
+presto:default> ALTER TABLE carbon DROP COLUMN name;
+Query 20181222_073038_00030_gtreq failed: This connector does not support dropping columns
+
+presto:default> ALTER TABLE carbon RENAME COLUMN name TO name2
+             -> ;
+Query 20181222_073112_00031_gtreq failed: This connector does not support renaming columns
+
+
+presto:default> CALL carbon('Bob',27)
+             -> ;
+Query 20181222_073307_00035_gtreq failed: Procedure not registered: default.carbon
+
+
+presto:default> COMMIT;
+Query 20181222_073344_00036_gtreq failed: No transaction in progress
+
+presto:default> COMMIT WORK;
+Query 20181222_073350_00037_gtreq failed: No transaction in progress
+
+
+presto:default> CREATE TABLE orders2 ( orderkey bigint, orderstatus varchar, totalprice double, orderdate date );
+Query 20181222_073510_00039_gtreq failed: line 1:1: Table 'carbondata.default.orders2' already exists
+CREATE TABLE orders2 ( orderkey bigint, orderstatus varchar, totalprice double, orderdate date )
+
+
+presto:default> CREATE TABLE orders_column_aliased (order_date, total_price)
+             -> AS
+             -> SELECT orderdate, totalprice
+             -> FROM orders2;
+Query 20181222_073549_00040_gtreq failed: line 1:1: Destination table 'carbondata.default.orders_column_aliased' already exists
+CREATE TABLE orders_column_aliased (order_date, total_price)
+AS
+SELECT orderdate, totalprice
+FROM orders2
+
+
+presto:default> CREATE VIEW test AS SELECT o_orderkey,o_custkey AS half FROM orders;
+Query 20181222_074009_00045_gtreq failed: This connector does not support creating views
+
+
+
+presto:default> DEALLOCATE PREPARE my_select1;
+DEALLOCATE
+
+
+
+presto:default> PREPARE my_select1 FROM
+             -> SELECT * FROM o;
+objectid   orders
+             -> SELECT * FROM orders;
+
+			 
+			 
+presto:default> DELETE FROM carbon WHERE name = 'Bob';
+Query 20181222_074329_00051_gtreq failed: This connector does not support updates or deletes
+
+presto:default> DELETE FROM lineitem WHERE shipmode = 'AIR';
+Query 20181222_074344_00052_gtreq failed: line 1:28: Column 'shipmode' cannot be resolved
+DELETE FROM lineitem WHERE shipmode = 'AIR'
+
+presto:default> describe carbon ;
+ Column |  Type   | Extra | Comment
+--------+---------+-------+---------
+ name   | varchar |       |
+ age    | integer |       |
+(2 rows)
+
+Query 20181222_074421_00054_gtreq, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:03 [2 rows, 125B] [0 rows/s, 48B/s]
+
+
+
+presto:default> PREPARE my_select1 FROM SELECT ? FROM orders where o_orderkey=?;
+PREPARE
+presto:default> DESCRIBE INPUT my_select1;
+ Position |  Type
+----------+---------
+        0 | unknown
+        1 | integer
+(2 rows)
+
+Query 20181222_074817_00066_gtreq, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:04 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+presto:default> PREPARE my_select1 FROM
+             -> SELECT * FROM orders;
+PREPARE
+presto:default> DESCRIBE OUTPUT my_select1;
+   Column Name   |  Catalog   | Schema  | Table  |     Type      | Type Size | Aliased
+-----------------+------------+---------+--------+---------------+-----------+---------
+ o_orderkey      | carbondata | default | orders | integer       |         4 | false
+ o_custkey       | carbondata | default | orders | integer       |         4 | false
+ o_orderstatus   | carbondata | default | orders | varchar       |         0 | false
+ o_totalprice    | carbondata | default | orders | decimal(15,2) |         8 | false
+ o_orderdate     | carbondata | default | orders | date          |         4 | false
+ o_orderpriority | carbondata | default | orders | varchar       |         0 | false
+ o_clerk         | carbondata | default | orders | varchar       |         0 | false
+ o_shippriority  | carbondata | default | orders | integer       |         4 | false
+ o_comment       | carbondata | default | orders | varchar       |         0 | false
+(9 rows)
+
+Query 20181222_074900_00068_gtreq, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:02 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+
+presto:default> show schemas;
+       Schema
+--------------------
+ default
+ information_schema
+(2 rows)
+
+Query 20181222_074940_00069_gtreq, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:01 [2 rows, 35B] [1 rows/s, 31B/s]
+
+presto:default> drop schema information_schema;
+Query 20181222_075015_00070_gtreq failed: This connector does not support dropping schemas
+
+
+presto:default> drop table carbon;
+Query 20181222_075056_00071_gtreq failed: This connector does not support dropping tables
+
+
+DROP VIEW [ IF EXISTS ] view_name
+
+can't create view
+
+
+
+presto:default> PREPARE my_select1 FROM SELECT * FROM orders;
+PREPARE
+presto:default> EXECUTE my_select1;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |                                   o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+--------------------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          2 |    390010 | O             | 75004.81     | 1996-12-01  | 1-URGENT        | Clerk#000004396 |              0 |  foxes. pending accounts at the pending, silent a
+          3 |    616570 | F             | 228570.52    | 1993-10-14  | 5-LOW           | Clerk#000004772 |              0 | sly final accounts boost. carefully regular ideas
+          4 |    683881 | O             | 35015.50     | 1995-10-11  | 5-LOW           | Clerk#000000617 |              0 | sits. slyly regular warthogs cajole. regular, reg
+          5 |    222424 | F             | 151840.11    | 1994-07-30  | 5-LOW           | Clerk#000004624 |              0 | quickly. bold deposits sleep slyly. packages use
+          6 |    278111 | F             | 41236.87     | 1992-02-21  | 4-NOT SPECIFIED | Clerk#000000290 |              0 | ggle. special, final requests are against the fur
+          7 |    195673 | O             | 250593.17    | 1996-01-10  | 2-HIGH          | Clerk#000002349 |              0 | ly special requests
+         32 |    650285 | O             | 152975.54    | 1995-07-16  | 2-HIGH          | Clerk#000003079 |              0 | ise blithely bold, regular requests. quickly unus
+         33 |    334790 | F             | 170291.54    | 1993-10-27  | 3-MEDIUM        | Clerk#000002043 |              0 | uriously. furiously final request
+         34 |    305002 | O             | 56450.43     | 1998-07-21  | 3-MEDIUM        | Clerk#000001114 |              0 | ly final packages. fluffily final deposits wake b
+         35 |    637939 | O             | 243737.73    | 1995-10-23  | 4-NOT SPECIFIED | Clerk#000001292 |              0 | zzle. carefully enticing deposits nag furio
+         36 |    576259 | O             | 73833.77     | 1995-11-03  | 1-URGENT        | Clerk#000001786 |              0 |  quick packages are blithely. slyly silent accoun
+         37 |    430573 | F             | 178299.79    | 1992-06-03  | 3-MEDIUM        | Clerk#000002278 |              0 | kly regular pinto beans. carefully unusual waters
+         38 |    624140 | O             | 50588.01     | 1996-08-21  | 4-NOT SPECIFIED | Clerk#000003019 |              0 | haggle blithely. furiously express ideas haggle b
+         39 |    408814 | O             | 367718.05    | 1996-09-20  | 3-MEDIUM        | Clerk#000003293 |              0 | ole express, ironic requests: ir
+         64 |    160564 | F             | 34282.56     | 1994-07-16  | 3-MEDIUM        | Clerk#000003302 |              0 | wake fluffily. sometimes ironic pinto beans about
+         65 |     81256 | P             | 102231.29    | 1995-03-18  | 1-URGENT        | Clerk#000003160 |              0 | ular requests are blithely pending orbits-- even
+         66 |    645998 | F             | 114986.17    | 1994-01-20  | 5-LOW           | Clerk#000003712 |              0 | y pending requests integrate
+         67 |    283061 | O             | 169745.19    | 1996-12-19  | 4-NOT SPECIFIED | Clerk#000002733 |              0 | symptotes haggle slyly around the furiously iron
+         68 |    142735 | O             | 365571.76    | 1998-04-18  | 3-MEDIUM        | Clerk#000002197 |              0 |  pinto beans sleep carefully. blithely ironic dep
+         69 |    422434 | F             | 227834.67    | 1994-06-04  | 4-NOT SPECIFIED | Clerk#000001650 |              0 |  depths atop the slyly thin deposits detect among
+         70 |    321698 | F             | 141162.38    | 1993-12-18  | 5-LOW           | Clerk#000001609 |              0 |  carefully ironic request
+         71 |     16856 | O             | 234901.97    | 1998-01-24  | 4-NOT SPECIFIED | Clerk#000001351 |              0 |  express deposits along the blithely regul
+         96 |    538889 | F             | 89054.05     | 1994-04-17  | 2-HIGH          | Clerk#000001973 |              0 | oost furiously. pinto
+         97 |    105301 | F             | 118800.13    | 1993-01-29  | 3-MEDIUM        | Clerk#000002735 |              0 | hang blithely along the regular accounts. furious
+         98 |    522400 | F             | 67418.70     | 1994-09-25  | 1-URGENT        | Clerk#000002239 |              0 | c asymptotes. quickly regular packages should hav
+         99 |    444547 | F             | 139669.35    | 1994-03-13  | 4-NOT SPECIFIED | Clerk#000004862 |              0 | e carefully ironic packages. pending
+        100 |    735016 | O             | 214033.24    | 1998-02-28  | 4-NOT SPECIFIED | Clerk#000002881 |              0 | heodolites detect slyly alongside of the ent
+        101 |    139987 | O             | 136170.46    | 1996-03-17  | 3-MEDIUM        | Clerk#000002091 |              0 | ding accounts above the slyly final asymptote
+        102 |      3580 | O             | 160238.63    | 1997-05-09  | 2-HIGH          | Clerk#000002976 |              0 |  slyly according to the asymptotes. carefully fin
+        103 |    145498 | O             | 117675.06    | 1996-06-20  | 4-NOT SPECIFIED | Clerk#000000449 |              0 | ges. carefully unusual instructions haggle quickl
+        128 |    369778 | F             | 42286.43     | 1992-06-15  | 1-URGENT        | Clerk#000001921 |              0 | ns integrate fluffily. ironic asymptotes after th
+        129 |    355667 | F             | 294942.99    | 1992-11-19  | 5-LOW           | Clerk#000004294 |              0 | ing tithes. carefully pending deposits boost abou
+        130 |    184817 | F             | 180106.48    | 1992-05-08  | 2-HIGH          | Clerk#000000177 |              0 | le slyly unusual, regular packages? express depos
+        131 |    463744 | F             | 125738.40    | 1994-06-08  | 3-MEDIUM        | Clerk#000003125 |              0 | after the fluffily special foxes integrate s
+        132 |    131968 | F             | 153866.88    | 1993-06-11  | 3-MEDIUM        | Clerk#000002436 |              0 | sits are daringly accounts. carefully regular fox
+        133 |    220000 | O             | 114573.26    | 1997-11-29  | 1-URGENT        | Clerk#000003687 |              0 | usly final asymptotes
+        134 |     30988 | F             | 183101.56    | 1992-05-01  | 4-NOT SPECIFIED | Clerk#000003555 |              0 | lar theodolites boos
+        135 |    302399 | O             | 232172.61    | 1995-10-21  | 4-NOT SPECIFIED | Clerk#000004017 |              0 | l platelets use according t
+        160 |    412468 | O             | 155743.51    | 1996-12-19  | 4-NOT SPECIFIED | Clerk#000001707 |              0 | thely special sauternes wake slyly of t
+        161 |     83095 | F             | 20157.35     | 1994-08-31  | 2-HIGH          | Clerk#000001607 |              0 | carefully! special instructions sin
+        162 |     70579 | O             | 2942.47      | 1995-05-08  | 3-MEDIUM        | Clerk#000001890 |              0 | nts hinder fluffily ironic instructions. express,
+        163 |    438791 | O             | 168740.81    | 1997-09-05  | 3-MEDIUM        | Clerk#000001892 |              0 | y final packages. final foxes since the quickly e
+        164 |      3892 | F             | 304217.26    | 1992-10-21  | 5-LOW           | Clerk#000001044 |              0 | cajole ironic courts. slyly final ideas are slyly
+        165 |    136181 | F             | 209907.27    | 1993-01-30  | 4-NOT SPECIFIED | Clerk#000001460 |              0 | across the blithely regular accounts. bold
+        166 |    539053 | O             | 130172.40    | 1995-09-12  | 2-HIGH          | Clerk#000002196 |              0 | lets. ironic, bold asymptotes kindle
+        167 |    597008 | F             | 91986.81     | 1993-01-04  | 4-NOT SPECIFIED | Clerk#000003654 |              0 | s nag furiously bold excuses. fluffily iron
+        192 |    412843 | O             | 164981.15    | 1997-11-25  | 5-LOW           | Clerk#000002414 |              0 | y unusual platelets among the final instructions
+        193 |    395302 | F             | 69994.81     | 1993-08-08  | 1-URGENT        | Clerk#000000123 |              0 | the furiously final pin
+        194 |    308618 | F             | 192396.50    | 1992-04-05  | 3-MEDIUM        | Clerk#000001757 |              0 | egular requests haggle slyly regular, regular pin
+        195 |    677104 | F             | 145652.24    | 1993-12-28  | 3-MEDIUM        | Clerk#000001080 |              0 | old forges are furiously sheaves. slyly fi
+        196 |    324116 | F             | 41481.31     | 1993-03-17  | 2-HIGH          | Clerk#000004936 |              0 | beans boost at the foxes. silent foxes
+        197 |    162556 | P             | 146778.10    | 1995-04-07  | 2-HIGH          | Clerk#000004842 |              0 | solve quickly about the even braids. carefully ex
+        198 |    551081 | O             | 198490.08    | 1998-01-02  | 4-NOT SPECIFIED | Clerk#000001655 |              0 | its. carefully ironic requests sleep. furiously e
+        199 |    264847 | O             | 121408.58    | 1996-03-07  | 2-HIGH          | Clerk#000002444 |              0 | g theodolites. special packag
+(query aborted by user)
+
+Query 20181222_075252_00076_gtreq, RUNNING, 1 node
+Splits: 17 total, 0 done (0.00%)
+0:17 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query aborted by user
+
+
+
+presto:default> PREPARE my_select1 FROM SELECT * FROM orders where o_orderkey=?;
+PREPARE
+presto:default> EXECUTE my_select1 USING 1;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |             o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+(1 row)
+
+Query 20181222_075508_00080_gtreq, FINISHED, 1 node
+Splits: 17 total, 17 done (100.00%)
+0:11 [32K rows, 0B] [2.89K rows/s, 0B/s]
+
+
+
+presto:default> explain SELECT * FROM orders where o_orderkey=1;
+                                                                                                                                                             Query Plan
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ - Output[o_orderkey, o_custkey, o_orderstatus, o_totalprice, o_orderdate, o_orderpriority, o_clerk, o_shippriority, o_comment] => [o_orderkey:integer, o_custkey:integer, o_
+         Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: ?}
+     - RemoteExchange[GATHER] => o_orderkey:integer, o_custkey:integer, o_orderstatus:varchar, o_totalprice:decimal(15,2), o_orderdate:date, o_orderpriority:varchar, o_clerk
+             Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: ?}
+         - ScanFilter[table = carbondata:carbondata:default.orders, filterPredicate = ("o_orderkey" = 1)] => [o_orderkey:integer, o_custkey:integer, o_orderstatus:varchar, o
+                 Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}/{rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}
+                 LAYOUT: CarbondataTableLayoutHandle{table=carbondata:default.orders, constraint=com.facebook.presto.spi.predicate.TupleDomain@2f2a3604}
+                 o_clerk := CarbondataColumnHandle{connectorId=carbondata, columnName=o_clerk, columnType=varchar, ordinalPosition=6}
+                 o_orderstatus := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderstatus, columnType=varchar, ordinalPosition=2}
+                 o_orderdate := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderdate, columnType=date, ordinalPosition=4}
+                 o_shippriority := CarbondataColumnHandle{connectorId=carbondata, columnName=o_shippriority, columnType=integer, ordinalPosition=7}
+                 o_custkey := CarbondataColumnHandle{connectorId=carbondata, columnName=o_custkey, columnType=integer, ordinalPosition=1}
+                 o_totalprice := CarbondataColumnHandle{connectorId=carbondata, columnName=o_totalprice, columnType=decimal(15,2), ordinalPosition=3}
+                 o_comment := CarbondataColumnHandle{connectorId=carbondata, columnName=o_comment, columnType=varchar, ordinalPosition=8}
+                 o_orderkey := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderkey, columnType=integer, ordinalPosition=0}
+                     :: [[1]]
+                 o_orderpriority := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderpriority, columnType=varchar, ordinalPosition=5}
+
+(1 row)
+
+Query 20181222_075625_00082_gtreq, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:03 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+presto:default>  EXPLAIN (TYPE DISTRIBUTED) SELECT * FROM orders where o_orderkey=1;
+                                                                                                                                                               Query Plan
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Fragment 0 [SINGLE]
+     Output layout: [o_orderkey, o_custkey, o_orderstatus, o_totalprice, o_orderdate, o_orderpriority, o_clerk, o_shippriority, o_comment]
+     Output partitioning: SINGLE []
+     Grouped Execution: false
+     - Output[o_orderkey, o_custkey, o_orderstatus, o_totalprice, o_orderdate, o_orderpriority, o_clerk, o_shippriority, o_comment] => [o_orderkey:integer, o_custkey:integer
+             Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}
+         - RemoteSource[1] => [o_orderkey:integer, o_custkey:integer, o_orderstatus:varchar, o_totalprice:decimal(15,2), o_orderdate:date, o_orderpriority:varchar, o_clerk:v
+                 Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}
+
+ Fragment 1 [SOURCE]
+     Output layout: [o_orderkey, o_custkey, o_orderstatus, o_totalprice, o_orderdate, o_orderpriority, o_clerk, o_shippriority, o_comment]
+     Output partitioning: SINGLE []
+     Grouped Execution: false
+     - ScanFilter[table = carbondata:carbondata:default.orders, grouped = false, filterPredicate = ("o_orderkey" = 1)] => [o_orderkey:integer, o_custkey:integer, o_orderstat
+             Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}/{rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}
+             LAYOUT: CarbondataTableLayoutHandle{table=carbondata:default.orders, constraint=com.facebook.presto.spi.predicate.TupleDomain@2f2a3604}
+             o_clerk := CarbondataColumnHandle{connectorId=carbondata, columnName=o_clerk, columnType=varchar, ordinalPosition=6}
+             o_orderstatus := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderstatus, columnType=varchar, ordinalPosition=2}
+             o_orderdate := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderdate, columnType=date, ordinalPosition=4}
+             o_shippriority := CarbondataColumnHandle{connectorId=carbondata, columnName=o_shippriority, columnType=integer, ordinalPosition=7}
+             o_custkey := CarbondataColumnHandle{connectorId=carbondata, columnName=o_custkey, columnType=integer, ordinalPosition=1}
+             o_totalprice := CarbondataColumnHandle{connectorId=carbondata, columnName=o_totalprice, columnType=decimal(15,2), ordinalPosition=3}
+             o_comment := CarbondataColumnHandle{connectorId=carbondata, columnName=o_comment, columnType=varchar, ordinalPosition=8}
+             o_orderkey := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderkey, columnType=integer, ordinalPosition=0}
+                 :: [[1]]
+             o_orderpriority := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderpriority, columnType=varchar, ordinalPosition=5}
+
+
+(1 row)
+
+Query 20181222_075723_00083_gtreq, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:05 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:default> EXPLAIN (TYPE VALIDATE) SELECT * FROM orders where o_orderkey=1;
+ Valid
+-------
+ true
+(1 row)
+
+Query 20181222_075801_00084_gtreq, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:02 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:default> EXPLAIN (TYPE IO) SELECT * FROM orders where o_orderkey=1;
+             Query Plan
+------------------------------------
+ {
+   "inputTableColumnInfos" : [ {
+     "table" : {
+       "catalog" : "carbondata",
+       "schemaTable" : {
+         "schema" : "default",
+         "table" : "orders"
+       }
+     },
+     "columnConstraints" : [ {
+       "columnName" : "o_orderkey",
+       "typeSignature" : "integer",
+       "domain" : {
+         "nullsAllowed" : false,
+         "ranges" : [ {
+           "low" : {
+             "value" : "1",
+             "bound" : "EXACTLY"
+           },
+           "high" : {
+             "value" : "1",
+             "bound" : "EXACTLY"
+           }
+         } ]
+       }
+     } ]
+   } ]
+ }
+(1 row)
+
+Query 20181222_075823_00085_gtreq, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:02 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+
+
+
+presto:default> select * from orders limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |                                 o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+--------------------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          2 |    390010 | O             | 75004.81     | 1996-12-01  | 1-URGENT        | Clerk#000004396 |              0 |  foxes. pending accounts at the pending, silent a
+          3 |    616570 | F             | 228570.52    | 1993-10-14  | 5-LOW           | Clerk#000004772 |              0 | sly final accounts boost. carefully regular ideas
+          4 |    683881 | O             | 35015.50     | 1995-10-11  | 5-LOW           | Clerk#000000617 |              0 | sits. slyly regular warthogs cajole. regular, reg
+          5 |    222424 | F             | 151840.11    | 1994-07-30  | 5-LOW           | Clerk#000004624 |              0 | quickly. bold deposits sleep slyly. packages use
+          6 |    278111 | F             | 41236.87     | 1992-02-21  | 4-NOT SPECIFIED | Clerk#000000290 |              0 | ggle. special, final requests are against the fur
+          7 |    195673 | O             | 250593.17    | 1996-01-10  | 2-HIGH          | Clerk#000002349 |              0 | ly special requests
+         32 |    650285 | O             | 152975.54    | 1995-07-16  | 2-HIGH          | Clerk#000003079 |              0 | ise blithely bold, regular requests. quickly unus
+         33 |    334790 | F             | 170291.54    | 1993-10-27  | 3-MEDIUM        | Clerk#000002043 |              0 | uriously. furiously final request
+         34 |    305002 | O             | 56450.43     | 1998-07-21  | 3-MEDIUM        | Clerk#000001114 |              0 | ly final packages. fluffily final deposits wake b
+(10 rows)
+
+Query 20181222_081708_00000_8emcn, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:43 [32K rows, 2.98MB] [740 rows/s, 70.6KB/s]
+
+presto:default> EXPLAIN ANALYZE SELECT o_orderkey=1,o_orderstatus FROM orders where o_orderkey=1 group by o_orderstatus,o_orderkey=1;
+                                                                                   Query Plan
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Fragment 1 [HASH]
+     CPU: 19.45ms, Input: 1 row (8B); per task: avg.: 1.00 std.dev.: 0.00, Output: 1 row (8B)
+     Output layout: [expr, o_orderstatus]
+     Output partitioning: SINGLE []
+     Grouped Execution: false
+     - Aggregate(FINAL)[expr, o_orderstatus] => [expr:boolean, o_orderstatus:varchar]
+             Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+             CPU fraction: 14.29%, Output: 1 row (8B)
+             Input avg.: 0.06 rows, Input std.dev.: 387.30%
+         - LocalExchange[HASH] ("expr", "o_orderstatus") => expr:boolean, o_orderstatus:varchar
+                 Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+                 CPU fraction: 85.71%, Output: 1 row (8B)
+                 Input avg.: 0.06 rows, Input std.dev.: 387.30%
+             - RemoteSource[2] => [expr:boolean, o_orderstatus:varchar]
+                     Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+                     CPU fraction: 0.00%, Output: 1 row (8B)
+                     Input avg.: 0.06 rows, Input std.dev.: 387.30%
+
+ Fragment 2 [SOURCE]
+     CPU: 239.89ms, Input: 1 row (8B); per task: avg.: 1.00 std.dev.: 0.00, Output: 1 row (8B)
+     Output layout: [expr, o_orderstatus]
+     Output partitioning: HASH [expr, o_orderstatus]
+     Grouped Execution: false
+     - Aggregate(PARTIAL)[expr, o_orderstatus] => [expr:boolean, o_orderstatus:varchar]
+             Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+             CPU fraction: 2.54%, Output: 1 row (8B)
+             Input avg.: 1.00 rows, Input std.dev.: 0.00%
+         - ScanFilterProject[table = carbondata:carbondata:default.orders, grouped = false, filterPredicate = ("o_orderkey" = 1)] => [o_orderstatus:varchar, expr:boolean]
+                 Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}/{rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}/{rows: ? (?), cpu: ?, memory: 0.00, network: 0.0
+                 CPU fraction: 97.46%, Input: 32000 rows (0B), Output: 1 row (8B), Filtered: 100.00%
+                 Input avg.: 32000.00 rows, Input std.dev.: 0.00%
+                 expr := ("o_orderkey" = 1)
+                 LAYOUT: CarbondataTableLayoutHandle{table=carbondata:default.orders, constraint=com.facebook.presto.spi.predicate.TupleDomain@62115666}
+                 o_orderstatus := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderstatus, columnType=varchar, ordinalPosition=2}
+                 o_orderkey := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderkey, columnType=integer, ordinalPosition=0}
+                     :: [[1]]
+
+
+(1 row)
+
+Query 20181222_081808_00001_8emcn, FINISHED, 1 node
+Splits: 50 total, 50 done (100.00%)
+0:12 [32K rows, 0B] [2.72K rows/s, 0B/s]
+
+presto:default>
+presto:default> EXPLAIN ANALYZE VERBOSE  SELECT o_orderkey=1,o_orderstatus FROM orders where o_orderkey=1 group by o_orderstatus,o_orderkey=1;
+                                                                                   Query Plan
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Fragment 1 [HASH]
+     CPU: 12.82ms, Input: 1 row (8B); per task: avg.: 1.00 std.dev.: 0.00, Output: 1 row (8B)
+     Output layout: [expr, o_orderstatus]
+     Output partitioning: SINGLE []
+     Grouped Execution: false
+     - Aggregate(FINAL)[expr, o_orderstatus] => [expr:boolean, o_orderstatus:varchar]
+             Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+             CPU fraction: 18.18%, Output: 1 row (8B)
+             Input avg.: 0.06 rows, Input std.dev.: 387.30%
+         - LocalExchange[HASH] ("expr", "o_orderstatus") => expr:boolean, o_orderstatus:varchar
+                 Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+                 CPU fraction: 81.82%, Output: 1 row (8B)
+                 Input avg.: 0.06 rows, Input std.dev.: 387.30%
+             - RemoteSource[2] => [expr:boolean, o_orderstatus:varchar]
+                     Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+                     CPU fraction: 0.00%, Output: 1 row (8B)
+                     Input avg.: 0.06 rows, Input std.dev.: 387.30%
+
+ Fragment 2 [SOURCE]
+     CPU: 149.83ms, Input: 1 row (8B); per task: avg.: 1.00 std.dev.: 0.00, Output: 1 row (8B)
+     Output layout: [expr, o_orderstatus]
+     Output partitioning: HASH [expr, o_orderstatus]
+     Grouped Execution: false
+     - Aggregate(PARTIAL)[expr, o_orderstatus] => [expr:boolean, o_orderstatus:varchar]
+             Cost: {rows: ? (?), cpu: ?, memory: ?, network: 0.00}
+             CPU fraction: 0.04%, Output: 1 row (8B)
+             Input avg.: 1.00 rows, Input std.dev.: 0.00%
+         - ScanFilterProject[table = carbondata:carbondata:default.orders, grouped = false, filterPredicate = ("o_orderkey" = 1)] => [o_orderstatus:varchar, expr:boolean]
+                 Cost: {rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}/{rows: ? (?), cpu: ?, memory: 0.00, network: 0.00}/{rows: ? (?), cpu: ?, memory: 0.00, network: 0.0
+                 CPU fraction: 99.96%, Input: 32000 rows (0B), Output: 1 row (8B), Filtered: 100.00%
+                 Input avg.: 32000.00 rows, Input std.dev.: 0.00%
+                 expr := ("o_orderkey" = 1)
+                 LAYOUT: CarbondataTableLayoutHandle{table=carbondata:default.orders, constraint=com.facebook.presto.spi.predicate.TupleDomain@62115666}
+                 o_orderstatus := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderstatus, columnType=varchar, ordinalPosition=2}
+                 o_orderkey := CarbondataColumnHandle{connectorId=carbondata, columnName=o_orderkey, columnType=integer, ordinalPosition=0}
+                     :: [[1]]
+
+
+(1 row)
+
+Query 20181222_081827_00002_8emcn, FINISHED, 1 node
+Splits: 50 total, 50 done (100.00%)
+0:10 [32K rows, 0B] [3.25K rows/s, 0B/s]
+
+
+
+presto:default> GRANT INSERT, SELECT ON orders TO alice;
+Query 20181222_082033_00005_8emcn failed: This connector does not support grants
+
+
+
+presto:default> INSERT INTO carbon VALUES ('San Francisco',1);
+Query 20181222_082121_00006_8emcn failed: This connector does not support inserts
+
+
+presto:default> SET SESSION optimize_hash_generation = true;
+SET SESSION
+presto:default> SHOW SESSION;
+                     Name                     |         Value         |        Default        |  Type   |                                                      Description
+----------------------------------------------+-----------------------+-----------------------+---------+--------------------------------------------------------------------
+ aggregation_operator_unspill_memory_limit    | 4MB                   | 4MB                   | varchar | Experimental: How much memory can should be allocated per aggragati
+ colocated_join                               | false                 | false                 | boolean | Experimental: Use a colocated join when possible
+ concurrent_lifespans_per_task                | 0                     | 0                     | integer | Experimental: Run a fixed number of groups concurrently for eligibl
+ dictionary_aggregation                       | true                  | true                  | boolean | Enable optimization for aggregations on dictionaries
+ distributed_index_join                       | false                 | false                 | boolean | Distribute index joins on join keys instead of executing inline
+ distributed_join                             |                       |                       | boolean | (DEPRECATED) Use a distributed join instead of a broadcast join. If
+ distributed_sort                             | true                  | true                  | boolean | Parallelize sort across multiple nodes
+ enable_intermediate_aggregations             | false                 | false                 | boolean | Enable the use of intermediate aggregations
+ exchange_compression                         | false                 | false                 | boolean | Enable compression in exchanges
+ execution_policy                             | all-at-once           | all-at-once           | varchar | Policy used for scheduling query tasks
+ fast_inequality_joins                        | true                  | true                  | boolean | Use faster handling of inequality join if it is possible
+ filter_and_project_min_output_page_row_count | 256                   | 256                   | integer | Experimental: Minimum output page row count for filter and project
+ filter_and_project_min_output_page_size      | 500kB                 | 500kB                 | varchar | Experimental: Minimum output page size for filter and project opera
+ grouped_execution_for_aggregation            | false                 | false                 | boolean | Use grouped execution for aggregation when possible
+ hash_partition_count                         | 100                   | 100                   | integer | Number of partitions for distributed joins and aggregations
+ initial_splits_per_node                      | 4                     | 4                     | integer | The number of splits each node will run per task, initially
+ iterative_optimizer_enabled                  | true                  | true                  | boolean | Experimental: enable iterative optimizer
+ iterative_optimizer_timeout                  | 3.00m                 | 3.00m                 | varchar | Timeout for plan optimization in iterative optimizer
+ join_distribution_type                       | PARTITIONED           | PARTITIONED           | varchar | The join method to use. Options are BROADCAST,PARTITIONED,AUTOMATIC
+ join_reordering_strategy                     | ELIMINATE_CROSS_JOINS | ELIMINATE_CROSS_JOINS | varchar | The join reordering strategy to use. Options are NONE,ELIMINATE_CRO
+ legacy_row_field_ordinal_access              | false                 | false                 | boolean | Allow accessing anonymous row field with .field0, .field1, ...
+ legacy_unnest                                | false                 | false                 | boolean | Using legacy unnest semantic, where unnest(array(row)) will create
+ max_reordered_joins                          | 9                     | 9                     | bigint  | The maximum number of joins to reorder as one group in cost-based j
+ optimize_hash_generation                     | true                  | false                 | boolean | Compute hash codes for distribution, joins, and aggregations early
+ optimize_metadata_queries                    | false                 | false                 | boolean | Enable optimization for metadata queries
+ optimize_mixed_distinct_aggregations         | false                 | false                 | boolean | Optimize mixed non-distinct and distinct aggregations
+ parse_decimal_literals_as_double             | false                 | false                 | boolean | Parse decimal literals as DOUBLE instead of DECIMAL
+ plan_with_table_node_partitioning            | true                  | true                  | boolean | Experimental: Adapt plan to pre-partitioned tables
+ prefer_partial_aggregation                   | true                  | true                  | boolean | Prefer splitting aggregations into partial and final stages
+ prefer_streaming_operators                   | false                 | false                 | boolean | Prefer source table layouts that produce streaming operators
+ push_aggregation_through_join                | true                  | true                  | boolean | Allow pushing aggregations below joins
+ push_partial_aggregation_through_join        | false                 | false                 | boolean | Push partial aggregations below joins
+ push_table_write_through_union               | true                  | true                  | boolean | Parallelize writes when using UNION ALL in queries that write data
+ query_max_cpu_time                           | 1000000000.00d        | 1000000000.00d        | varchar | Maximum CPU time of a query
+ query_max_execution_time                     | 100.00d               | 100.00d               | varchar | Maximum execution time of a query
+ query_max_run_time                           | 100.00d               | 100.00d               | varchar | Maximum run time of a query (includes the queueing time)
+ query_priority                               | 1                     | 1                     | integer | The priority of queries. Larger numbers are higher priority
+ redistribute_writes                          | true                  | true                  | boolean | Force parallel distributed writes
+ reorder_joins                                |                       |                       | boolean | (DEPRECATED) Reorder joins to remove unnecessary cross joins. If th
+ resource_overcommit                          | false                 | false                 | boolean | Use resources which are not guaranteed to be available to the query
+ scale_writers                                | false                 | false                 | boolean | Scale out writers based on throughput (use minimum necessary)
+ spatial_join                                 | true                  | true                  | boolean | Use spatial index for spatial join when possible
+ spill_enabled                                | false                 | false                 | boolean | Experimental: Enable spilling
+ split_concurrency_adjustment_interval        | 100.00ms              | 100.00ms              | varchar | Experimental: Interval between changes to the number of concurrent
+ task_concurrency                             | 16                    | 16                    | bigint  | Default number of local parallel jobs per worker
+ task_share_index_loading                     | false                 | false                 | boolean | Share index join lookups and caching within a task
+ task_writer_count                            | 1                     | 1                     | bigint  | Default number of local parallel table writer jobs per worker
+ use_mark_distinct                            | true                  | true                  | boolean | Implement DISTINCT aggregations using MarkDistinct
+ writer_min_size                              | 32MB                  | 32MB                  | varchar | Target minimum size of writer output when scaling writers
+(49 rows)
+...skipping...
+                     Name                     |         Value         |        Default        |  Type   |                                                      Description
+----------------------------------------------+-----------------------+-----------------------+---------+--------------------------------------------------------------------
+ aggregation_operator_unspill_memory_limit    | 4MB                   | 4MB                   | varchar | Experimental: How much memory can should be allocated per aggragati
+ colocated_join                               | false                 | false                 | boolean | Experimental: Use a colocated join when possible
+ concurrent_lifespans_per_task                | 0                     | 0                     | integer | Experimental: Run a fixed number of groups concurrently for eligibl
+ dictionary_aggregation                       | true                  | true                  | boolean | Enable optimization for aggregations on dictionaries
+ distributed_index_join                       | false                 | false                 | boolean | Distribute index joins on join keys instead of executing inline
+ distributed_join                             |                       |                       | boolean | (DEPRECATED) Use a distributed join instead of a broadcast join. If
+ distributed_sort                             | true                  | true                  | boolean | Parallelize sort across multiple nodes
+ enable_intermediate_aggregations             | false                 | false                 | boolean | Enable the use of intermediate aggregations
+ exchange_compression                         | false                 | false                 | boolean | Enable compression in exchanges
+ execution_policy                             | all-at-once           | all-at-once           | varchar | Policy used for scheduling query tasks
+ fast_inequality_joins                        | true                  | true                  | boolean | Use faster handling of inequality join if it is possible
+ filter_and_project_min_output_page_row_count | 256                   | 256                   | integer | Experimental: Minimum output page row count for filter and project
+ filter_and_project_min_output_page_size      | 500kB                 | 500kB                 | varchar | Experimental: Minimum output page size for filter and project opera
+ grouped_execution_for_aggregation            | false                 | false                 | boolean | Use grouped execution for aggregation when possible
+ hash_partition_count                         | 100                   | 100                   | integer | Number of partitions for distributed joins and aggregations
+ initial_splits_per_node                      | 4                     | 4                     | integer | The number of splits each node will run per task, initially
+ iterative_optimizer_enabled                  | true                  | true                  | boolean | Experimental: enable iterative optimizer
+ iterative_optimizer_timeout                  | 3.00m                 | 3.00m                 | varchar | Timeout for plan optimization in iterative optimizer
+ join_distribution_type                       | PARTITIONED           | PARTITIONED           | varchar | The join method to use. Options are BROADCAST,PARTITIONED,AUTOMATIC
+ join_reordering_strategy                     | ELIMINATE_CROSS_JOINS | ELIMINATE_CROSS_JOINS | varchar | The join reordering strategy to use. Options are NONE,ELIMINATE_CRO
+ legacy_row_field_ordinal_access              | false                 | false                 | boolean | Allow accessing anonymous row field with .field0, .field1, ...
+ legacy_unnest                                | false                 | false                 | boolean | Using legacy unnest semantic, where unnest(array(row)) will create
+ max_reordered_joins                          | 9                     | 9                     | bigint  | The maximum number of joins to reorder as one group in cost-based j
+ optimize_hash_generation                     | true                  | false                 | boolean | Compute hash codes for distribution, joins, and aggregations early
+ optimize_metadata_queries                    | false                 | false                 | boolean | Enable optimization for metadata queries
+ optimize_mixed_distinct_aggregations         | false                 | false                 | boolean | Optimize mixed non-distinct and distinct aggregations
+ parse_decimal_literals_as_double             | false                 | false                 | boolean | Parse decimal literals as DOUBLE instead of DECIMAL
+ plan_with_table_node_partitioning            | true                  | true                  | boolean | Experimental: Adapt plan to pre-partitioned tables
+ prefer_partial_aggregation                   | true                  | true                  | boolean | Prefer splitting aggregations into partial and final stages
+ prefer_streaming_operators                   | false                 | false                 | boolean | Prefer source table layouts that produce streaming operators
+ push_aggregation_through_join                | true                  | true                  | boolean | Allow pushing aggregations below joins
+ push_partial_aggregation_through_join        | false                 | false                 | boolean | Push partial aggregations below joins
+ push_table_write_through_union               | true                  | true                  | boolean | Parallelize writes when using UNION ALL in queries that write data
+ query_max_cpu_time                           | 1000000000.00d        | 1000000000.00d        | varchar | Maximum CPU time of a query
+ query_max_execution_time                     | 100.00d               | 100.00d               | varchar | Maximum execution time of a query
+ query_max_run_time                           | 100.00d               | 100.00d               | varchar | Maximum run time of a query (includes the queueing time)
+ query_priority                               | 1                     | 1                     | integer | The priority of queries. Larger numbers are higher priority
+ redistribute_writes                          | true                  | true                  | boolean | Force parallel distributed writes
+ reorder_joins                                |                       |                       | boolean | (DEPRECATED) Reorder joins to remove unnecessary cross joins. If th
+ resource_overcommit                          | false                 | false                 | boolean | Use resources which are not guaranteed to be available to the query
+ scale_writers                                | false                 | false                 | boolean | Scale out writers based on throughput (use minimum necessary)
+ spatial_join                                 | true                  | true                  | boolean | Use spatial index for spatial join when possible
+ spill_enabled                                | false                 | false                 | boolean | Experimental: Enable spilling
+ split_concurrency_adjustment_interval        | 100.00ms              | 100.00ms              | varchar | Experimental: Interval between changes to the number of concurrent
+ task_concurrency                             | 16                    | 16                    | bigint  | Default number of local parallel jobs per worker
+ task_share_index_loading                     | false                 | false                 | boolean | Share index join lookups and caching within a task
+ task_writer_count                            | 1                     | 1                     | bigint  | Default number of local parallel table writer jobs per worker
+ use_mark_distinct                            | true                  | true                  | boolean | Implement DISTINCT aggregations using MarkDistinct
+ writer_min_size                              | 32MB                  | 32MB                  | varchar | Target minimum size of writer output when scaling writers
+(49 rows)
+~
+~
+~
+~
+~
+
+Query 20181222_083247_00010_8emcn, FINISHED, 1 node
+Splits: 17 total, 17 done (100.00%)
+0:18 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+
+presto:default> SHOW SESSION;
+                     Name                     |         Value         |        Default        |  Type   |                                                      Description
+----------------------------------------------+-----------------------+-----------------------+---------+--------------------------------------------------------------------
+ aggregation_operator_unspill_memory_limit    | 4MB                   | 4MB                   | varchar | Experimental: How much memory can should be allocated per aggragati
+ colocated_join                               | false                 | false                 | boolean | Experimental: Use a colocated join when possible
+ concurrent_lifespans_per_task                | 0                     | 0                     | integer | Experimental: Run a fixed number of groups concurrently for eligibl
+ dictionary_aggregation                       | true                  | true                  | boolean | Enable optimization for aggregations on dictionaries
+ distributed_index_join                       | false                 | false                 | boolean | Distribute index joins on join keys instead of executing inline
+ distributed_join                             |                       |                       | boolean | (DEPRECATED) Use a distributed join instead of a broadcast join. If
+ distributed_sort                             | true                  | true                  | boolean | Parallelize sort across multiple nodes
+ enable_intermediate_aggregations             | false                 | false                 | boolean | Enable the use of intermediate aggregations
+ exchange_compression                         | false                 | false                 | boolean | Enable compression in exchanges
+ execution_policy                             | all-at-once           | all-at-once           | varchar | Policy used for scheduling query tasks
+ fast_inequality_joins                        | true                  | true                  | boolean | Use faster handling of inequality join if it is possible
+ filter_and_project_min_output_page_row_count | 256                   | 256                   | integer | Experimental: Minimum output page row count for filter and project
+ filter_and_project_min_output_page_size      | 500kB                 | 500kB                 | varchar | Experimental: Minimum output page size for filter and project opera
+ grouped_execution_for_aggregation            | false                 | false                 | boolean | Use grouped execution for aggregation when possible
+ hash_partition_count                         | 100                   | 100                   | integer | Number of partitions for distributed joins and aggregations
+ initial_splits_per_node                      | 4                     | 4                     | integer | The number of splits each node will run per task, initially
+ iterative_optimizer_enabled                  | true                  | true                  | boolean | Experimental: enable iterative optimizer
+ iterative_optimizer_timeout                  | 3.00m                 | 3.00m                 | varchar | Timeout for plan optimization in iterative optimizer
+ join_distribution_type                       | PARTITIONED           | PARTITIONED           | varchar | The join method to use. Options are BROADCAST,PARTITIONED,AUTOMATIC
+ join_reordering_strategy                     | ELIMINATE_CROSS_JOINS | ELIMINATE_CROSS_JOINS | varchar | The join reordering strategy to use. Options are NONE,ELIMINATE_CRO
+ legacy_row_field_ordinal_access              | false                 | false                 | boolean | Allow accessing anonymous row field with .field0, .field1, ...
+ legacy_unnest                                | false                 | false                 | boolean | Using legacy unnest semantic, where unnest(array(row)) will create
+ max_reordered_joins                          | 9                     | 9                     | bigint  | The maximum number of joins to reorder as one group in cost-based j
+ optimize_hash_generation                     | false                 | false                 | boolean | Compute hash codes for distribution, joins, and aggregations early
+ optimize_metadata_queries                    | false                 | false                 | boolean | Enable optimization for metadata queries
+ optimize_mixed_distinct_aggregations         | false                 | false                 | boolean | Optimize mixed non-distinct and distinct aggregations
+ parse_decimal_literals_as_double             | false                 | false                 | boolean | Parse decimal literals as DOUBLE instead of DECIMAL
+ plan_with_table_node_partitioning            | true                  | true                  | boolean | Experimental: Adapt plan to pre-partitioned tables
+ prefer_partial_aggregation                   | true                  | true                  | boolean | Prefer splitting aggregations into partial and final stages
+ prefer_streaming_operators                   | false                 | false                 | boolean | Prefer source table layouts that produce streaming operators
+ push_aggregation_through_join                | true                  | true                  | boolean | Allow pushing aggregations below joins
+ push_partial_aggregation_through_join        | false                 | false                 | boolean | Push partial aggregations below joins
+ push_table_write_through_union               | true                  | true                  | boolean | Parallelize writes when using UNION ALL in queries that write data
+ query_max_cpu_time                           | 1000000000.00d        | 1000000000.00d        | varchar | Maximum CPU time of a query
+ query_max_execution_time                     | 100.00d               | 100.00d               | varchar | Maximum execution time of a query
+ query_max_run_time                           | 100.00d               | 100.00d               | varchar | Maximum run time of a query (includes the queueing time)
+ query_priority                               | 1                     | 1                     | integer | The priority of queries. Larger numbers are higher priority
+ redistribute_writes                          | true                  | true                  | boolean | Force parallel distributed writes
+ reorder_joins                                |                       |                       | boolean | (DEPRECATED) Reorder joins to remove unnecessary cross joins. If th
+ resource_overcommit                          | false                 | false                 | boolean | Use resources which are not guaranteed to be available to the query
+ scale_writers                                | false                 | false                 | boolean | Scale out writers based on throughput (use minimum necessary)
+ spatial_join                                 | true                  | true                  | boolean | Use spatial index for spatial join when possible
+ spill_enabled                                | false                 | false                 | boolean | Experimental: Enable spilling
+ split_concurrency_adjustment_interval        | 100.00ms              | 100.00ms              | varchar | Experimental: Interval between changes to the number of concurrent
+ task_concurrency                             | 16                    | 16                    | bigint  | Default number of local parallel jobs per worker
+ task_share_index_loading                     | false                 | false                 | boolean | Share index join lookups and caching within a task
+ task_writer_count                            | 1                     | 1                     | bigint  | Default number of local parallel table writer jobs per worker
+ use_mark_distinct                            | true                  | true                  | boolean | Implement DISTINCT aggregations using MarkDistinct
+ writer_min_size                              | 32MB                  | 32MB                  | varchar | Target minimum size of writer output when scaling writers
+(49 rows)
+
+Query 20181222_083421_00013_8emcn, FINISHED, 1 node
+Splits: 17 total, 17 done (100.00%)
+0:01 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+presto:default> REVOKE INSERT, SELECT ON orders FROM alice;
+Query 20181222_083538_00014_8emcn failed: This connector does not support revokes
+
+
+presto:default> START TRANSACTION;
+START TRANSACTION
+presto:default> START TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+Query 20181222_083646_00017_8emcn failed: Nested transactions not supported
+
+presto:default> START TRANSACTION READ WRITE;
+Query 20181222_083700_00018_8emcn failed: Nested transactions not supported
+
+presto:default> START TRANSACTION READ;
+Query 20181222_083705_00019_8emcn failed: line 1:23: mismatched input '<EOF>'. Expecting: 'ONLY', 'WRITE'
+START TRANSACTION READ <EOF>
+
+presto:default> START TRANSACTION READ WRITE;
+Query 20181222_083718_00020_8emcn failed: Nested transactions not supported
+
+presto:default> START TRANSACTION READ ONLY;
+Query 20181222_083722_00021_8emcn failed: Nested transactions not supported
+
+presto:default> START TRANSACTION READ WRITE, ISOLATION LEVEL SERIALIZABLE;
+Query 20181222_083745_00022_8emcn failed: Nested transactions not supported
+
+
+presto:default> START TRANSACTION;
+START TRANSACTION
+presto:default> COMMIT;
+COMMIT
+presto:default> ROLLBACK;
+Query 20181222_083856_00026_8emcn failed: No transaction in progress
+
+presto:default> START TRANSACTION;
+START TRANSACTION
+presto:default> ROLLBACK;
+ROLLBACK
+
+
+
+8.26. SELECT
+
+WITH x AS (SELECT o_orderkey, MAX(o_custkey) AS b FROM orders GROUP BY o_orderkey)
+SELECT o_orderkey, b FROM x;
+
+
+
+presto:default> WITH x AS (SELECT o_orderkey, MAX(o_custkey) AS b FROM orders GROUP BY o_orderkey) SELECT o_orderkey, b FROM x limit 10;
+ o_orderkey |   b
+------------+--------
+          2 | 390010
+        130 | 184817
+        192 | 412843
+        226 | 637327
+        229 | 558638
+        259 | 215924
+        322 | 667726
+        323 | 195665
+        352 | 532279
+        353 |   8878
+(10 rows)
+
+Query 20181222_094144_00006_ndsjp, FINISHED, 1 node
+Splits: 50 total, 40 done (80.00%)
+0:19 [7.5M rows, 71.5MB] [401K rows/s, 3.82MB/s]
+
+
+SELECT o_orderdate, o_orderstatus, o_orderpriority,sum(o_totalprice),count(*) as sum
+FROM orders
+GROUP BY GROUPING SETS (
+    (o_orderdate),
+    (o_orderstatus, o_orderpriority),
+    (o_totalprice)) order by sum limit 10;;
+	
+	presto:default> SELECT o_orderdate, o_orderstatus, o_orderpriority,sum(o_totalprice),count(*) as sum
+             -> FROM orders
+             -> GROUP BY GROUPING SETS (
+             ->     (o_orderdate),
+             ->     (o_orderstatus, o_orderpriority),
+             ->     (o_totalprice)) order by sum limit 10;
+ o_orderdate | o_orderstatus | o_orderpriority |   _col3   | sum
+-------------+---------------+-----------------+-----------+-----
+ NULL        | NULL          | NULL            | 269119.64 |   1
+ NULL        | NULL          | NULL            | 52048.54  |   1
+ NULL        | NULL          | NULL            | 190028.21 |   1
+ NULL        | NULL          | NULL            | 157545.01 |   1
+ NULL        | NULL          | NULL            | 66260.55  |   1
+ NULL        | NULL          | NULL            | 132481.52 |   1
+ NULL        | NULL          | NULL            | 355637.82 |   1
+ NULL        | NULL          | NULL            | 87608.72  |   1
+ NULL        | NULL          | NULL            | 418670.97 |   1
+ NULL        | NULL          | NULL            | 167737.31 |   1
+(10 rows)
+
+Query 20181222_095056_00012_ndsjp, FINISHED, 1 node
+Splits: 50 total, 50 done (100.00%)
+0:34 [7.5M rows, 157MB] [221K rows/s, 4.64MB/s]
+
+presto:default> SELECT o_orderdate, o_orderstatus, o_orderpriority,sum(o_totalprice),count(*) as sum FROM orders GROUP BY GROUPING SETS ( (o_orderdate) ) order by sum limit 10;
+Query 20181222_095200_00013_ndsjp failed: line 1:21: 'o_orderstatus' must be an aggregate expression or appear in GROUP BY clause
+SELECT o_orderdate, o_orderstatus, o_orderpriority,sum(o_totalprice),count(*) as sum FROM orders GROUP BY GROUPING SETS ( (o_orderdate) ) order by sum limit 10
+
+presto:default> SELECT o_orderdate,sum(o_totalprice),count(*) as sum FROM orders GROUP BY GROUPING SETS ( (o_orderdate) ) order by sum limit 10;
+ o_orderdate |    _col1     | sum
+-------------+--------------+------
+ 1997-11-12  | 438131655.79 | 2910
+ 1995-02-23  | 449953662.74 | 2945
+ 1996-04-14  | 449106604.18 | 2950
+ 1997-12-26  | 455716941.36 | 2959
+ 1992-02-19  | 450986298.14 | 2962
+ 1995-09-03  | 440794236.86 | 2969
+ 1997-03-19  | 458134585.22 | 2975
+ 1998-02-23  | 457124745.41 | 2975
+ 1994-12-20  | 445768617.64 | 2976
+ 1993-05-27  | 448416680.75 | 2977
+(10 rows)
+
+Query 20181222_095216_00014_ndsjp, FINISHED, 1 node
+Splits: 50 total, 50 done (100.00%)
+0:15 [7.5M rows, 100MB] [503K rows/s, 6.71MB/s]
+
+
+
+SELECT o_orderstatus, o_orderpriority, sum(o_totalprice)
+FROM orders
+GROUP BY CUBE (o_orderstatus, o_orderpriority);
+
+presto:default> SELECT o_orderstatus, o_orderpriority, sum(o_totalprice)
+             -> FROM orders
+             -> GROUP BY CUBE (o_orderstatus, o_orderpriority);
+ o_orderstatus | o_orderpriority |      _col2
+---------------+-----------------+------------------
+ NULL          | 5-LOW           | 226628507182.19
+ P             | 2-HIGH          | 7104929182.90
+ P             | 3-MEDIUM        | 7043598012.06
+ O             | 5-LOW           | 109676385409.41
+ O             | NULL            | 548923692869.55
+ P             | NULL            | 35333603011.43
+ NULL          | 3-MEDIUM        | 226291403383.43
+ P             | 5-LOW           | 7035996806.80
+ O             | 4-NOT SPECIFIED | 109939695106.69
+ F             | 5-LOW           | 109916124965.98
+ NULL          | 1-URGENT        | 226905605646.07
+ NULL          | 4-NOT SPECIFIED | 226828528845.12
+ P             | 4-NOT SPECIFIED | 7127741709.32
+ F             | 3-MEDIUM        | 109649546469.83
+ O             | 3-MEDIUM        | 109598258901.54
+ F             | 2-HIGH          | 109944564266.43
+ F             | 1-URGENT        | 109910591633.92
+ F             | NULL            | 549181919365.27
+ O             | 2-HIGH          | 109735676740.11
+ F             | 4-NOT SPECIFIED | 109761092029.11
+ O             | 1-URGENT        | 109973676711.80
+ NULL          | 2-HIGH          | 226785170189.44
+ P             | 1-URGENT        | 7021337300.35
+ NULL          | NULL            | 1133439215246.25
+(24 rows)
+
+Query 20181222_095415_00016_ndsjp, FINISHED, 1 node
+Splits: 49 total, 49 done (100.00%)
+0:22 [7.5M rows, 122MB] [348K rows/s, 5.64MB/s]
+
+
+SELECT o_orderstatus, o_orderpriority, sum(o_totalprice)
+FROM orders
+GROUP BY ROLLUP (o_orderstatus, o_orderpriority);
+
+
+presto:default> SELECT o_orderstatus, o_orderpriority, sum(o_totalprice)
+             -> FROM orders
+             -> GROUP BY ROLLUP (o_orderstatus, o_orderpriority);
+ o_orderstatus | o_orderpriority |      _col2
+---------------+-----------------+------------------
+ O             | 4-NOT SPECIFIED | 109939695106.69
+ O             | 2-HIGH          | 109735676740.11
+ O             | 1-URGENT        | 109973676711.80
+ F             | 5-LOW           | 109916124965.98
+ F             | 4-NOT SPECIFIED | 109761092029.11
+ P             | 1-URGENT        | 7021337300.35
+ P             | 2-HIGH          | 7104929182.90
+ O             | NULL            | 548923692869.55
+ P             | NULL            | 35333603011.43
+ F             | NULL            | 549181919365.27
+ P             | 5-LOW           | 7035996806.80
+ O             | 5-LOW           | 109676385409.41
+ F             | 1-URGENT        | 109910591633.92
+ F             | 2-HIGH          | 109944564266.43
+ O             | 3-MEDIUM        | 109598258901.54
+ F             | 3-MEDIUM        | 109649546469.83
+ P             | 4-NOT SPECIFIED | 7127741709.32
+ NULL          | NULL            | 1133439215246.25
+ P             | 3-MEDIUM        | 7043598012.06
+(19 rows)
+
+Query 20181222_095617_00017_ndsjp, FINISHED, 1 node
+Splits: 49 total, 49 done (100.00%)
+0:19 [7.5M rows, 122MB] [386K rows/s, 6.26MB/s]
+
+
+SELECT o_orderstatus, o_orderpriority, sum(o_totalprice)
+FROM orders
+GROUP BY GROUPING SETS ((o_orderstatus, o_orderpriority),(o_orderstatus),());
+
+
+
+
+presto:default> SELECT o_orderstatus, o_orderpriority, sum(o_totalprice) as sum FROM orders GROUP BY GROUPING SETS ((o_orderstatus, o_orderpriority),(o_orderstatus),()) order by sum;
+ o_orderstatus | o_orderpriority |       sum
+---------------+-----------------+------------------
+ P             | 1-URGENT        | 7021337300.35
+ P             | 5-LOW           | 7035996806.80
+ P             | 3-MEDIUM        | 7043598012.06
+ P             | 2-HIGH          | 7104929182.90
+ P             | 4-NOT SPECIFIED | 7127741709.32
+ P             | NULL            | 35333603011.43
+ O             | 3-MEDIUM        | 109598258901.54
+ F             | 3-MEDIUM        | 109649546469.83
+ O             | 5-LOW           | 109676385409.41
+ O             | 2-HIGH          | 109735676740.11
+ F             | 4-NOT SPECIFIED | 109761092029.11
+ F             | 1-URGENT        | 109910591633.92
+ F             | 5-LOW           | 109916124965.98
+ O             | 4-NOT SPECIFIED | 109939695106.69
+ F             | 2-HIGH          | 109944564266.43
+ O             | 1-URGENT        | 109973676711.80
+ O             | NULL            | 548923692869.55
+ F             | NULL            | 549181919365.27
+ NULL          | NULL            | 1133439215246.25
+(19 rows)
+
+Query 20181222_100003_00019_ndsjp, FINISHED, 1 node
+Splits: 51 total, 51 done (100.00%)
+0:19 [7.5M rows, 122MB] [385K rows/s, 6.25MB/s]
+
+presto:default> SELECT o_orderstatus, o_orderpriority, sum(o_totalprice) as sum FROM orders GROUP BY ROLLUP (o_orderstatus, o_orderpriority) order by sum;
+ o_orderstatus | o_orderpriority |       sum
+---------------+-----------------+------------------
+ P             | 1-URGENT        | 7021337300.35
+ P             | 5-LOW           | 7035996806.80
+ P             | 3-MEDIUM        | 7043598012.06
+ P             | 2-HIGH          | 7104929182.90
+ P             | 4-NOT SPECIFIED | 7127741709.32
+ P             | NULL            | 35333603011.43
+ O             | 3-MEDIUM        | 109598258901.54
+ F             | 3-MEDIUM        | 109649546469.83
+ O             | 5-LOW           | 109676385409.41
+ O             | 2-HIGH          | 109735676740.11
+ F             | 4-NOT SPECIFIED | 109761092029.11
+ F             | 1-URGENT        | 109910591633.92
+ F             | 5-LOW           | 109916124965.98
+ O             | 4-NOT SPECIFIED | 109939695106.69
+ F             | 2-HIGH          | 109944564266.43
+ O             | 1-URGENT        | 109973676711.80
+ O             | NULL            | 548923692869.55
+ F             | NULL            | 549181919365.27
+ NULL          | NULL            | 1133439215246.25
+(19 rows)
+
+Query 20181222_100122_00020_ndsjp, FINISHED, 1 node
+Splits: 51 total, 51 done (100.00%)
+0:20 [7.5M rows, 122MB] [381K rows/s, 6.17MB/s]
+
+
+SELECT o_orderstatus, o_orderpriority, sum(o_totalprice) as sum FROM orders GROUP BY GROUPING SETS ((o_orderstatus, o_orderpriority)),GROUPING SETS ((o_orderstatus),()) order by sum;
+
+presto:default> SELECT o_orderstatus, o_orderpriority, sum(o_totalprice) as sum FROM orders GROUP BY GROUPING SETS ((o_orderstatus, o_orderpriority)),GROUPING SETS ((o_orderstatus),()) order by sum;
+ o_orderstatus | o_orderpriority |       sum
+---------------+-----------------+-----------------
+ P             | 1-URGENT        | 7021337300.35
+ P             | 1-URGENT        | 7021337300.35
+ P             | 5-LOW           | 7035996806.80
+ P             | 5-LOW           | 7035996806.80
+ P             | 3-MEDIUM        | 7043598012.06
+ P             | 3-MEDIUM        | 7043598012.06
+ P             | 2-HIGH          | 7104929182.90
+ P             | 2-HIGH          | 7104929182.90
+ P             | 4-NOT SPECIFIED | 7127741709.32
+ P             | 4-NOT SPECIFIED | 7127741709.32
+ O             | 3-MEDIUM        | 109598258901.54
+ O             | 3-MEDIUM        | 109598258901.54
+ F             | 3-MEDIUM        | 109649546469.83
+ F             | 3-MEDIUM        | 109649546469.83
+ O             | 5-LOW           | 109676385409.41
+ O             | 5-LOW           | 109676385409.41
+ O             | 2-HIGH          | 109735676740.11
+ O             | 2-HIGH          | 109735676740.11
+ F             | 4-NOT SPECIFIED | 109761092029.11
+ F             | 4-NOT SPECIFIED | 109761092029.11
+ F             | 1-URGENT        | 109910591633.92
+ F             | 1-URGENT        | 109910591633.92
+ F             | 5-LOW           | 109916124965.98
+ F             | 5-LOW           | 109916124965.98
+ O             | 4-NOT SPECIFIED | 109939695106.69
+ O             | 4-NOT SPECIFIED | 109939695106.69
+ F             | 2-HIGH          | 109944564266.43
+ F             | 2-HIGH          | 109944564266.43
+ O             | 1-URGENT        | 109973676711.80
+ O             | 1-URGENT        | 109973676711.80
+(30 rows)
+
+Query 20181222_100338_00021_ndsjp, FINISHED, 1 node
+Splits: 51 total, 51 done (100.00%)
+0:19 [7.5M rows, 122MB] [389K rows/s, 6.31MB/s]
+
+
+presto:default> SELECT * from orders where o_orderstatus='P' UNION SELECT * from orders where o_orderstatus='O' limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |                                   o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+--------------------------------------------------
+         65 |     81256 | P             | 102231.29    | 1995-03-18  | 1-URGENT        | Clerk#000003160 |              0 | ular requests are blithely pending orbits-- even
+        197 |    162556 | P             | 146778.10    | 1995-04-07  | 2-HIGH          | Clerk#000004842 |              0 | solve quickly about the even braids. carefully ex
+        225 |    165148 | P             | 218255.48    | 1995-05-25  | 1-URGENT        | Clerk#000000882 |              0 | s. blithely ironic accounts wake quickly fluffily
+        327 |    722990 | P             | 36732.75     | 1995-04-17  | 5-LOW           | Clerk#000004957 |              0 | ng the slyly final courts. slyly even escapades e
+        418 |    474169 | P             | 60931.63     | 1995-04-13  | 4-NOT SPECIFIED | Clerk#000003211 |              0 | . furiously ironic instruc
+        450 |    236896 | P             | 240615.67    | 1995-03-05  | 4-NOT SPECIFIED | Clerk#000001461 |              0 | d theodolites. boldly bold foxes since the pack
+        512 |    315110 | P             | 148357.24    | 1995-05-20  | 5-LOW           | Clerk#000004069 |              0 | ding requests. carefully express theodolites was
+        643 |    288856 | P             | 270133.58    | 1995-03-25  | 2-HIGH          | Clerk#000001767 |              0 | g dependencies. regular accounts
+        897 |    244648 | P             | 88412.10     | 1995-03-20  | 1-URGENT        | Clerk#000001576 |              0 |  wake quickly against
+        961 |    275344 | P             | 255710.42    | 1995-06-04  | 4-NOT SPECIFIED | Clerk#000003599 |              0 | ons nag furiously among the quickl
+(10 rows)
+
+Query 20181222_100814_00024_ndsjp, FINISHED, 1 node
+Splits: 35 total, 33 done (94.29%)
+0:26 [128K rows, 5.96MB] [5.01K rows/s, 239KB/s]
+
+presto:default>
+presto:default> SELECT * FROM (VALUES 13, 42)
+             -> INTERSECT
+             -> SELECT 13;
+ _col0
+-------
+    13
+(1 row)
+
+Query 20181222_100844_00025_ndsjp, FINISHED, 1 node
+Splits: 50 total, 50 done (100.00%)
+0:00 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+presto:default> SELECT * FROM (VALUES 13, 42)
+             -> EXCEPT
+             -> SELECT 13;
+ _col0
+-------
+    42
+(1 row)
+
+Query 20181222_100924_00026_ndsjp, FINISHED, 1 node
+Splits: 50 total, 50 done (100.00%)
+0:00 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+
+presto:default> SELECT * from orders where o_orderstatus='P' and o_orderpriority='1-URGENT' and o_custkey<38;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |           o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+-------------------------------
+    1944711 |        16 | P             | 103227.81    | 1995-05-06  | 1-URGENT        | Clerk#000002896 |              0 | deas wake. slyly silent packa
+   14251045 |        28 | P             | 232873.32    | 1995-05-28  | 1-URGENT        | Clerk#000004659 |              0 | ages along the regula
+   15724007 |         4 | P             | 223987.86    | 1995-03-29  | 1-URGENT        | Clerk#000003808 |              0 | wly final patterns sleep slyl
+(3 rows)
+
+
+presto:default> (SELECT * from orders where o_orderstatus='P' and o_orderpriority='1-URGENT' and o_custkey<38) INTERSECT (select * from orders where o_custkey>10);
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |           o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+-------------------------------
+   14251045 |        28 | P             | 232873.32    | 1995-05-28  | 1-URGENT        | Clerk#000004659 |              0 | ages along the regula
+    1944711 |        16 | P             | 103227.81    | 1995-05-06  | 1-URGENT        | Clerk#000002896 |              0 | deas wake. slyly silent packa
+(2 rows)
+
+Query 20181222_102114_00041_ndsjp, FINISHED, 1 node
+Splits: 66 total, 66 done (100.00%)
+1:14 [13.3M rows, 762MB] [180K rows/s, 10.3MB/s]
+
+presto:default> (SELECT * from orders where o_orderstatus='P' and o_orderpriority='1-URGENT' and o_custkey<38) EXCEPT (select * from orders where o_custkey>10);
+
+Query 20181222_102247_00042_ndsjp, RUNNING, 1 node
+Splits: 66 total, 17 done (25.76%)
+3:20 [11.8M rows, 625MB] [59.3K rows/s, 3.13MB/s]
+
+Query is gone (server restarted?)
+
+killed
+
+
+presto:default> SELECT * FROM orders TABLESAMPLE BERNOULLI (50) limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |                                 o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+--------------------------------------------------
+          2 |    390010 | O             | 75004.81     | 1996-12-01  | 1-URGENT        | Clerk#000004396 |              0 |  foxes. pending accounts at the pending, silent a
+          3 |    616570 | F             | 228570.52    | 1993-10-14  | 5-LOW           | Clerk#000004772 |              0 | sly final accounts boost. carefully regular ideas
+          4 |    683881 | O             | 35015.50     | 1995-10-11  | 5-LOW           | Clerk#000000617 |              0 | sits. slyly regular warthogs cajole. regular, reg
+          5 |    222424 | F             | 151840.11    | 1994-07-30  | 5-LOW           | Clerk#000004624 |              0 | quickly. bold deposits sleep slyly. packages use
+         32 |    650285 | O             | 152975.54    | 1995-07-16  | 2-HIGH          | Clerk#000003079 |              0 | ise blithely bold, regular requests. quickly unus
+         33 |    334790 | F             | 170291.54    | 1993-10-27  | 3-MEDIUM        | Clerk#000002043 |              0 | uriously. furiously final request
+         34 |    305002 | O             | 56450.43     | 1998-07-21  | 3-MEDIUM        | Clerk#000001114 |              0 | ly final packages. fluffily final deposits wake b
+         35 |    637939 | O             | 243737.73    | 1995-10-23  | 4-NOT SPECIFIED | Clerk#000001292 |              0 | zzle. carefully enticing deposits nag furio
+         36 |    576259 | O             | 73833.77     | 1995-11-03  | 1-URGENT        | Clerk#000001786 |              0 |  quick packages are blithely. slyly silent accoun
+         37 |    430573 | F             | 178299.79    | 1992-06-03  | 3-MEDIUM        | Clerk#000002278 |              0 | kly regular pinto beans. carefully unusual waters
+(10 rows)
+
+Query 20181222_102742_00002_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:26 [32K rows, 0B] [1.22K rows/s, 0B/s]
+
+presto:default> SELECT * FROM orders TABLESAMPLE System (75) limit 10;
+ o_orderkey | o_custkey | o_orderstatus | o_totalprice | o_orderdate | o_orderpriority |     o_clerk     | o_shippriority |                                 o_comment
+------------+-----------+---------------+--------------+-------------+-----------------+-----------------+----------------+--------------------------------------------------
+          1 |    184501 | O             | 203010.51    | 1996-01-02  | 5-LOW           | Clerk#000004753 |              0 | nstructions sleep furiously among
+          2 |    390010 | O             | 75004.81     | 1996-12-01  | 1-URGENT        | Clerk#000004396 |              0 |  foxes. pending accounts at the pending, silent a
+          3 |    616570 | F             | 228570.52    | 1993-10-14  | 5-LOW           | Clerk#000004772 |              0 | sly final accounts boost. carefully regular ideas
+          4 |    683881 | O             | 35015.50     | 1995-10-11  | 5-LOW           | Clerk#000000617 |              0 | sits. slyly regular warthogs cajole. regular, reg
+          5 |    222424 | F             | 151840.11    | 1994-07-30  | 5-LOW           | Clerk#000004624 |              0 | quickly. bold deposits sleep slyly. packages use
+          6 |    278111 | F             | 41236.87     | 1992-02-21  | 4-NOT SPECIFIED | Clerk#000000290 |              0 | ggle. special, final requests are against the fur
+          7 |    195673 | O             | 250593.17    | 1996-01-10  | 2-HIGH          | Clerk#000002349 |              0 | ly special requests
+         32 |    650285 | O             | 152975.54    | 1995-07-16  | 2-HIGH          | Clerk#000003079 |              0 | ise blithely bold, regular requests. quickly unus
+         33 |    334790 | F             | 170291.54    | 1993-10-27  | 3-MEDIUM        | Clerk#000002043 |              0 | uriously. furiously final request
+         34 |    305002 | O             | 56450.43     | 1998-07-21  | 3-MEDIUM        | Clerk#000001114 |              0 | ly final packages. fluffily final deposits wake b
+(10 rows)
+
+Query 20181222_102819_00003_b76je, FINISHED, 1 node
+Splits: 18 total, 18 done (100.00%)
+0:46 [32K rows, 2.98MB] [696 rows/s, 66.5KB/s]
+
+
+SELECT o_custkey, v
+FROM orders
+CROSS JOIN UNNEST(o_shippriority) AS t (o_shippriority);
+
+
+
+presto:default> SELECT o_custkey, v
+             -> FROM orders
+             -> CROSS JOIN UNNEST(o_totalprice) AS t (o_totalprice);
+Query 20181222_103011_00004_b76je failed: Cannot unnest type: decimal(15,2)
+
+presto:default> SELECT o_custkey, v
+             -> FROM orders
+             -> CROSS JOIN UNNEST(o_shippriority) AS t (o_shippriority);
+Query 20181222_103056_00005_b76je failed: Cannot unnest type: integer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+presto:default> SHOW CATALOGS;
+  Catalog
+------------
+ carbondata
+ system
+(2 rows)
+
+Query 20181222_084043_00029_8emcn, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:00 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+
+presto:default> SHOW CATALOGS;
+  Catalog
+------------
+ carbondata
+ system
+(2 rows)
+
+Query 20181222_084043_00029_8emcn, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:00 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:default> SHOW COLUMNS FROM carbon;
+ Column |  Type   | Extra | Comment
+--------+---------+-------+---------
+ name   | varchar |       |
+ age    | integer |       |
+(2 rows)
+
+Query 20181222_084117_00030_8emcn, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:04 [2 rows, 125B] [0 rows/s, 29B/s]
+
+
+presto:default> SHOW CREATE TABLE orders;
+               Create Table
+-------------------------------------------
+ CREATE TABLE carbondata.default.orders (
+    o_orderkey integer COMMENT '',
+    o_custkey integer COMMENT '',
+    o_orderstatus varchar COMMENT '',
+    o_totalprice decimal(15,2) COMMENT '',
+    o_orderdate date COMMENT '',
+    o_orderpriority varchar COMMENT '',
+    o_clerk varchar COMMENT '',
+    o_shippriority integer COMMENT '',
+    o_comment varchar COMMENT ''
+ )
+(1 row)
+
+Query 20181222_084151_00031_8emcn, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:03 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+
+SHOW CREATE VIEW view_name: can't create view
+
+
+presto:default> SHOW FUNCTIONS;
+            Function             |         Return Type          |                                 Argument Types                                 | Function Type | Determinis
+---------------------------------+------------------------------+--------------------------------------------------------------------------------+---------------+-----------
+ abs                             | bigint                       | bigint                                                                         | scalar        | true
+ abs                             | decimal(p,s)                 | decimal(p,s)                                                                   | scalar        | true
+ abs                             | double                       | double                                                                         | scalar        | true
+ abs                             | integer                      | integer                                                                        | scalar        | true
+ abs                             | real                         | real                                                                           | scalar        | true
+ abs                             | smallint                     | smallint                                                                       | scalar        | true
+ abs                             | tinyint                      | tinyint                                                                        | scalar        | true
+ acos                            | double                       | double                                                                         | scalar        | true
+ approx_distinct                 | bigint                       | T                                                                              | aggregate     | true
+ approx_distinct                 | bigint                       | T, double                                                                      | aggregate     | true
+ approx_percentile               | array(bigint)                | bigint, array(double)                                                          | aggregate     | true
+ approx_percentile               | array(bigint)                | bigint, bigint, array(double)                                                  | aggregate     | true
+ approx_percentile               | array(double)                | double, array(double)                                                          | aggregate     | true
+ approx_percentile               | array(double)                | double, bigint, array(double)                                                  | aggregate     | true
+ approx_percentile               | array(real)                  | real, array(double)                                                            | aggregate     | true
+ approx_percentile               | array(real)                  | real, bigint, array(double)                                                    | aggregate     | true
+ approx_percentile               | bigint                       | bigint, bigint, double                                                         | aggregate     | true
+ approx_percentile               | bigint                       | bigint, bigint, double, double                                                 | aggregate     | true
+ approx_percentile               | bigint                       | bigint, double                                                                 | aggregate     | true
+ approx_percentile               | double                       | double, bigint, double                                                         | aggregate     | true
+ approx_percentile               | double                       | double, bigint, double, double                                                 | aggregate     | true
+ approx_percentile               | double                       | double, double                                                                 | aggregate     | true
+ approx_percentile               | real                         | real, bigint, double                                                           | aggregate     | true
+ approx_percentile               | real                         | real, bigint, double, double                                                   | aggregate     | true
+ approx_percentile               | real                         | real, double                                                                   | aggregate     | true
+ approx_set                      | HyperLogLog                  | bigint                                                                         | aggregate     | true
+ approx_set                      | HyperLogLog                  | double                                                                         | aggregate     | true
+ approx_set                      | HyperLogLog                  | varchar(x)                                                                     | aggregate     | true
+ arbitrary                       | T                            | T                                                                              | aggregate     | true
+ array_agg                       | array(T)                     | T                                                                              | aggregate     | true
+ array_distinct                  | array(E)                     | array(E)                                                                       | scalar        | true
+ array_except                    | array(E)                     | array(E), array(E)                                                             | scalar        | true
+ array_intersect                 | array(E)                     | array(E), array(E)                                                             | scalar        | true
+ array_join                      | varchar                      | array(T), varchar                                                              | scalar        | true
+ array_join                      | varchar                      | array(T), varchar, varchar                                                     | scalar        | true
+ array_max                       | T                            | array(T)                                                                       | scalar        | true
+ array_min                       | T                            | array(T)                                                                       | scalar        | true
+ array_position                  | bigint                       | array(T), T                                                                    | scalar        | true
+ array_remove                    | array(E)                     | array(E), E                                                                    | scalar        | true
+ array_sort                      | array(E)                     | array(E)                                                                       | scalar        | true
+ array_sort                      | array(T)                     | array(T), function(T,T,integer)                                                | scalar        | true
+ array_union                     | array(E)                     | array(E), array(E)                                                             | scalar        | true
+ arrays_overlap                  | boolean                      | array(E), array(E)                                                             | scalar        | true
+ asin                            | double                       | double                                                                         | scalar        | true
+ atan                            | double                       | double                                                                         | scalar        | true
+ atan2                           | double                       | double, double                                                                 | scalar        | true
+ avg                             | decimal(p,s)                 | decimal(p,s)                                                                   | aggregate     | true
+ avg                             | double                       | bigint                                                                         | aggregate     | true
+ avg                             | double                       | double                                                                         | aggregate     | true
+ avg                             | interval day to second       | interval day to second                                                         | aggregate     | true
+ avg                             | interval year to month       | interval year to month                                                         | aggregate     | true
+ avg                             | real                         | real                                                                           | aggregate     | true
+ bar                             | varchar                      | double, bigint                                                                 | scalar        | true
+ bar                             | varchar                      | double, bigint, color, color                                                   | scalar        | true
+ bing_tile                       | BingTile                     | integer, integer, integer                                                      | scalar        | true
+(query aborted by user)
+
+Query 20181222_084254_00032_8emcn, FINISHED, 1 node
+Splits: 35 total, 35 done (100.00%)
+0:04 [0 rows, 0B] [0 rows/s, 0B/s]
+
+
+presto:default> SHOW GRANTS ON TABLE ``orders``;
+Query 20181222_084346_00033_8emcn failed: line 1:22: backquoted identifiers are not supported; use double quotes to quote identifiers
+SHOW GRANTS ON TABLE ``orders``
+
+presto:default> SHOW GRANTS ON TABLE `orders`;
+Query 20181222_084356_00034_8emcn failed: line 1:22: backquoted identifiers are not supported; use double quotes to quote identifiers
+SHOW GRANTS ON TABLE `orders`
+
+presto:default> SHOW GRANTS ON TABLE orders;
+ Grantee | Catalog | Schema | Table | Privilege | Grantable
+---------+---------+--------+-------+-----------+-----------
+(0 rows)
+
+Query 20181222_084401_00035_8emcn, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:02 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:default> SHOW GRANTS ON TABLE ``orders``;
+Query 20181222_084346_00033_8emcn failed: line 1:22: backquoted identifiers are not supported; use double quotes to quote identifiers
+SHOW GRANTS ON TABLE ``orders``
+
+presto:default> SHOW GRANTS ON TABLE `orders`;
+Query 20181222_084356_00034_8emcn failed: line 1:22: backquoted identifiers are not supported; use double quotes to quote identifiers
+SHOW GRANTS ON TABLE `orders`
+
+presto:default> SHOW GRANTS ON TABLE orders;
+ Grantee | Catalog | Schema | Table | Privilege | Grantable
+---------+---------+--------+-------+-----------+-----------
+(0 rows)
+
+Query 20181222_084401_00035_8emcn, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:02 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:schema> USE information_schema;
+USE
+presto:information_schema> show schemas;
+       Schema
+--------------------
+ default
+ information_schema
+(2 rows)
+
+Query 20181222_090616_00043_8emcn, FINISHED, 1 node
+Splits: 19 total, 19 done (100.00%)
+0:01 [2 rows, 35B] [1 rows/s, 25B/s]
+
+
+
+presto:information_schema> VALUES 1, 2, 3;
+ _col0
+-------
+     1
+     2
+     3
+(3 rows)
+
+Query 20181222_090701_00046_8emcn, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:00 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:information_schema> VALUES
+                        ->     (1, 'a'),
+                        ->     (2, 'b'),
+                        ->     (3, 'c');
+ _col0 | _col1
+-------+-------
+     1 | a
+     2 | b
+     3 | c
+(3 rows)
+
+Query 20181222_090717_00047_8emcn, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:00 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:information_schema> SELECT * FROM (
+                        ->     VALUES
+                        ->         (1, 'a'),
+                        ->         (2, 'b'),
+                        ->         (3, 'c')
+                        -> ) AS t (id, name);
+ id | name
+----+------
+  1 | a
+  2 | b
+  3 | c
+(3 rows)
+
+Query 20181222_090728_00048_8emcn, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0:00 [0 rows, 0B] [0 rows/s, 0B/s]
+
+presto:information_schema> id
+                        -> ;
+Query 20181222_090733_00049_8emcn failed: line 1:1: mismatched input 'id'. Expecting: 'ALTER', 'CALL', 'COMMIT', 'CREATE', 'DEALLOCATE', 'DELETE', 'DESC', 'DESCRIBE', 'DROP', 'EXECUTE', 'EXPLAIN', 'GRANT', 'INSERT', 'PREPARE', 'RESET', 'REVOKE', 'ROLLBACK', 'SET', 'SHOW', 'START', 'USE', <query>
+id
+
+presto:information_schema> CREATE TABLE example AS
+                        -> SELECT * FROM (
+                        ->     VALUES
+                        ->         (1, 'a'),
+                        ->         (2, 'b'),
+                        ->         (3, 'c')
+                        -> ) AS t (id, name);
+Query 20181222_090749_00050_8emcn failed: This connector does not support creating tables with data
+
+
+
+
