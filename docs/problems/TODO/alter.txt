@@ -1,0 +1,5 @@
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon SET TBLPROPERTIES('sort_columns'='age');
+Error: java.lang.RuntimeException: Alter table newProperties operation failed: Error: Invalid option(s): sort_columns (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon SET TBLPROPERTIES('sort_columns'='age');
+Error: java.lang.RuntimeException: Alter table newProperties operation failed: Error: Invalid option(s): sort_columns (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000>

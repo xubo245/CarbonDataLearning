@@ -1,0 +1,24 @@
+
+0: jdbc:hive2://127.0.0.1:10000> desc carbon;
++-----------+------------+----------+--+
+| col_name  | data_type  | comment  |
++-----------+------------+----------+--+
+| name      | string     | NULL     |
+| age       | int        | NULL     |
++-----------+------------+----------+--+
+2 rows selected (0.037 seconds)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon CHANGE age age Double;
+Error: org.apache.carbondata.common.exceptions.sql.MalformedCarbonCommandException: Data type provided is invalid. (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon CHANGE age age double;
+Error: org.apache.carbondata.common.exceptions.sql.MalformedCarbonCommandException: Data type provided is invalid. (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon CHANGE age age float;
+Error: org.apache.carbondata.common.exceptions.sql.MalformedCarbonCommandException: Data type provided is invalid. (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon CHANGE age age string;
+Error: org.apache.carbondata.common.exceptions.sql.MalformedCarbonCommandException: Data type provided is invalid. (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon CHANGE age age DECIMAL(18,2);
+Error: org.apache.carbondata.spark.exception.ProcessMetaDataException: operation failed for default.carbon: Alter table data type change operation failed: Given column age with data type INT cannot be modified. Int can only be changed to bigInt or long (state=,code=0)
+0: jdbc:hive2://127.0.0.1:10000> ALTER TABLE carbon CHANGE age age BigInt;
++---------+--+
+| Result  |
++---------+--+
++---------+--+

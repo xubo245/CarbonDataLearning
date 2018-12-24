@@ -2,84 +2,86 @@
 ###create external table
 ###create table and insert into values
 
-	create external table customer STORED BY 'carbondata' location 's3a://newcarbonstore/default/customer';
-	select count(*) from customer;
-	select * from customer limit 10;
-	
-	create table obs1(name STRING) stored by 'carbondata';
-	show tables;
-	insert into obs1 values("xubo");
-	select * from obs1;
-	
-	
-	
-	
-	create table t2(name STRING);
-	show tables;
-	insert into t2 values("xubo");
-	select * from t2;
+create external table customer STORED BY 'carbondata' location 's3a://newcarbonstore/default/customer';
+select count(*) from customer;
+select * from customer limit 10;
+
+create table obs1(name STRING) stored by 'carbondata';
+show tables;
+insert into obs1 values("xubo");
+select * from obs1;
+
+
+
+
+create table t2(name STRING);
+show tables;
+insert into t2 values("xubo");
+select * from t2;
+
+
 
 
 ## history
 ###create external table
 
-	0: jdbc:hive2://172.31.3.5:10000> create external table customer STORED BY 'carbondata' location 's3a://newcarbonstore/default/customer';
-	+---------+--+
-	| Result  |
-	+---------+--+
-	+---------+--+
-	No rows selected (5.073 seconds)
-	0: jdbc:hive2://172.31.3.5:10000> select count(*) from customer;
-	+-----------+--+
-	| count(1)  |
-	+-----------+--+
-	| 15000000  |
-	+-----------+--+
-	1 row selected (11.647 seconds)
-	0: jdbc:hive2://172.31.3.5:10000> select * from customer limit 10;
+0: jdbc:hive2://172.31.3.5:10000> create external table customer STORED BY 'carbondata' location 's3a://newcarbonstore/default/customer';
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (5.073 seconds)
+0: jdbc:hive2://172.31.3.5:10000> select count(*) from customer;
++-----------+--+
+| count(1)  |
++-----------+--+
+| 15000000  |
++-----------+--+
+1 row selected (11.647 seconds)
+0: jdbc:hive2://172.31.3.5:10000> select * from customer limit 10;
 
 
 ###create table and insert into values
-	
-	0: jdbc:hive2://172.31.3.5:10000> create table obs1(name STRING) stored by 'carbondata';
-	+---------+--+
-	| Result  |
-	+---------+--+
-	+---------+--+
-	No rows selected (3.783 seconds)
-	0: jdbc:hive2://172.31.3.5:10000> show tables;
-	+-----------+------------+--------------+--+
-	| database  | tableName  | isTemporary  |
-	+-----------+------------+--------------+--+
-	| default   | customer   | false        |
-	| default   | obs1       | false        |
-	+-----------+------------+--------------+--+
-	2 rows selected (0.052 seconds)
-	0: jdbc:hive2://172.31.3.5:10000> insert into obs1("xubo");
-	Error: org.apache.spark.sql.AnalysisException: == Parse1 ==
-	
-	mismatched input '"xubo"' expecting {'(', 'SELECT', 'FROM', 'VALUES', 'TABLE', 'INSERT', 'MAP', 'REDUCE'}(line 1, pos 17)
-	
-	== SQL ==
-	insert into obs1("xubo")
-	-----------------^^^
-	
-	== Parse2 ==
-	[1.1] failure: identifier matching regex (?i)ALTER expected
-	
-	insert into obs1("xubo")
-	^;; (state=,code=0)
-	0: jdbc:hive2://172.31.3.5:10000> insert into obs1 values("xubo");
-	+---------+--+
-	| Result  |
-	+---------+--+
-	+---------+--+
-	No rows selected (23.412 seconds)
-	0: jdbc:hive2://172.31.3.5:10000> select * from obs1;
-	+-------+--+
-	| name  |
-	+-------+--+
-	| xubo  |
-	+-------+--+
-	1 row selected (2.417 seconds)
-	0: jdbc:hive2://172.31.3.5:10000>
+
+0: jdbc:hive2://172.31.3.5:10000> create table obs1(name STRING) stored by 'carbondata';
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (3.783 seconds)
+0: jdbc:hive2://172.31.3.5:10000> show tables;
++-----------+------------+--------------+--+
+| database  | tableName  | isTemporary  |
++-----------+------------+--------------+--+
+| default   | customer   | false        |
+| default   | obs1       | false        |
++-----------+------------+--------------+--+
+2 rows selected (0.052 seconds)
+0: jdbc:hive2://172.31.3.5:10000> insert into obs1("xubo");
+Error: org.apache.spark.sql.AnalysisException: == Parse1 ==
+
+mismatched input '"xubo"' expecting {'(', 'SELECT', 'FROM', 'VALUES', 'TABLE', 'INSERT', 'MAP', 'REDUCE'}(line 1, pos 17)
+
+== SQL ==
+insert into obs1("xubo")
+-----------------^^^
+
+== Parse2 ==
+[1.1] failure: identifier matching regex (?i)ALTER expected
+
+insert into obs1("xubo")
+^;; (state=,code=0)
+0: jdbc:hive2://172.31.3.5:10000> insert into obs1 values("xubo");
++---------+--+
+| Result  |
++---------+--+
++---------+--+
+No rows selected (23.412 seconds)
+0: jdbc:hive2://172.31.3.5:10000> select * from obs1;
++-------+--+
+| name  |
++-------+--+
+| xubo  |
++-------+--+
+1 row selected (2.417 seconds)
+0: jdbc:hive2://172.31.3.5:10000>
