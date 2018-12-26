@@ -12,18 +12,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snappy.version>1.1.2.6</snappy.version>
-        <hadoop.version>2.2.0</hadoop.version>
+        <hadoop.version>2.7.2</hadoop.version>
         <hadoop.deps.scope>compile</hadoop.deps.scope>
         <spark.deps.scope>compile</spark.deps.scope>
         <scala.deps.scope>compile</scala.deps.scope>
         <dev.path>${basedir}/dev</dev.path>
         <spark.master.url>local[2]</spark.master.url>
         <hdfs.url>local</hdfs.url>
-        <!--<suite.name>org.apache.carbondata.cluster.sdv.suite.SDVSuites</suite.name>-->
         <spark.version>2.2.1</spark.version>
         <scala.binary.version>2.11</scala.binary.version>
         <scala.version>2.11.12</scala.version>
-        <carbondata.version>1.5.0</carbondata.version>
+        <carbondata.version>1.5.1</carbondata.version>
     </properties>
 
     <dependencies>
@@ -114,6 +113,11 @@
         <dependency>
             <groupId>org.apache.carbondata</groupId>
             <artifactId>carbondata-format</artifactId>
+            <version>${carbondata.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.carbondata</groupId>
+            <artifactId>carbondata-examples-spark2</artifactId>
             <version>${carbondata.version}</version>
         </dependency>
         <dependency>
