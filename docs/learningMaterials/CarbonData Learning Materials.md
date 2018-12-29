@@ -91,16 +91,19 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
  - 3.7 Apache CarbonData:大数据生态一种新的高性能数据格式: 
 	 - [https://my.oschina.net/u/3156280/blog/808506](https://my.oschina.net/u/3156280/blog/808506)
 
-## 4. Performance report
+## 4. Source code analysis
+ - CarbonData源码浅析一：Create Table：[https://blog.csdn.net/zzcclp/article/details/80161130](https://blog.csdn.net/zzcclp/article/details/80161130)
+ 
+## 5. Performance report
   - [CarbonData-1.5.1 TPCH Report](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/slides/Performance%20report/CarbonData-TPCH-Report.pdf)
 
-## 5.Refernce
- - 5.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
- - 5.2 [https://github.com/QiangCai/carbondata_guide](https://github.com/QiangCai/carbondata_guide)
- - 5.3 [Apache CarbonData 中文文档 - 过往记忆](https://www.iteblog.com/archives/tag/carbondata/)
+## 6.Refernce
+ - 6.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
+ - 6.2 [https://github.com/QiangCai/carbondata_guide](https://github.com/QiangCai/carbondata_guide)
+ - 6.3 [Apache CarbonData 中文文档 - 过往记忆](https://www.iteblog.com/archives/tag/carbondata/)
 
-## 6.WeChat group(微信群)
+## 7.WeChat group(微信群)
    Please add WeChat ID：xu601450868, I will add you into CarbonData WeChat group
-## 7.更多资料：
-  - 7.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
-  - 7.2 [https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData Learning Materials.md](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData%20Learning%20Materials.md)
+## 8.更多资料：
+  - 8.1 [https://github.com/xubo245/CarbonDataLearning](https://github.com/xubo245/CarbonDataLearning)
+  - 8.2 [https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData Learning Materials.md](https://github.com/xubo245/CarbonDataLearning/blob/master/docs/learningMaterials/CarbonData%20Learning%20Materials.md)
