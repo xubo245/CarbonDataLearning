@@ -6,7 +6,7 @@ Apache CarbonData is an indexed columnar data store solution for fast analytics 
  - 1.3 CarbonData cwiki: [https://cwiki.apache.org/confluence/display/CARBONDATA/](https://cwiki.apache.org/confluence/display/CARBONDATA/)
 
 ## 2.Activity (Video and ppt)
- - 2.1 Apache CarbonData ShenZhen Meetup PPT (1st Dec,2018)
+ - 2.1 Apache CarbonData & Spark ShenZhen Meetup (1st Dec,2018)
  	- Videos:
  		- 视频回顾：[http://zhibo.huaweicloud.com/watch/2590022](http://zhibo.huaweicloud.com/watch/2590022)
  	- News:
