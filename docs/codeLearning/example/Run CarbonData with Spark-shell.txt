@@ -19,11 +19,24 @@ CarbonData jar
 	
 	val carbon = SparkSession.builder().master("local").appName("test").getOrCreateCarbonSession("/Users/xubo/Desktop/xubo/git/carbondata1/examples/spark2/target", "/Users/xubo/Desktop/xubo/git/carbondata1/examples/spark2/target");
 	      
-	CREATE TABLE test_carbon(id String,name String, city String,age Int) STORED as carbondata;
+	carbon.sql("CREATE TABLE test_carbon(id String,name String, city String,age Int) STORED as carbondata");
 	
-	LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv' into table test_carbon；
+	carbon.sql("LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv' into table test_carbon");
 	
 	carbon.sql("select * from test_carbon").show
+	
+	
+### run with Alluxio
+	import org.apache.spark.sql.CarbonSession._
+	import org.apache.spark.sql.SparkSession
+	
+	val carbon = SparkSession.builder().master("local").appName("test").getOrCreateCarbonSession("alluxio://localhost:19998/carbondata");
+	carbon.sql("CREATE TABLE carbon_alluxio(id String,name String, city String,age Int) STORED as carbondata");
+	carbon.sql("LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv' into table carbon_alluxio");
+	carbon.sql("select * from carbon_alluxio").show
+	
+	./bin/alluxio fs copyFromLocal /Users/xubo/Desktop/xubo/git/carbondata1/integration/spark-common-test/src/test/resources/sample.csv /
+	carbon.sql("LOAD DATA LOCAL INPATH 'alluxio://localhost:19998/sample.csv' into table carbon_alluxio");
 	
 ##4. History
 
