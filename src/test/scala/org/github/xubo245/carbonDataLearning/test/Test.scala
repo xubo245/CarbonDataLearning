@@ -23,7 +23,9 @@ object Test {
     val b=10.00001
 
     assert(Math.abs(a-b)<0.00002)
-    println(Math.abs(a-b))
+    println(Math.abs(a - b))
+    println(Integer.MAX_VALUE / (1024 * 1024 * 1024.0))
+
   }
 
 }

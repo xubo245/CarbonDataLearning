@@ -29,6 +29,9 @@
 	+---------+--+
 	+---------+--+
 	No rows selected (1399.757 seconds)
+	
+	LOAD DATA LOCAL INPATH 's3a://carbonstore/tpch/size1G/lineitem10000.tbl' into table lineitem2 OPTIONS('DELIMITER'='|','HEADER'='false');
+	
 	0: jdbc:hive2://127.0.0.1:10000> Display all 560 possibilities? (y or n)
 	0: jdbc:hive2://127.0.0.1:10000> select * from lineitem2 limit 10;
 	+-------------+------------+------------+---------------+-------------+------------------+-------------+--------+---------------+---------------+-------------+---------------+----------------+--------------------+-------------+--------------------------------------+--+
