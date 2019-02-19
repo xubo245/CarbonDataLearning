@@ -11,3 +11,8 @@ Replace py4j with pyjnius, support OBS
 TODO
 1. decrease the data size for image dataset
 2. save feature vector for classification
+
+
+Python SDK:
+1.for other frame work integrationg, such as MXnet
+2.For user to read carbon file simplily, for example: download from OBS and read

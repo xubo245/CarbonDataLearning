@@ -2,11 +2,20 @@ Schema:
 ImageName
 ImageBinary
 labelFileName
-labelFileContent String/Binary(SegmentationClass)
-label, complex data type
+label
+labelFileContent String(detection)
 
-image1,XX,XX,XX,'persion,bicycle'
+classification:
+	image1,XX,XX,cat
+Object detection:
+	image1,XX,XX,cat,'objectname:cat\nlocation:XX'\
+	'cat,dog'. contains sql filter
 
+
+, complex data type<!---->
+/Binary(SegmentationClass)
+
+=> labelFileContent =>carbon
 
 
 1.image classification
