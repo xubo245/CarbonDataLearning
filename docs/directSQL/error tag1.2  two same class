@@ -1,0 +1,867 @@
+  /huawei/tools/jdk1.8.0_161/bin/java -Dmaven.multiModuleProjectDirectory=/huawei/xubo/git/carbondata -Dmaven.home=/huawei/tools/apache-maven-3.3.9 -Dclassworlds.conf=/huawei/tools/apache-maven-3.3.9/bin/m2.conf -javaagent:/huawei/tools/idea-IC-171.4424.56/lib/idea_rt.jar=38839:/huawei/tools/idea-IC-171.4424.56/bin -Dfile.encoding=UTF-8 -classpath /huawei/tools/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar org.codehaus.classworlds.Launcher -Didea.version=2017.1.3 -DskipTests -Pspark-1.6 -Pbuild-with-format -Dspark.version=1.6.2 clean install
+  [INFO] Scanning for projects...
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Reactor Build Order:
+  [INFO] 
+  [INFO] Apache CarbonData :: Parent
+  [INFO] Apache CarbonData :: Common
+  [INFO] Apache CarbonData :: Format
+  [INFO] Apache CarbonData :: Core
+  [INFO] Apache CarbonData :: Processing
+  [INFO] Apache CarbonData :: Hadoop
+  [INFO] Apache CarbonData :: Spark Common
+  [INFO] Apache CarbonData :: Spark
+  [INFO] Apache CarbonData :: Spark Common Test
+  [INFO] Apache CarbonData :: Assembly
+  [INFO] Apache CarbonData :: Spark Examples
+  [INFO] Apache CarbonData :: Flink Examples
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Parent 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-parent ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-parent ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-parent ---
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-parent >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-parent ---d
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-parent <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-parent ---
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-parent ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-parent ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-parent ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-parent ---
+  [WARNING] sourceDirectory is not specified or does not exist value=/huawei/xubo/git/carbondata/src/main/scala
+  Saving to outputFile=/huawei/xubo/git/carbondata/target/scalastyle-output.xml
+  Processed 0 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 104 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-parent ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-parent ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-parent ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-parent ---
+  [INFO] Installing /huawei/xubo/git/carbondata/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-parent/1.2.0/carbondata-parent-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Common 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-common ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/common/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-common ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/common/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-common ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-common ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] skip non existing resourceDirectory /huawei/xubo/git/carbondata/common/src/main/resources
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-common ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 10 source files to /huawei/xubo/git/carbondata/common/target/classes
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-common >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-common ---
+  [INFO] Fork Value is true
+  [INFO] Done FindBugs Analysis....
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-common <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-common ---
+  [INFO] BugInstance size is 0
+  [INFO] Error size is 0
+  [INFO] No errors/warnings found
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-common ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] skip non existing resourceDirectory /huawei/xubo/git/carbondata/common/src/test/resources
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-common ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 7 source files to /huawei/xubo/git/carbondata/common/target/test-classes
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ carbondata-common ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-common ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/common/target/carbondata-common-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-common ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-common ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/common/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-common ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-common ---
+  [WARNING] sourceDirectory is not specified or does not exist value=/huawei/xubo/git/carbondata/common/src/main/scala
+  Saving to outputFile=/huawei/xubo/git/carbondata/common/target/scalastyle-output.xml
+  Processed 0 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 1 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-common ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-common ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-common ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/common/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-common ---
+  [INFO] Installing /huawei/xubo/git/carbondata/common/target/carbondata-common-1.2.0.jar to /root/.m2/repository/org/apache/carbondata/carbondata-common/1.2.0/carbondata-common-1.2.0.jar
+  [INFO] Installing /huawei/xubo/git/carbondata/common/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-common/1.2.0/carbondata-common-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Format 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-format ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/format/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-format ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/format/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-thrift-plugin:0.1.11:compile (generate-thrift-java) @ carbondata-format ---
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-format ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-format ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] skip non existing resourceDirectory /huawei/xubo/git/carbondata/format/src/main/resources
+  [INFO] Copying 6 resources
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-format ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 34 source files to /huawei/xubo/git/carbondata/format/target/classes
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-format >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-format ---
+  [INFO] Fork Value is true
+  [INFO] Done FindBugs Analysis....
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-format <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-format ---
+  [INFO] BugInstance size is 0
+  [INFO] Error size is 0
+  [INFO] No errors/warnings found
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-format ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] skip non existing resourceDirectory /huawei/xubo/git/carbondata/format/src/test/resources
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-format ---
+  [INFO] No sources to compile
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ carbondata-format ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-format ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/format/target/carbondata-format-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-format ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-format ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/format/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-format ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-format ---
+  [WARNING] sourceDirectory is not specified or does not exist value=/huawei/xubo/git/carbondata/format/src/main/scala
+  Saving to outputFile=/huawei/xubo/git/carbondata/format/target/scalastyle-output.xml
+  Processed 0 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 1 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-format ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-format ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-format ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/format/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-format ---
+  [INFO] Installing /huawei/xubo/git/carbondata/format/target/carbondata-format-1.2.0.jar to /root/.m2/repository/org/apache/carbondata/carbondata-format/1.2.0/carbondata-format-1.2.0.jar
+  [INFO] Installing /huawei/xubo/git/carbondata/format/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-format/1.2.0/carbondata-format-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Core 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-core ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/core/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-core ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/core/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-core ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-core ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 1 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-core ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 517 source files to /huawei/xubo/git/carbondata/core/target/classes
+  [WARNING] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/memory/CarbonUnsafe.java:[23,16] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+  [WARNING] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/memory/CarbonUnsafe.java:[43,18] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+  [WARNING] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/memory/CarbonUnsafe.java:[47,21] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+  [WARNING] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/memory/CarbonUnsafe.java:[49,17] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+  [WARNING] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/memory/CarbonUnsafe.java:[70,17] sun.misc.Unsafe is internal proprietary API and may be removed in a future release
+  [INFO] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/util/ByteUtil.java: /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/util/ByteUtil.java uses or overrides a deprecated API.
+  [INFO] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/util/ByteUtil.java: Recompile with -Xlint:deprecation for details.
+  [INFO] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/scan/executor/impl/AbstractQueryExecutor.java: Some input files use unchecked or unsafe operations.
+  [INFO] /huawei/xubo/git/carbondata/core/src/main/java/org/apache/carbondata/core/scan/executor/impl/AbstractQueryExecutor.java: Recompile with -Xlint:unchecked for details.
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-core >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-core ---
+  [INFO] Fork Value is true
+  [INFO] Done FindBugs Analysis....
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-core <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-core ---
+  [INFO] BugInstance size is 0
+  [INFO] Error size is 0
+  [INFO] No errors/warnings found
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-core ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 1 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-core ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 104 source files to /huawei/xubo/git/carbondata/core/target/test-classes
+  [WARNING] /huawei/xubo/git/carbondata/core/src/test/java/org/apache/carbondata/core/datastore/filesystem/LocalCarbonFileTest.java:[27,18] sun.nio.ch.FileChannelImpl is internal proprietary API and may be removed in a future release
+  [WARNING] /huawei/xubo/git/carbondata/core/src/test/java/org/apache/carbondata/core/datastore/filesystem/LocalCarbonFileTest.java:[192,20] sun.nio.ch.FileChannelImpl is internal proprietary API and may be removed in a future release
+  [INFO] /huawei/xubo/git/carbondata/core/src/test/java/org/apache/carbondata/core/keygenerator/directdictionary/DirectDictionaryKeyGeneratorFactoryUnitTest.java: Some input files use or override a deprecated API.
+  [INFO] /huawei/xubo/git/carbondata/core/src/test/java/org/apache/carbondata/core/keygenerator/directdictionary/DirectDictionaryKeyGeneratorFactoryUnitTest.java: Recompile with -Xlint:deprecation for details.
+  [INFO] /huawei/xubo/git/carbondata/core/src/test/java/org/apache/carbondata/core/scan/expression/ExpressionResultTest.java: Some input files use unchecked or unsafe operations.
+  [INFO] /huawei/xubo/git/carbondata/core/src/test/java/org/apache/carbondata/core/scan/expression/ExpressionResultTest.java: Recompile with -Xlint:unchecked for details.
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ carbondata-core ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-core ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/core/target/carbondata-core-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-core ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-core ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/core/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-core ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-core ---
+  [WARNING] sourceDirectory is not specified or does not exist value=/huawei/xubo/git/carbondata/core/src/main/scala
+  Saving to outputFile=/huawei/xubo/git/carbondata/core/target/scalastyle-output.xml
+  Processed 0 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 1 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-core ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-core ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-core ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/core/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-core ---
+  [INFO] Installing /huawei/xubo/git/carbondata/core/target/carbondata-core-1.2.0.jar to /root/.m2/repository/org/apache/carbondata/carbondata-core/1.2.0/carbondata-core-1.2.0.jar
+  [INFO] Installing /huawei/xubo/git/carbondata/core/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-core/1.2.0/carbondata-core-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Processing 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-processing ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/processing/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-processing ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/processing/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-processing ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-processing ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 1 resource
+  [INFO] Copying 1 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-processing ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 150 source files to /huawei/xubo/git/carbondata/processing/target/classes
+  [INFO] /huawei/xubo/git/carbondata/processing/src/main/java/org/apache/carbondata/processing/merger/CarbonDataMergerUtil.java: /huawei/xubo/git/carbondata/processing/src/main/java/org/apache/carbondata/processing/merger/CarbonDataMergerUtil.java uses or overrides a deprecated API.
+  [INFO] /huawei/xubo/git/carbondata/processing/src/main/java/org/apache/carbondata/processing/merger/CarbonDataMergerUtil.java: Recompile with -Xlint:deprecation for details.
+  [INFO] /huawei/xubo/git/carbondata/processing/src/main/java/org/apache/carbondata/processing/spliter/AbstractCarbonQueryExecutor.java: Some input files use unchecked or unsafe operations.
+  [INFO] /huawei/xubo/git/carbondata/processing/src/main/java/org/apache/carbondata/processing/spliter/AbstractCarbonQueryExecutor.java: Recompile with -Xlint:unchecked for details.
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-processing >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-processing ---
+  [INFO] Fork Value is true
+  [INFO] Done FindBugs Analysis....
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-processing <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-processing ---
+  [INFO] BugInstance size is 0
+  [INFO] Error size is 0
+  [INFO] No errors/warnings found
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-processing ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 14 resources
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-processing ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 8 source files to /huawei/xubo/git/carbondata/processing/target/test-classes
+  [INFO] /huawei/xubo/git/carbondata/processing/src/test/java/org/apache/carbondata/carbon/datastore/BlockIndexStoreTest.java: Some input files use unchecked or unsafe operations.
+  [INFO] /huawei/xubo/git/carbondata/processing/src/test/java/org/apache/carbondata/carbon/datastore/BlockIndexStoreTest.java: Recompile with -Xlint:unchecked for details.
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ carbondata-processing ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-processing ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/processing/target/carbondata-processing-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-processing ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-processing ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/processing/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-processing ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-processing ---
+  [WARNING] sourceDirectory is not specified or does not exist value=/huawei/xubo/git/carbondata/processing/src/main/scala
+  Saving to outputFile=/huawei/xubo/git/carbondata/processing/target/scalastyle-output.xml
+  Processed 0 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 1 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-processing ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-processing ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-processing ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/processing/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-processing ---
+  [INFO] Installing /huawei/xubo/git/carbondata/processing/target/carbondata-processing-1.2.0.jar to /root/.m2/repository/org/apache/carbondata/carbondata-processing/1.2.0/carbondata-processing-1.2.0.jar
+  [INFO] Installing /huawei/xubo/git/carbondata/processing/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-processing/1.2.0/carbondata-processing-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Hadoop 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-hadoop ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/hadoop/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-hadoop ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/hadoop/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-hadoop ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-hadoop ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 1 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-hadoop ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 34 source files to /huawei/xubo/git/carbondata/hadoop/target/classes
+  [INFO] /huawei/xubo/git/carbondata/hadoop/src/main/java/org/apache/carbondata/hadoop/api/CarbonTableInputFormat.java: Some input files use unchecked or unsafe operations.
+  [INFO] /huawei/xubo/git/carbondata/hadoop/src/main/java/org/apache/carbondata/hadoop/api/CarbonTableInputFormat.java: Recompile with -Xlint:unchecked for details.
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-hadoop >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-hadoop ---
+  [INFO] Fork Value is true
+  [INFO] Done FindBugs Analysis....
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-hadoop <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-hadoop ---
+  [INFO] BugInstance size is 0
+  [INFO] Error size is 0
+  [INFO] No errors/warnings found
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-hadoop ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 1 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-hadoop ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 5 source files to /huawei/xubo/git/carbondata/hadoop/target/test-classes
+  [INFO] /huawei/xubo/git/carbondata/hadoop/src/test/java/org/apache/carbondata/hadoop/test/util/StoreCreator.java: /huawei/xubo/git/carbondata/hadoop/src/test/java/org/apache/carbondata/hadoop/test/util/StoreCreator.java uses unchecked or unsafe operations.
+  [INFO] /huawei/xubo/git/carbondata/hadoop/src/test/java/org/apache/carbondata/hadoop/test/util/StoreCreator.java: Recompile with -Xlint:unchecked for details.
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ carbondata-hadoop ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-hadoop ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/hadoop/target/carbondata-hadoop-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-hadoop ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-hadoop ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/hadoop/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-hadoop ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-hadoop ---
+  [WARNING] sourceDirectory is not specified or does not exist value=/huawei/xubo/git/carbondata/hadoop/src/main/scala
+  Saving to outputFile=/huawei/xubo/git/carbondata/hadoop/target/scalastyle-output.xml
+  Processed 0 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 0 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-hadoop ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-hadoop ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-hadoop ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/hadoop/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-hadoop ---
+  [INFO] Installing /huawei/xubo/git/carbondata/hadoop/target/carbondata-hadoop-1.2.0.jar to /root/.m2/repository/org/apache/carbondata/carbondata-hadoop/1.2.0/carbondata-hadoop-1.2.0.jar
+  [INFO] Installing /huawei/xubo/git/carbondata/hadoop/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-hadoop/1.2.0/carbondata-hadoop-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Spark Common 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-spark-common ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/integration/spark-common/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-spark-common ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/integration/spark-common/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-spark-common ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-spark-common ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] skip non existing resourceDirectory /huawei/xubo/git/carbondata/integration/spark-common/src/resources
+  [INFO] Copying 0 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:compile (default) @ carbondata-spark-common ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [INFO] /huawei/xubo/git/carbondata/integration/spark-common/src/main/java:-1: info: compiling
+  [INFO] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala:-1: info: compiling
+  [INFO] Compiling 76 source files to /huawei/xubo/git/carbondata/integration/spark-common/target/classes at 1521636182277
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala/org/apache/carbondata/spark/util/CarbonScalaUtil.scala:127: warning: non-variable type argument Any in type pattern scala.collection.Map[Any,Any] is unchecked since it is eliminated by erasure
+  [INFO]         case m: scala.collection.Map[Any, Any] =>
+  [INFO]                                  ^
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala/org/apache/carbondata/spark/rdd/PartitionDropper.scala:57: warning: match may not be exhaustive.
+  [INFO] It would fail on the following inputs: HASH, RANGE_INTERVAL
+  [INFO]     val targetPartitionId = partitionInfo.getPartitionType match {
+  [INFO]                                           ^
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala/org/apache/carbondata/spark/util/CarbonScalaUtil.scala:69: warning: match may not be exhaustive.
+  [INFO] It would fail on the following inputs: ARRAY, BYTE, BYTE_ARRAY, FLOAT, MAP, NULL, SHORT_INT, STRUCT
+  [INFO]     dataType match {
+  [INFO]     ^
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala/org/apache/carbondata/spark/util/DataTypeConverterUtil.scala:81: warning: match may not be exhaustive.
+  [INFO] It would fail on the following inputs: BOOLEAN, BYTE, BYTE_ARRAY, MAP, NULL, SHORT_INT
+  [INFO]     dataType match {
+  [INFO]     ^
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala/org/apache/spark/rdd/DataLoadPartitionCoalescer.scala:193: warning: match may not be exhaustive.
+  [INFO] It would fail on the following input: None
+  [INFO]                 hostMapPartitionIds.get(loc) match {
+  [INFO]                                        ^
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala/org/apache/spark/rdd/DataLoadPartitionCoalescer.scala:190: warning: match may not be exhaustive.
+  [INFO] It would fail on the following input: None
+  [INFO]           partitionIdMapHosts.get(partitionId) match {
+  [INFO]                                  ^
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark-common/src/main/scala/org/apache/spark/sql/optimizer/CarbonDecoderOptimizerHelper.scala:79: warning: unreachable code
+  [INFO]       case u: Union =>
+  [INFO]                     ^
+  [WARNING] warning: there were 4 deprecation warning(s); re-run with -deprecation for details
+  [WARNING] warning: there were 4 feature warning(s); re-run with -feature for details
+  [WARNING] 9 warnings found
+  [INFO] prepare-compile in 0 s
+  [INFO] compile in 20 s
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-spark-common ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 18 source files to /huawei/xubo/git/carbondata/integration/spark-common/target/classes
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-spark-common >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-spark-common ---
+  [INFO] Fork Value is true
+  [INFO] Done FindBugs Analysis....
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-spark-common <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-spark-common ---
+  [INFO] BugInstance size is 0
+  [INFO] Error size is 0
+  [INFO] No errors/warnings found
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:compile (compile) @ carbondata-spark-common ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [INFO] Nothing to compile - all classes are up to date
+  [INFO] 
+  [INFO] --- maven-dependency-plugin:3.0.0:copy (compile) @ carbondata-spark-common ---
+  [INFO] Configured Artifact: org.apache.carbondata:carbondata-format:1.2.0:jar
+  [INFO] Configured Artifact: com.google.code.gson:gson:2.3.1:jar
+  [INFO] Configured Artifact: org.xerial.snappy:snappy-java:1.1.2.6:jar
+  [INFO] Copying carbondata-format-1.2.0.jar to /huawei/xubo/git/carbondata/integration/spark-common/target/jars/carbondata-format-1.2.0.jar
+  [INFO] Copying gson-2.3.1.jar to /huawei/xubo/git/carbondata/integration/spark-common/target/jars/gson-2.3.1.jar
+  [INFO] Copying snappy-java-1.1.2.6.jar to /huawei/xubo/git/carbondata/integration/spark-common/target/jars/snappy-java-1.1.2.6.jar
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-spark-common ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] skip non existing resourceDirectory /huawei/xubo/git/carbondata/integration/spark-common/src/test/resources
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-spark-common ---
+  [INFO] No sources to compile
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18:test (default-test) @ carbondata-spark-common ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:testCompile (testCompile) @ carbondata-spark-common ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [WARNING] No source files found.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-spark-common ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/integration/spark-common/target/carbondata-spark-common-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-spark-common ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-spark-common ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/integration/spark-common/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-spark-common ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-spark-common ---
+  Saving to outputFile=/huawei/xubo/git/carbondata/integration/spark-common/target/scalastyle-output.xml
+  Processed 58 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 2774 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-spark-common ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-spark-common ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-spark-common ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/integration/spark-common/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-spark-common ---
+  [INFO] Installing /huawei/xubo/git/carbondata/integration/spark-common/target/carbondata-spark-common-1.2.0.jar to /root/.m2/repository/org/apache/carbondata/carbondata-spark-common/1.2.0/carbondata-spark-common-1.2.0.jar
+  [INFO] Installing /huawei/xubo/git/carbondata/integration/spark-common/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-spark-common/1.2.0/carbondata-spark-common-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Spark 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-spark ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/integration/spark/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-spark ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/integration/spark/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-spark ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-spark ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 2 resources
+  [INFO] Copying 1 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:compile (default) @ carbondata-spark ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [INFO] /huawei/xubo/git/carbondata/integration/spark/src/main/java:-1: info: compiling
+  [INFO] /huawei/xubo/git/carbondata/integration/spark/src/main/scala:-1: info: compiling
+  [INFO] Compiling 35 source files to /huawei/xubo/git/carbondata/integration/spark/target/classes at 1521636229298
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark/src/main/scala/org/apache/spark/sql/CarbonDictionaryDecoder.scala:98: warning: match may not be exhaustive.
+  [INFO] It would fail on the following inputs: BYTE, BYTE_ARRAY, FLOAT, MAP, NULL, SHORT_INT
+  [INFO]     carbonDimension.getDataType match {
+  [INFO]                     ^
+  [WARNING] /huawei/xubo/git/carbondata/integration/spark/src/main/scala/org/apache/carbondata/spark/rdd/CarbonDataRDDFactory.scala:90: warning: org.apache.carbondata.core.statusmanager.SegmentUpdateStatusManager and None.type are unrelated: they will most likely always compare unequal
+  [INFO]       if (alterTableModel.segmentUpdateStatusManager.get != None) {
+  [INFO]                                                          ^
+  [WARNING] warning: there were 7 deprecation warning(s); re-run with -deprecation for details
+  [WARNING] warning: there were 1 feature warning(s); re-run with -feature for details
+  [WARNING] four warnings found
+  [INFO] prepare-compile in 0 s
+  [INFO] compile in 19 s
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-spark ---
+  [INFO] Changes detected - recompiling the module!
+  [INFO] Compiling 1 source file to /huawei/xubo/git/carbondata/integration/spark/target/classes
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-spark >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-spark ---
+  [INFO] Fork Value is true
+  [INFO] Done FindBugs Analysis....
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-spark <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-spark ---
+  [INFO] BugInstance size is 0
+  [INFO] Error size is 0
+  [INFO] No errors/warnings found
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:compile (compile) @ carbondata-spark ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [INFO] Nothing to compile - all classes are up to date
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-spark ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 1 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-spark ---
+  [INFO] Nothing to compile - all classes are up to date
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18:test (default-test) @ carbondata-spark ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:testCompile (testCompile) @ carbondata-spark ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [INFO] /huawei/xubo/git/carbondata/integration/spark/src/test/scala:-1: info: compiling
+  [INFO] Compiling 19 source files to /huawei/xubo/git/carbondata/integration/spark/target/test-classes at 1521636269838
+  [INFO] prepare-compile in 0 s
+  [INFO] compile in 8 s
+  [INFO] 
+  [INFO] --- scalatest-maven-plugin:1.0:test (test) @ carbondata-spark ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-spark ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/integration/spark/target/carbondata-spark-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-spark ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-spark ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/integration/spark/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-checkstyle-plugin:2.17:check (default) @ carbondata-spark ---
+  [INFO] Starting audit...
+  Audit done.
+  [INFO] 
+  [INFO] --- scalastyle-maven-plugin:0.8.0:check (default) @ carbondata-spark ---
+  Saving to outputFile=/huawei/xubo/git/carbondata/integration/spark/target/scalastyle-output.xml
+  Processed 34 file(s)
+  Found 0 errors
+  Found 0 warnings
+  Found 0 infos
+  Finished in 1099 ms
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ carbondata-spark ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:report-integration (default-report-integration) @ carbondata-spark ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file.
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:check (default-check) @ carbondata-spark ---
+  [INFO] Skipping JaCoCo execution due to missing execution data file:/huawei/xubo/git/carbondata/integration/spark/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ carbondata-spark ---
+  [INFO] Installing /huawei/xubo/git/carbondata/integration/spark/target/carbondata-spark-1.2.0.jar to /root/.m2/repository/org/apache/carbondata/carbondata-spark/1.2.0/carbondata-spark-1.2.0.jar
+  [INFO] Installing /huawei/xubo/git/carbondata/integration/spark/pom.xml to /root/.m2/repository/org/apache/carbondata/carbondata-spark/1.2.0/carbondata-spark-1.2.0.pom
+  [INFO]                                                                         
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Apache CarbonData :: Spark Common Test 1.2.0
+  [INFO] ------------------------------------------------------------------------
+  [INFO] 
+  [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ carbondata-spark-common-test ---
+  [INFO] Deleting /huawei/xubo/git/carbondata/integration/spark-common-test/target
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ carbondata-spark-common-test ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/integration/spark-common-test/target/jacoco.exec
+  [INFO] 
+  [INFO] --- maven-remote-resources-plugin:1.5:process (default) @ carbondata-spark-common-test ---
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ carbondata-spark-common-test ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] skip non existing resourceDirectory /huawei/xubo/git/carbondata/integration/spark-common-test/src/resources
+  [INFO] Copying 0 resource
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:compile (default) @ carbondata-spark-common-test ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [WARNING] No source files found.
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ carbondata-spark-common-test ---
+  [INFO] No sources to compile
+  [INFO] 
+  [INFO] >>> findbugs-maven-plugin:3.0.4:check (analyze-compile) > :findbugs @ carbondata-spark-common-test >>>
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ carbondata-spark-common-test ---
+  [INFO] 
+  [INFO] <<< findbugs-maven-plugin:3.0.4:check (analyze-compile) < :findbugs @ carbondata-spark-common-test <<<
+  [INFO] 
+  [INFO] --- findbugs-maven-plugin:3.0.4:check (analyze-compile) @ carbondata-spark-common-test ---
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:compile (compile) @ carbondata-spark-common-test ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [WARNING] No source files found.
+  [INFO] 
+  [INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ carbondata-spark-common-test ---
+  [INFO] Using 'UTF-8' encoding to copy filtered resources.
+  [INFO] Copying 198 resources
+  [INFO] Copying 3 resources
+  [INFO] 
+  [INFO] --- maven-dependency-plugin:2.8:copy (jacoco-dependency-ant) @ carbondata-spark-common-test ---
+  [INFO] Configured Artifact: org.jacoco:org.jacoco.ant:0.7.9:jar
+  [INFO] Copying org.jacoco.ant-0.7.9.jar to /huawei/xubo/git/carbondata/integration/spark-common-test/target/jacoco-jars/org.jacoco.ant.jar
+  [INFO] 
+  [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ carbondata-spark-common-test ---
+  [INFO] Nothing to compile - all classes are up to date
+  [INFO] 
+  [INFO] --- maven-surefire-plugin:2.18:test (default-test) @ carbondata-spark-common-test ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-scala-plugin:2.15.2:testCompile (testCompile) @ carbondata-spark-common-test ---
+  [INFO] Checking for multiple versions of scala
+  [INFO] includes = [**/*.java,**/*.scala,]
+  [INFO] excludes = []
+  [INFO] /huawei/xubo/git/carbondata/integration/spark-common-test/src/test/scala:-1: info: compiling
+  [INFO] Compiling 124 source files to /huawei/xubo/git/carbondata/integration/spark-common-test/target/test-classes at 1521636284849
+  [INFO] prepare-compile in 0 s
+  [INFO] compile in 19 s
+  [INFO] 
+  [INFO] --- scalatest-maven-plugin:1.0:test (test) @ carbondata-spark-common-test ---
+  [INFO] Tests are skipped.
+  [INFO] 
+  [INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ carbondata-spark-common-test ---
+  [INFO] Building jar: /huawei/xubo/git/carbondata/integration/spark-common-test/target/carbondata-spark-common-test-1.2.0.jar
+  [INFO] 
+  [INFO] --- maven-site-plugin:3.4:attach-descriptor (attach-descriptor) @ carbondata-spark-common-test ---
+  [INFO] 
+  [INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent-integration (default-prepare-agent-integration) @ carbondata-spark-common-test ---
+  [INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/huawei/xubo/git/carbondata/integration/spark-common-test/target/jacoco-it.exec
+  [INFO] 
+  [INFO] --- maven-antrun-plugin:1.6:run (default) @ carbondata-spark-common-test ---
+  [INFO] Executing tasks
+
+  main:
+       [echo] Generating JaCoCo Reports
+      [mkdir] Created dir: /huawei/xubo/git/carbondata/integration/spark-common-test/target/coverage-report
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Reactor Summary:
+  [INFO] 
+  [INFO] Apache CarbonData :: Parent ........................ SUCCESS [  3.265 s]
+  [INFO] Apache CarbonData :: Common ........................ SUCCESS [  6.689 s]
+  [INFO] Apache CarbonData :: Format ........................ SUCCESS [ 12.437 s]
+  [INFO] Apache CarbonData :: Core .......................... SUCCESS [ 29.114 s]
+  [INFO] Apache CarbonData :: Processing .................... SUCCESS [ 16.052 s]
+  [INFO] Apache CarbonData :: Hadoop ........................ SUCCESS [  8.473 s]
+  [INFO] Apache CarbonData :: Spark Common .................. SUCCESS [ 49.098 s]
+  [INFO] Apache CarbonData :: Spark ......................... SUCCESS [ 52.524 s]
+  [INFO] Apache CarbonData :: Spark Common Test ............. FAILURE [ 25.787 s]
+  [INFO] Apache CarbonData :: Assembly ...................... SKIPPED
+  [INFO] Apache CarbonData :: Spark Examples ................ SKIPPED
+  [INFO] Apache CarbonData :: Flink Examples ................ SKIPPED
+  [INFO] ------------------------------------------------------------------------
+  [INFO] BUILD FAILURE
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Total time: 03:23 min
+  [INFO] Finished at: 2018-03-21T20:45:05+08:00
+  [INFO] Final Memory: 135M/1540M
+  [INFO] ------------------------------------------------------------------------
+  [ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.6:run (default) on project carbondata-spark-common-test: An Ant BuildException has occured: Error while creating report: Error while analyzing org/apache/carbondata/spark/rdd/CarbonDataRDDFactory$$anon$1.class. Can't add different class with same name: org/apache/carbondata/spark/rdd/CarbonDataRDDFactory$$anon$1 -> [Help 1]
+  [ERROR] 
+  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+  [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+  [ERROR] 
+  [ERROR] For more information about the errors and possible solutions, please read the following articles:
+  [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+  [ERROR] 
+  [ERROR] After correcting the problems, you can resume the build with the command
+  [ERROR]   mvn <goals> -rf :carbondata-spark-common-test
+
+  Process finished with exit code 1
