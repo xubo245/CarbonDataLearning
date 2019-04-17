@@ -233,7 +233,7 @@ processData方法有三百多行代码，加上调用的不止
 	val carbonProperty: CarbonProperties = CarbonProperties.getInstance()
 如果table不存在，则会报错；carbonProperty有Carbon详细的各项配置
 
-![LoadTableCarbonProperties.PNG](./pictrues/LoadTableCarbonProperties.PNG)
+![LoadTableCarbonProperties.PNG](../pictrues/LoadTableCarbonProperties.PNG)
 
 
 ###3.1.2check文件
@@ -568,7 +568,7 @@ batchSize默认1000，每次处理1000行
 	  }
 
 读取的数据放在dataHandler对象的dataRows中
-![LoadTabledataHandler.PNG](./pictrues/LoadTabledataHandler.PNG)
+![LoadTabledataHandler.PNG](../pictrues/LoadTabledataHandler.PNG)
 
 csv文件数据为：
 
@@ -646,7 +646,7 @@ csv文件数据为：
 	    this.keyBlockHolder = null;
 	  }
 
-![](./pictrues/LoadTableWriteTmp.PNG)
+![](../pictrues/LoadTableWriteTmp.PNG)
 
 	  @Override protected void writeBlockletInfoToFile(FileChannel channel, String filePath)
 	      throws CarbonDataWriterException {
@@ -766,7 +766,7 @@ org.apache.carbondata.processing.store.writer.v3.CarbonFactDataWriterImplV3#clos
 （org.apache.hadoop.io.IOUtils#copyBytes(java.io.InputStream, java.io.OutputStream, int)）
 调用的还是hadoop里面的文件
 
-![LoadTableCopyTmpToGoal](./pictrues/LoadTableCopyTmpToGoal.PNG)
+![LoadTableCopyTmpToGoal](../pictrues/LoadTableCopyTmpToGoal.PNG)
 
 
 ####org.apache.carbondata.processing.store.writer.AbstractFactDataWriter#writeIndexFile
