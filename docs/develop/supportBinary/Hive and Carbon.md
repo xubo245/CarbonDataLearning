@@ -48,7 +48,7 @@ No rows selected (0.342 seconds)
 
 ## CarbonSession
 
-#### with \u0001 before binary and \u0002 after binary
+#### with \u0001 before binary and \u0002 after binary(binarystringdata.csv)
 ```
 CREATE TABLE IF NOT EXISTS carbontable (
     id int,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS carbontable (
 3 rows selected (0.134 seconds)
 
 ```
-#### without \u0001 before binary and \u0002 after binary
+#### without \u0001 before binary and \u0002 after binary(binarystringdata2.csv)
 ```
 0: jdbc:hive2://127.0.0.1:10000>  LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata2.csv' INTO TABLE carbontable OPTIONS('header'='false','DELIMITER'='|');
 +---------+--+
@@ -96,7 +96,7 @@ No rows selected (0.168 seconds)
 ```
 
 ###Hive 
-#### with \u0001 before binary and \u0002 after binary
+#### with \u0001 before binary and \u0002 after binary(binarystringdata.csv)
 ```
  CREATE TABLE IF NOT EXISTS hivetable (
     id int,
@@ -118,7 +118,7 @@ No rows selected (0.168 seconds)
 +-----+--------+--------+--------------+------------+--+
 3 rows selected (0.371 seconds)
 ```
-#### without \u0001 before binary and \u0002 after binary
+#### without \u0001 before binary and \u0002 after binary(binarystringdata2.csv)
 ```
 0: jdbc:hive2://127.0.0.1:10000>  LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata2.csv' INTO TABLE hivetable;
 +---------+--+
