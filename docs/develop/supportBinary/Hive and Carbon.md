@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS carbontable (
     autoLabel boolean)
  STORED BY 'carbondata';
  
- LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata.csv' INTO TABLE carbontable3 OPTIONS('header'='false','DELIMITER'='|');
+ LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata.csv' INTO TABLE carbontable OPTIONS('header'='false','DELIMITER'='|');
  
 0: jdbc:hive2://127.0.0.1:10000> select * from carbontable3;
 +-----+--------+--------+--------------+------------+--+
@@ -120,7 +120,7 @@ No rows selected (0.168 seconds)
 ```
 #### without \u0001 before binary and \u0002 after binary(binarystringdata2.csv)
 ```
-0: jdbc:hive2://127.0.0.1:10000>  LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata2.csv' INTO TABLE hivetable;
+0: jdbc:hive2://127.0.0.1:10000>  LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata2.csv' INTO TABLE hivetable2;
 +---------+--+
 | Result  |
 +---------+--+
@@ -139,6 +139,112 @@ No rows selected (0.131 seconds)
 | 1   | true   | 1.png  | education  | true       |
 +-----+--------+--------+--------------+------------+--+
 6 rows selected (0.098 seconds)
+```
+
+### alter table serde to LazyBinarySerDe
+```
+hive> ALTER TABLE hivetable SET SERDE 'org.apache.hadoop.hive.serde2.lazybinary.LazyBinarySerDe';
+OK
+Time taken: 0.049 seconds
+hive> desc formatted hivetable;
+OK
+# col_name            	data_type           	comment             
+	 	 
+id                  	int                 	                    
+label               	boolean             	                    
+name                	string              	                    
+image               	binary              	                    
+autolabel           	boolean             	                    
+	 	 
+# Detailed Table Information	 	 
+Database:           	default             	 
+Owner:              	xubo                	 
+CreateTime:         	Thu Apr 18 16:11:25 CST 2019	 
+LastAccessTime:     	UNKNOWN             	 
+Protect Mode:       	None                	 
+Retention:          	0                   	 
+Location:           	file:/user/hive/warehouse/hivetable	 
+Table Type:         	MANAGED_TABLE       	 
+Table Parameters:	 	 
+	COLUMN_STATS_ACCURATE	false               
+	last_modified_by    	xubo                
+	last_modified_time  	1555575169          
+	numFiles            	1                   
+	numRows             	-1                  
+	rawDataSize         	-1                  
+	totalSize           	81                  
+	transient_lastDdlTime	1555575169          
+	 	 
+# Storage Information	 	 
+SerDe Library:      	org.apache.hadoop.hive.serde2.lazybinary.LazyBinarySerDe	 
+InputFormat:        	org.apache.hadoop.mapred.TextInputFormat	 
+OutputFormat:       	org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat	 
+Compressed:         	No                  	 
+Num Buckets:        	-1                  	 
+Bucket Columns:     	ÄÅ                  	 
+Sort Columns:       	ÄÅ                  	 
+Storage Desc Params:	 	 
+	field.delim         	ö                   
+	serialization.format	ö                   
+Time taken: 0.053 seconds, Fetched: 38 row(s)
+hive> LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata2.csv' INTO TABLE hivetable;
+Loading data to table default.hivetable
+Table default.hivetable stats: ÄnumFiles=2, numRows=0, totalSize=162, rawDataSize=0Å
+OK
+Time taken: 0.141 seconds
+hive> select * from hivetable;
+OK
+NULL	false	NULL	NULL	false
+124	false	NULL	NULL	false
+124	NULL	NULL	NULL	false
+NULL	false	NULL	NULL	false
+124	false	NULL	NULL	false
+124	NULL	NULL	NULL	false
+Time taken: 0.093 seconds, Fetched: 6 row(s)
+hive> ALTER TABLE hivetable SET SERDEPROPERTIES ('field.delim' = 'ö');
+OK
+Time taken: 0.037 seconds
+hive> select * from hivetable;
+OK
+NULL	false	NULL	NULL	false
+124	false	NULL	NULL	false
+124	NULL	NULL	NULL	false
+NULL	false	NULL	NULL	false
+124	false	NULL	NULL	false
+124	NULL	NULL	NULL	false
+Time taken: 0.091 seconds, Fetched: 6 row(s)
+```
+ 
+### create table with LazyBinarySerDe
+```
+
+CREATE TABLE IF NOT EXISTS hivetable2 (
+  id int,
+   label boolean,
+  	name string,
+   image binary,
+   autoLabel boolean)
+row format SERDE 'org.apache.hadoop.hive.serde2.lazybinary.LazyBinarySerDe'   WITH SERDEPROPERTIES ('field.delim'='ö');
+OK
+Time taken: 0.012 seconds
+hive>  LOAD DATA LOCAL INPATH '/Users/xubo/Desktop/xubo/git/carbondata3/integration/spark-common-test/src/test/resources/binarystringdata2.csv' INTO TABLE hivetable2;
+Loading data to table default.hivetable2
+Table default.hivetable2 stats: ÄnumFiles=2, totalSize=156Å
+OK
+Time taken: 0.121 seconds
+hive> select * from hivetable;
+OK
+NULL	false	NULL	NULL	false
+124	false	NULL	NULL	false
+124	NULL	NULL	NULL	false
+NULL	false	NULL	NULL	false
+124	false	NULL	NULL	false
+124	NULL	NULL	NULL	false
+NULL	false	NULL	NULL	false
+124	false	NULL	NULL	false
+124	NULL	NULL	NULL	false
+Time taken: 0.091 seconds, Fetched: 9 row(s)
+hive> 
 ```
 ##Cast 
 ```

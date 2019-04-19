@@ -276,7 +276,7 @@ So hive storage data as base 64 format in disk
 
 For String
 
-	   > select CAST(s AS BINARY) from over10k_n20;
+	 > select CAST(s AS BINARY) from over10k_n20;
 	OK
 	bob davidson
 	alice zipper

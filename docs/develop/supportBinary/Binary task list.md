@@ -9,3 +9,8 @@
 	Issue or suggestion:
 	
 	https://github.com/apache/carbondata/pull/3079
+	
+	
+	Array<Binary>:org.apache.carbondata.processing.loading.parser.impl.RowParserImpl#parseRow
+	
+	89504e470d0a1a0a0000000d4948445200000
