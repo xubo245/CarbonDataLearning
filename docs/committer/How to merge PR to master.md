@@ -1,4 +1,4 @@
-	git clone https://git-wip-us.apache.org/repos/asf/carbondata
+	git clone https://git-wip-us.apache.org/repos/asf/carbondata  cahnge to git clone https://gitbox.apache.org/repos/asf/carbondata
 	cd carbondata
 	git remote rename origin apache
 	git remote add github https://github.com/apache/carbondata
